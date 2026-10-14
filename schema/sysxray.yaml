@@ -1,0 +1,293 @@
+id: https://local.sysxray/sobre
+name: sysxray_sobre
+title: sysXray observation envelope
+description: >-
+  Types the act of observing a home computer (plate, horizon, statement,
+  judgment, cited authority). Does not model the filesystem tree.
+  Six prohibitions: no exists/target_exists/compliant; Plate is tree_root;
+  Statement has no parent/children; Authority.source_url required;
+  regime+captured_at required; body_uri points to raw body.
+prefixes:
+  linkml: https://w3id.org/linkml/
+  sysxray: https://local.sysxray/
+default_prefix: sysxray
+imports:
+  - linkml:types
+default_range: string
+
+classes:
+  Plate:
+    tree_root: true
+    description: Immutable capture with instrument and horizons.
+    slots:
+      - id
+      - role
+      - instrument
+      - regime
+      - captured_at
+      - horizons
+      - body_uri
+      - statements
+    slot_usage:
+      id:
+        identifier: true
+        required: true
+      role:
+        required: true
+        range: Role
+      instrument:
+        required: true
+        range: Instrument
+      regime:
+        required: true
+        range: Regime
+      captured_at:
+        required: true
+        range: datetime
+      horizons:
+        required: true
+        multivalued: true
+        range: Horizon
+        inlined: true
+        inlined_as_list: true
+      body_uri:
+        required: true
+      statements:
+        multivalued: true
+        range: Statement
+        inlined: true
+        inlined_as_list: true
+
+  Horizon:
+    description: What the instrument cannot see or must refuse.
+    slots:
+      - id
+      - kind
+      - note
+    slot_usage:
+      id:
+        identifier: true
+        required: true
+      kind:
+        required: true
+        range: HorizonKind
+
+  Statement:
+    description: One relation asserted, refused, or not in plate. No parent/children.
+    slots:
+      - id
+      - subject
+      - relation
+      - object_text
+      - support
+    slot_usage:
+      id:
+        identifier: true
+        required: true
+      subject:
+        required: true
+      relation:
+        required: true
+        range: Relation
+      support:
+        required: true
+        range: Support
+
+  Judgment:
+    description: Verdict against an external authority. No compliant slot on paths.
+    slots:
+      - id
+      - statement
+      - authority
+      - verdict
+    slot_usage:
+      id:
+        identifier: true
+        required: true
+      statement:
+        required: true
+        range: Statement
+      authority:
+        required: true
+        range: Authority
+      verdict:
+        required: true
+        range: Verdict
+
+  Authority:
+    description: External canon cited by URL. Text stays outside the schema.
+    slots:
+      - id
+      - title
+      - source_url
+      - version_label
+    slot_usage:
+      id:
+        identifier: true
+        required: true
+      title:
+        required: true
+      source_url:
+        required: true
+      version_label:
+        required: true
+
+  CanonFicha:
+    is_a: Authority
+    description: >-
+      JSON card under docs/*.json. Extends Authority with local observation,
+      optional Secure Boot switch fields, and source-contrast provenance.
+    slots:
+      - judges_what
+      - observed_here
+      - explanation
+      - switch_on
+      - switch_off
+      - activates_when_on
+      - deactivates_when_on
+      - source_checked_at
+      - source_http_status
+      - contrast_verdict
+      - secondary_urls
+      - local_witness
+    slot_usage:
+      judges_what:
+        required: true
+      observed_here:
+        required: true
+      explanation:
+        required: true
+      activates_when_on:
+        multivalued: true
+        range: string
+      deactivates_when_on:
+        multivalued: true
+        range: string
+      secondary_urls:
+        multivalued: true
+        range: uriorcurie
+
+slots:
+  id:
+    range: string
+  role:
+    range: Role
+  instrument:
+    range: Instrument
+  regime:
+    range: Regime
+  captured_at:
+    range: datetime
+  horizons:
+    range: Horizon
+  body_uri:
+    range: uriorcurie
+  statements:
+    range: Statement
+  kind:
+    range: HorizonKind
+  note:
+    range: string
+  subject:
+    range: string
+  relation:
+    range: Relation
+  object_text:
+    range: string
+  support:
+    range: Support
+  statement:
+    range: Statement
+  authority:
+    range: Authority
+  verdict:
+    range: Verdict
+  title:
+    range: string
+  source_url:
+    range: uriorcurie
+  version_label:
+    range: string
+  judges_what:
+    range: string
+  observed_here:
+    range: string
+  explanation:
+    range: string
+  switch_on:
+    range: string
+  switch_off:
+    range: string
+  activates_when_on:
+    range: string
+    multivalued: true
+  deactivates_when_on:
+    range: string
+    multivalued: true
+  source_checked_at:
+    range: datetime
+  source_http_status:
+    range: string
+    description: "200, 404, 403_bot, local_only, or similar probe label"
+  contrast_verdict:
+    range: ContrastVerdict
+  secondary_urls:
+    range: uriorcurie
+    multivalued: true
+  local_witness:
+    range: string
+    description: Local man/info/NEWS path or measured command
+
+enums:
+  Role:
+    permissible_values:
+      capture:
+        description: Real capture from this machine
+      fixture:
+        description: Test-only instance
+  Instrument:
+    permissible_values:
+      tree:
+      grub_ls:
+      grub_cat:
+      grub_hexdump:
+      sh_ls:
+  Regime:
+    permissible_values:
+      live:
+      frozen:
+  HorizonKind:
+    permissible_values:
+      no_dotfiles:
+      no_metadata:
+      leaf_ambiguity:
+      grub_lockdown:
+      kernel_lockdown_integrity:
+      unknown_filesystem:
+      full_dentries:
+  Relation:
+    permissible_values:
+      lists:
+      contains:
+      links_to:
+      mounts:
+      denies:
+      reads:
+  Support:
+    permissible_values:
+      asserted:
+      refused:
+      not_in_plate:
+  Verdict:
+    permissible_values:
+      acuerdo:
+      desacuerdo:
+      inobservable:
+      extra_documentado:
+  ContrastVerdict:
+    permissible_values:
+      acuerdo:
+      desacuerdo:
+      url_rota:
+      bloqueado_bot:
+      parcial:

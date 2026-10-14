@@ -1,0 +1,17 @@
+{
+  "@type": "CanonFicha",
+  "id": "authority-redhat",
+  "title": "Red Hat — Managing file systems (RHEL 9)",
+  "source_url": "https://docs.redhat.com/en/documentation/red_hat_enterprise_linux/9/html/managing_file_systems/index",
+  "version_label": "RHEL 9 docs — Managing file systems",
+  "judges_what": "Práctica de administración documentada por Red Hat sobre sistemas de ficheros en RHEL 9 (creación, montaje, cuotas, XFS/ext4). Contraste de fabricante frente a FHS/UAPI; no arbitra esta placa Ubuntu.",
+  "observed_here": "Este equipo es Ubuntu 26.04.1, no RHEL. La URL anterior (assembly_managing-file-system-hierarchy bajo configuring_basic_system_settings) devolvió 404; sustituida por el índice vivo Managing file systems. La ficha sigue siendo contraste de fabricante, no árbitro de la placa.",
+  "explanation": "Complementa FHS/UAPI con prosa de operaciones Red Hat. No se copia la guía entera. Histórico: assembly_managing-file-system-hierarchy… → 404 (2026-10-14).",
+  "source_checked_at": "2026-10-14T13:45:00Z",
+  "source_http_status": "200",
+  "contrast_verdict": "parcial",
+  "secondary_urls": [
+    "https://docs.redhat.com/en/documentation/red_hat_enterprise_linux/9/html/configuring_basic_system_settings/index"
+  ],
+  "local_witness": "WebFetch 404 sobre assembly antiguo; índice Managing file systems OK"
+}

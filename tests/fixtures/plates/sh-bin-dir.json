@@ -1,0 +1,16 @@
+{
+  "id": "fixture-sh-bin-dir",
+  "role": "fixture",
+  "instrument": "sh_ls",
+  "regime": "live",
+  "captured_at": "2026-10-14T12:00:00Z",
+  "horizons": [{ "id": "h2", "kind": "full_dentries" }],
+  "body_uri": "file://tests/fixtures/plates/sh-bin-dir.json",
+  "statements": [{
+    "id": "s2",
+    "subject": "/bin",
+    "relation": "contains",
+    "object_text": "(hier-style directory claim)",
+    "support": "asserted"
+  }]
+}

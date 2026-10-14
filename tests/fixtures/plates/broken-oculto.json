@@ -1,0 +1,16 @@
+{
+  "id": "fixture-broken-oculto",
+  "role": "fixture",
+  "instrument": "tree",
+  "regime": "frozen",
+  "captured_at": "2026-10-12T18:25:38Z",
+  "horizons": [{ "id": "h3", "kind": "no_dotfiles" }],
+  "body_uri": "file://data/tree/",
+  "statements": [{
+    "id": "s3",
+    "subject": "/home/alexendros/.config",
+    "relation": "links_to",
+    "object_text": "(destino oculto no volcado)",
+    "support": "not_in_plate"
+  }]
+}

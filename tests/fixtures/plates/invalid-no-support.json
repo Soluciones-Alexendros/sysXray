@@ -1,0 +1,15 @@
+{
+  "id": "invalid-no-support",
+  "role": "fixture",
+  "instrument": "tree",
+  "regime": "frozen",
+  "captured_at": "2026-10-12T18:25:38Z",
+  "horizons": [{ "id": "h", "kind": "no_dotfiles" }],
+  "body_uri": "file://data/tree/",
+  "statements": [{
+    "id": "s",
+    "subject": "/bin",
+    "relation": "links_to",
+    "object_text": "usr/bin"
+  }]
+}

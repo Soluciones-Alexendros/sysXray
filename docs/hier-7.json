@@ -1,0 +1,14 @@
+{
+  "@type": "CanonFicha",
+  "id": "authority-hier-7",
+  "title": "hier(7) — descripción de la jerarquía de ficheros",
+  "source_url": "https://man7.org/linux/man-pages/man7/hier.7.html",
+  "version_label": "man-pages 6.17 (este equipo)",
+  "judges_what": "Descripción local (man-pages) de un árbol Linux típico: /bin como directorio de programas necesarios para arrancar y reparar, /lib como bibliotecas, etc.",
+  "observed_here": "En este equipo hier(7) sigue describiendo /bin como directorio de ejecutables. El disco tiene /bin → usr/bin. Esa tensión es el dato: dos afirmaciones válidas (texto del man vs enlace en la placa) y un juicio desacuerdo, no un error de formato de la placa.",
+  "explanation": "hier(7) no es árbitro de un Ubuntu con usr-merge. Sirve como autoridad citada para contrastar lo que el texto local afirma frente a lo que la placa mide. No se usa para juzgar dotfiles del home.",
+  "source_checked_at": "2026-10-14T13:44:00Z",
+  "source_http_status": "200",
+  "contrast_verdict": "acuerdo",
+  "local_witness": "man hier(7) man-pages 6.17"
+}

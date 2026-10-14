@@ -1,0 +1,128 @@
+{
+  "generated": "2026-10-12T18:25:40.956Z",
+  "distro": "Ubuntu",
+  "fhs": {
+    "canonical": [
+      "bin",
+      "boot",
+      "dev",
+      "etc",
+      "home",
+      "lib",
+      "media",
+      "mnt",
+      "opt",
+      "proc",
+      "root",
+      "run",
+      "sbin",
+      "srv",
+      "sys",
+      "tmp",
+      "usr",
+      "var"
+    ],
+    "core": [
+      "bin",
+      "boot",
+      "dev",
+      "etc",
+      "lib",
+      "media",
+      "mnt",
+      "opt",
+      "run",
+      "sbin",
+      "srv",
+      "tmp",
+      "usr",
+      "var"
+    ],
+    "present": [
+      "bin",
+      "boot",
+      "dev",
+      "etc",
+      "home",
+      "lib",
+      "media",
+      "mnt",
+      "opt",
+      "proc",
+      "root",
+      "run",
+      "sbin",
+      "srv",
+      "sys",
+      "tmp",
+      "usr",
+      "var"
+    ],
+    "missing": [],
+    "nonCanonical": [
+      {
+        "name": "cdrom",
+        "clase": "#anomalia-top",
+        "comentario": "Mountpoint huérfano/vacío: entrada /media/cdrom creada por el instalador sin medio montado."
+      },
+      {
+        "name": "desplantar.md",
+        "clase": "#anomalia-top",
+        "comentario": "Auto-inclusión: el volcado completo del árbol / se incluye a sí mismo en el repositorio auditado."
+      },
+      {
+        "name": "swap.img",
+        "clase": "#anomalia-top",
+        "comentario": "Swapfile por defecto de Ubuntu (instalación con swap en fichero); normal."
+      },
+      {
+        "name": "snap",
+        "clase": "#anomalia-top",
+        "comentario": "Directorio de snaps: extra-FHS, normal en Ubuntu."
+      },
+      {
+        "name": "lost+found",
+        "clase": "#anomalia-top",
+        "comentario": "Directorio de fsck de ext4: extra-FHS, normal en la raíz del sistema de ficheros."
+      }
+    ]
+  },
+  "mergedUsr": {
+    "ok": true,
+    "links": [
+      {
+        "path": "/bin",
+        "target": "usr/bin"
+      },
+      {
+        "path": "/lib",
+        "target": "usr/lib"
+      },
+      {
+        "path": "/lib32",
+        "target": "usr/lib32"
+      },
+      {
+        "path": "/lib64",
+        "target": "usr/lib64"
+      },
+      {
+        "path": "/libx32",
+        "target": "usr/libx32"
+      },
+      {
+        "path": "/sbin",
+        "target": "usr/sbin"
+      }
+    ]
+  },
+  "kernel": {
+    "versions": [
+      "7.0.0-34",
+      "7.0.0-38"
+    ],
+    "nonStandard": true,
+    "comentario": "Kernel no estándar en Ubuntu: detectado 7.0.0-34, 7.0.0-38; Ubuntu 24.04 LTS distribuye kernels 6.x."
+  },
+  "note": "Public excerpt without anomaly path lists (home paths omitted)."
+}

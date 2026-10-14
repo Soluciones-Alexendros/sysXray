@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>sysXray — Sobre LinkML</title>
+  <style>
+    :root {
+      --ink: #1a1a1a;
+      --muted: #4a4a4a;
+      --line: #c8c8c8;
+      --bg: #f6f4ef;
+      --accent: #0b3d2e;
+      --warn: #6b2e0a;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: "Iowan Old Style", "Palatino Linotype", Palatino, Georgia, serif;
+      color: var(--ink);
+      background:
+        radial-gradient(ellipse at 10% 0%, #e8e2d4 0%, transparent 50%),
+        radial-gradient(ellipse at 90% 100%, #d9e2dc 0%, transparent 45%),
+        var(--bg);
+      line-height: 1.45;
+    }
+    main { max-width: 42rem; margin: 0 auto; padding: 2.5rem 1.25rem 4rem; }
+    h1 { font-size: 1.85rem; font-weight: 600; letter-spacing: -0.02em; margin: 0 0 0.4rem; color: var(--accent); }
+    h2 { font-size: 1.15rem; margin: 2rem 0 0.6rem; border-top: 1px solid var(--line); padding-top: 1.2rem; }
+    p, li { font-size: 1.02rem; }
+    .lead { color: var(--muted); margin-top: 0; }
+    a { color: var(--accent); }
+    code, pre { font-family: "IBM Plex Mono", "Consolas", monospace; font-size: 0.88rem; }
+    pre {
+      background: #efece4;
+      border: 1px solid var(--line);
+      padding: 0.85rem 1rem;
+      overflow-x: auto;
+      white-space: pre-wrap;
+    }
+    .ded { font-style: italic; color: var(--muted); margin: 1.5rem 0; }
+    .grid { display: grid; gap: 0.75rem; }
+    .card {
+      border-left: 3px solid var(--accent);
+      padding: 0.35rem 0 0.35rem 0.85rem;
+    }
+    .card.warn { border-left-color: var(--warn); }
+    ul.plain { padding-left: 1.2rem; }
+    nav a { margin-right: 0.85rem; }
+  </style>
+</head>
+<body>
+<main>
+  <h1>sysXray — sobre LinkML</h1>
+  <p class="lead">LinkML tipa el acto de observar. No tipa el disco. El contrato manda: <a href="../SPECLinkML-sysXray.txt">SPECLinkML-sysXray.txt</a>.</p>
+  <p class="ded">Dedicado a Daniel Domingo Benito, que pedía callar porque no quería saber nada de ordenadores.</p>
+
+  <nav>
+    <a href="../docs/nucleo.md">núcleo</a>
+    <a href="../docs/fase-antiguo.md">fase antigua</a>
+    <a href="../docs/secure-boot-lockdown.json">Secure Boot</a>
+    <a href="../schema/sysxray.yaml">esquema</a>
+  </nav>
+
+  <h2>Tres capas</h2>
+  <ol class="plain">
+    <li><strong>Placa</strong> — captura cruda (instrumento, horizonte, cuerpo).</li>
+    <li><strong>Carta</strong> — relaciones entre afirmaciones.</li>
+    <li><strong>Juicio</strong> — veredicto citando una ficha <code>CanonFicha</code> por URL.</li>
+  </ol>
+
+  <h2>Seis prohibiciones</h2>
+  <div class="grid">
+    <div class="card">1. Sin slots <code>exists</code> / <code>target_exists</code>. Ceguera = <code>not_in_plate</code> + horizonte.</div>
+    <div class="card">2. <code>tree_root</code> es <code>Plate</code>. <code>Statement</code> sin <code>parent</code>/<code>children</code>.</div>
+    <div class="card">3. <code>Authority.source_url</code> obligatorio. Slot <code>compliant</code> prohibido.</div>
+    <div class="card">4. <code>regime</code> + <code>captured_at</code>. Dos placas contradictorias validan.</div>
+    <div class="card">5. <code>body_uri</code> apunta al cuerpo. LinkML no recorre los TSV.</div>
+    <div class="card">6. <code>linkml</code> genera; <code>node tests/run.js</code> no pide Python.</div>
+  </div>
+
+  <h2>Caso /bin</h2>
+  <p>En este disco <code>/bin</code> es un enlace a <code>usr/bin</code> (usr-merge). <a href="../docs/hier-7.json">hier(7)</a> lo describe como directorio. Dos afirmaciones válidas; el juicio es <code>desacuerdo</code> bajo hier, <code>acuerdo</code> bajo <a href="../docs/uapi-file-hierarchy.json">UAPI.9</a>.</p>
+  <pre>{
+  "subject": "/bin",
+  "relation": "links_to",
+  "object_text": "usr/bin",
+  "support": "asserted"
+}</pre>
+
+  <h2>Secure Boot — el interruptor</h2>
+  <p class="card warn">Ficha completa: <a href="../docs/secure-boot-lockdown.json">secure-boot-lockdown.json</a> (campos <code>switch_on</code>, <code>switch_off</code>, <code>activates_when_on</code>, <code>deactivates_when_on</code>).</p>
+  <p><strong>Qué es.</strong> Función del firmware UEFI: antes de cargar un binario EFI, comprueba su firma contra las bases PK, KEK, db y dbx de la máquina.</p>
+  <p><strong>Cómo funciona aquí.</strong> Cadena <code>shimx64.efi</code> → <code>grubx64.efi</code> → núcleo firmado. Arrastra lockdown de GRUB y del núcleo (en este equipo: <em>integrity</em>).</p>
+  <p><strong>Switch ON.</strong> Solo arranca lo firmado; cierra <code>/dev/mem</code>, debugfs, módulos sin firma y órdenes GRUB que reescriben la cadena. No oculta los nombres con punto; no cifra la ext4.</p>
+  <p><strong>Switch OFF.</strong> El firmware deja de exigir esa cadena firmada; los lockdowns dejan de activarse por esa vía. El disco es el mismo.</p>
+  <p>Medido: Secure Boot enabled. Lockdown <code>integrity</code>. Órdenes de placa: <a href="../docs/grub-ordenes.json">grub-ordenes.json</a>.</p>
+
+  <h2>Contraste de fuentes</h2>
+  <p>Informe de la pasada de validación (HTTP + testigos locales):
+    <a href="../docs/contraste-fuentes.json">contraste-fuentes.json</a>.
+    Cada ficha lleva <code>source_checked_at</code>, <code>source_http_status</code>,
+    <code>contrast_verdict</code>, y si hace falta <code>secondary_urls</code> /
+    <code>local_witness</code>.</p>
+  <p>gnu.org puede devolver 403 a clientes automatizados (<code>bloqueado_bot</code>);
+    el contenido se sostiene con info/NEWS locales. La URL antigua de Red Hat
+    (assembly hierarchy) era 404; sustituida por <em>Managing file systems</em> RHEL 9.</p>
+
+  <h2>Fichas CanonFicha (JSON)</h2>
+  <ul class="plain">
+    <li><a href="../docs/fhs-3.0.json">fhs-3.0.json</a></li>
+    <li><a href="../docs/hier-7.json">hier-7.json</a></li>
+    <li><a href="../docs/uapi-file-hierarchy.json">uapi-file-hierarchy.json</a></li>
+    <li><a href="../docs/xdg.json">xdg.json</a></li>
+    <li><a href="../docs/gnu.json">gnu.json</a></li>
+    <li><a href="../docs/redhat.json">redhat.json</a></li>
+    <li><a href="../docs/secure-boot-lockdown.json">secure-boot-lockdown.json</a></li>
+    <li><a href="../docs/grub-ordenes.json">grub-ordenes.json</a></li>
+  </ul>
+</main>
+</body>
+</html>

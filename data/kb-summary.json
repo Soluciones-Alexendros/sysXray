@@ -1,0 +1,1723 @@
+{
+  "generated": "2026-10-12T22:30:59.321Z",
+  "taxonomy": [
+    {
+      "tag": "#fhs",
+      "label_es": "Jerarquia FHS",
+      "color": "#4C6EF5",
+      "descripcion": "Directorio canonico del Filesystem Hierarchy Standard (FHS 3.0) o dato compartido del sistema.",
+      "rol": "Sistema",
+      "detalle": "El FHS 3.0 estandariza donde vive cada cosa en un sistema Linux: binarios en /usr/bin, configuracion en /etc, datos variables en /var, etc. Que una ruta se ajuste a este estandar es lo que permite que las herramientas funcionen igual en cualquier distribucion.",
+      "caracteristicas": [
+        {
+          "clave": "Naturaleza",
+          "valor": "Directorio del sistema (FHS)"
+        },
+        {
+          "clave": "Origen",
+          "valor": "FHS 3.0 / usr-merge"
+        },
+        {
+          "clave": "Persistencia",
+          "valor": "Depende del subarbol"
+        }
+      ]
+    },
+    {
+      "tag": "#config",
+      "label_es": "Configuracion",
+      "color": "#12B886",
+      "descripcion": "Ficheros y directorios de configuracion del sistema, servicios y aplicaciones (normalmente bajo /etc).",
+      "rol": "Sistema",
+      "detalle": "La configuracion del sistema vive casi toda en /etc y se lee al arrancar los servicios. Suele ser texto plano editable, especifica de la maquina, y se conserva al actualizar paquetes. El sufijo .d indica un directorio de fragmentos que se combinan.",
+      "caracteristicas": [
+        {
+          "clave": "Naturaleza",
+          "valor": "Configuracion"
+        },
+        {
+          "clave": "Formato",
+          "valor": "Texto / INI / YAML segun extension"
+        },
+        {
+          "clave": "Ambito",
+          "valor": "Host-especifico"
+        },
+        {
+          "clave": "Al actualizar",
+          "valor": "Se conserva"
+        }
+      ]
+    },
+    {
+      "tag": "#daemon",
+      "label_es": "Servicios / systemd",
+      "color": "#7950F2",
+      "descripcion": "Unidades de systemd (.service, .socket, .target, .timer, .mount) y arranque de servicios.",
+      "rol": "Sistema (servicios)",
+      "detalle": "systemd gestiona el arranque y los servicios. Cada unidad declara que se ejecuta, cuando y como. Los enlaces dentro de *.wants/ o /etc/systemd/system/ activan una unidad (enable).",
+      "caracteristicas": [
+        {
+          "clave": "Naturaleza",
+          "valor": "Unidad systemd"
+        },
+        {
+          "clave": "Formato",
+          "valor": "INI (estilo freedesktop)"
+        },
+        {
+          "clave": "Activacion",
+          "valor": "Arranque / socket / timer"
+        }
+      ]
+    },
+    {
+      "tag": "#binario",
+      "label_es": "Ejecutables",
+      "color": "#15AABF",
+      "descripcion": "Binarios ejecutables (ELF) y scripts invocables: /usr/bin, /usr/sbin, /usr/libexec, /usr/local/bin.",
+      "rol": "Programa",
+      "detalle": "Programas que el usuario o el sistema pueden ejecutar. Los mas habituales son ficheros ELF enlazados dinamicamente contra glibc; tambien los hay como scripts (#!). /usr/bin es para el usuario y /usr/sbin para administracion.",
+      "caracteristicas": [
+        {
+          "clave": "Naturaleza",
+          "valor": "Programa ejecutable"
+        },
+        {
+          "clave": "Formato",
+          "valor": "ELF o script"
+        },
+        {
+          "clave": "Ejecutable",
+          "valor": "Si"
+        }
+      ]
+    },
+    {
+      "tag": "#biblioteca",
+      "label_es": "Bibliotecas",
+      "color": "#1098AD",
+      "descripcion": "Bibliotecas compartidas (.so), estaticas (.a) y cabeceras de desarrollo (/usr/lib, /usr/include).",
+      "rol": "Sistema",
+      "detalle": "Codigo reutilizable que otros programas cargan en ejecucion (bibliotecas compartidas .so) o enlazan al compilar (bibliotecas estaticas .a). Las versionadas suelen seguir el patron libX.so.MAYOR.MENOR.",
+      "caracteristicas": [
+        {
+          "clave": "Naturaleza",
+          "valor": "Biblioteca"
+        },
+        {
+          "clave": "Formato",
+          "valor": ".so (ELF) o .a (ar)"
+        },
+        {
+          "clave": "Enlace",
+          "valor": "Dinamico o estatico"
+        }
+      ]
+    },
+    {
+      "tag": "#kernel",
+      "label_es": "Nucleo y arranque",
+      "color": "#E8590C",
+      "descripcion": "Nucleo (vmlinuz), initramfs, modulos (.ko), firmware y cargador de arranque (GRUB/EFI).",
+      "rol": "Sistema (arranque)",
+      "detalle": "El nucleo Linux y todo lo necesario para arrancar: la imagen comprimida (vmlinuz), el initramfs que carga controladores minimos, los modulos (.ko) y el firmware de los dispositivos. Critico: un fallo aqui impide arrancar.",
+      "caracteristicas": [
+        {
+          "clave": "Naturaleza",
+          "valor": "Nucleo / firmware / arranque"
+        },
+        {
+          "clave": "Formato",
+          "valor": "vmlinuz / initramfs / .ko"
+        },
+        {
+          "clave": "Criticidad",
+          "valor": "Arranque del sistema"
+        }
+      ]
+    },
+    {
+      "tag": "#dispositivo",
+      "label_es": "Dispositivos",
+      "color": "#F59F00",
+      "descripcion": "Nodos de dispositivo y reglas udev en el pseudo-sistema de archivos /dev (devtmpfs).",
+      "rol": "Kernel (devtmpfs)",
+      "detalle": "En /dev el nucleo expone los dispositivos como ficheros (p. ej. /dev/sda, /dev/null). udev los crea y renombra dinamicamente segun sus reglas, y ofrece alias estables por ID.",
+      "caracteristicas": [
+        {
+          "clave": "Naturaleza",
+          "valor": "Nodo de dispositivo"
+        },
+        {
+          "clave": "Filesystem",
+          "valor": "devtmpfs (memoria)"
+        },
+        {
+          "clave": "Gestion",
+          "valor": "udev"
+        }
+      ]
+    },
+    {
+      "tag": "#datos-proceso",
+      "label_es": "Pseudo-FS del nucleo",
+      "color": "#AE3EC9",
+      "descripcion": "Sistemas de archivos virtuales generados en memoria por el nucleo: /proc, /sys, /run.",
+      "rol": "Kernel (virtual)",
+      "detalle": "No son ficheros reales en disco: el nucleo los genera al vuelo para exponer procesos (/proc), dispositivos y parametros (/sys) y datos de ejecucion (/run). Su contenido cambia constantemente y no se respalda.",
+      "caracteristicas": [
+        {
+          "clave": "Naturaleza",
+          "valor": "Pseudo-filesystem"
+        },
+        {
+          "clave": "Persistencia",
+          "valor": "Ninguna (memoria)"
+        },
+        {
+          "clave": "Generado por",
+          "valor": "El nucleo"
+        }
+      ]
+    },
+    {
+      "tag": "#cache",
+      "label_es": "Cache / temporales",
+      "color": "#868E96",
+      "descripcion": "Datos regenerables o efimeros: caches, indices y ficheros temporales (/var/cache, /tmp).",
+      "rol": "Temporal",
+      "detalle": "Datos que se pueden borrar sin perdida real: caches de aplicaciones, indices del gestor de paquetes y temporales. /tmp suele vaciarse al reiniciar (tmpfs); /var/tmp sobrevive mas tiempo.",
+      "caracteristicas": [
+        {
+          "clave": "Naturaleza",
+          "valor": "Datos regenerables"
+        },
+        {
+          "clave": "Persistencia",
+          "valor": "Prescindible"
+        },
+        {
+          "clave": "Ubicacion",
+          "valor": "/var/cache, /tmp, /var/tmp"
+        }
+      ]
+    },
+    {
+      "tag": "#log",
+      "label_es": "Registros",
+      "color": "#F08C00",
+      "descripcion": "Registros de eventos y auditoria: /var/log, journald, logs rotados.",
+      "rol": "Sistema",
+      "detalle": "Historial de lo que ocurre en el sistema: arranques, errores, accesos. systemd-journald los centraliza (binario) y los ficheros de /var/log los escriben los servicios; logrotate los va rotando y comprimiendo.",
+      "caracteristicas": [
+        {
+          "clave": "Naturaleza",
+          "valor": "Registro de eventos"
+        },
+        {
+          "clave": "Formato",
+          "valor": "Texto o journal binario"
+        },
+        {
+          "clave": "Rotacion",
+          "valor": "logrotate"
+        }
+      ]
+    },
+    {
+      "tag": "#datos-usuario",
+      "label_es": "Datos de usuario",
+      "color": "#E64980",
+      "descripcion": "Datos personales del usuario: /home, /root, configuraciones XDG y correo local.",
+      "rol": "Usuario",
+      "detalle": "Ficheros propios de cada persona o del administrador (root). Incluye documentos, configuracion personal (.config), caches (.cache) y datos (.local), siguiendo el estandar XDG Base Directory.",
+      "caracteristicas": [
+        {
+          "clave": "Naturaleza",
+          "valor": "Datos personales"
+        },
+        {
+          "clave": "Propietario",
+          "valor": "Usuario / root"
+        },
+        {
+          "clave": "Estandar",
+          "valor": "XDG Base Directory"
+        }
+      ]
+    },
+    {
+      "tag": "#snap",
+      "label_es": "Paquetes snap",
+      "color": "#FD7E14",
+      "descripcion": "Aplicaciones empaquetadas como snaps (squashfs) y sus datos en /snap y /var/lib/snapd.",
+      "rol": "Aplicacion",
+      "detalle": "Ubuntu empaqueta parte del software como snaps: imagenes squashfs de solo lectura que se montan en /snap. Van confinados (aislados) y se actualizan de forma atomica e independiente.",
+      "caracteristicas": [
+        {
+          "clave": "Naturaleza",
+          "valor": "Empaquetado snap"
+        },
+        {
+          "clave": "Formato",
+          "valor": "squashfs (solo lectura)"
+        },
+        {
+          "clave": "Aislamiento",
+          "valor": "Confinado"
+        }
+      ]
+    },
+    {
+      "tag": "#anomalia-top",
+      "label_es": "Anomalia: nivel raiz",
+      "color": "#FA5252",
+      "descripcion": "Entrada en la raiz fuera del conjunto esperado o punto de montaje huerfano/inusual.",
+      "rol": "Aviso",
+      "detalle": "Entrada en / que no forma parte del conjunto canonico de directorios. Puede ser normal (swap.img en Ubuntu, lost+found de ext4) o un residuo que conviene revisar (cdrom huerfano).",
+      "caracteristicas": [
+        {
+          "clave": "Naturaleza",
+          "valor": "Hallazgo de auditoria"
+        },
+        {
+          "clave": "Accion",
+          "valor": "Revision manual"
+        }
+      ]
+    },
+    {
+      "tag": "#anomalia-symlink-roto",
+      "label_es": "Anomalia: symlink roto",
+      "color": "#E03131",
+      "descripcion": "Enlace simbolico cuyo destino no existe.",
+      "rol": "Aviso",
+      "detalle": "El enlace apunta a una ruta que no existe. Muchas veces es inofensivo (sockets efimeros, capas de contenedores) pero conviene confirmarlo.",
+      "caracteristicas": [
+        {
+          "clave": "Naturaleza",
+          "valor": "Hallazgo de auditoria"
+        },
+        {
+          "clave": "Accion",
+          "valor": "Revision manual"
+        }
+      ]
+    },
+    {
+      "tag": "#anomalia-symlink-circular",
+      "label_es": "Anomalia: symlink circular",
+      "color": "#C92A2A",
+      "descripcion": "Enlace simbolico que forma un ciclo de resolucion.",
+      "rol": "Aviso",
+      "detalle": "La resolucion del enlace se realimenta y nunca termina. Impide acceder al fichero.",
+      "caracteristicas": [
+        {
+          "clave": "Naturaleza",
+          "valor": "Hallazgo de auditoria"
+        },
+        {
+          "clave": "Accion",
+          "valor": "Corregir"
+        }
+      ]
+    },
+    {
+      "tag": "#anomalia-ubicacion",
+      "label_es": "Anomalia: ubicacion",
+      "color": "#D6336C",
+      "descripcion": "Fichero colocado en un directorio que no corresponde segun FHS (p. ej. datos personales fuera de /home).",
+      "rol": "Aviso",
+      "detalle": "El contenido no encaja con el proposito del directorio segun el FHS. Dificulta el mantenimiento y las copias de seguridad.",
+      "caracteristicas": [
+        {
+          "clave": "Naturaleza",
+          "valor": "Hallazgo de auditoria"
+        },
+        {
+          "clave": "Accion",
+          "valor": "Reubicar o justificar"
+        }
+      ]
+    },
+    {
+      "tag": "#anomalia-contenido",
+      "label_es": "Anomalia: contenido",
+      "color": "#F76707",
+      "descripcion": "Contenido inesperado en una ubicacion del sistema (p. ej. el propio volcado dentro de /).",
+      "rol": "Aviso",
+      "detalle": "Hay algo que no deberia estar ahi (el ejemplo tipico: el fichero de volcado dentro de la propia raiz).",
+      "caracteristicas": [
+        {
+          "clave": "Naturaleza",
+          "valor": "Hallazgo de auditoria"
+        },
+        {
+          "clave": "Accion",
+          "valor": "Retirar"
+        }
+      ]
+    },
+    {
+      "tag": "#anomalia-candidato",
+      "label_es": "Anomalia: candidato",
+      "color": "#FAB005",
+      "descripcion": "Elemento que merece revision manual: posible anomalia no concluyente.",
+      "rol": "Aviso",
+      "detalle": "No se puede decidir automaticamente si es anomalia; queda marcado para que una persona lo valore.",
+      "caracteristicas": [
+        {
+          "clave": "Naturaleza",
+          "valor": "Hallazgo de auditoria"
+        },
+        {
+          "clave": "Accion",
+          "valor": "Revisar"
+        }
+      ]
+    }
+  ],
+  "topLevelAnnotated": [
+    {
+      "name": "bin",
+      "hashtag": "#fhs",
+      "categoria": "Jerarquia FHS",
+      "rol": "Sistema",
+      "descripcion_corta_ES": "Enlace de la fusion /usr: /bin -> usr/bin (ejecutables esenciales).",
+      "detalle": "El FHS 3.0 estandariza donde vive cada cosa en un sistema Linux: binarios en /usr/bin, configuracion en /etc, datos variables en /var, etc. Que una ruta se ajuste a este estandar es lo que permite que las herramientas funcionen igual en cualquier distribucion.",
+      "formato": "",
+      "estandar": "FHS 3.0 §3.4  /bin (usr-merge)",
+      "caracteristicas": [
+        {
+          "clave": "Naturaleza",
+          "valor": "Directorio del sistema (FHS)"
+        },
+        {
+          "clave": "Origen",
+          "valor": "FHS 3.0 / usr-merge"
+        },
+        {
+          "clave": "Persistencia",
+          "valor": "Depende del subarbol"
+        },
+        {
+          "clave": "Estandar",
+          "valor": "FHS 3.0 §3.4  /bin (usr-merge)"
+        }
+      ],
+      "fuentes": [
+        {
+          "texto": "The Case for the /usr Merge (freedesktop.org)",
+          "url": "https://www.freedesktop.org/wiki/Software/systemd/TheCaseForTheUsrMerge/",
+          "tipo": "oficial"
+        },
+        {
+          "texto": "File hierarchy (Arch Wiki)",
+          "url": "https://wiki.archlinux.org/title/File_hierarchy",
+          "tipo": "distro"
+        }
+      ],
+      "enlaces": [
+        {
+          "texto": "The Case for the /usr Merge (freedesktop.org)",
+          "url": "https://www.freedesktop.org/wiki/Software/systemd/TheCaseForTheUsrMerge/"
+        },
+        {
+          "texto": "File hierarchy (Arch Wiki)",
+          "url": "https://wiki.archlinux.org/title/File_hierarchy"
+        }
+      ]
+    },
+    {
+      "name": "boot",
+      "hashtag": "#kernel",
+      "categoria": "Nucleo y arranque",
+      "rol": "Sistema (arranque)",
+      "descripcion_corta_ES": "Nucleo, initramfs y cargador de arranque.",
+      "detalle": "El nucleo Linux y todo lo necesario para arrancar: la imagen comprimida (vmlinuz), el initramfs que carga controladores minimos, los modulos (.ko) y el firmware de los dispositivos. Critico: un fallo aqui impide arrancar.",
+      "formato": "",
+      "estandar": "FHS 3.0 §3.5  /boot",
+      "caracteristicas": [
+        {
+          "clave": "Naturaleza",
+          "valor": "Nucleo / firmware / arranque"
+        },
+        {
+          "clave": "Formato",
+          "valor": "vmlinuz / initramfs / .ko"
+        },
+        {
+          "clave": "Criticidad",
+          "valor": "Arranque del sistema"
+        },
+        {
+          "clave": "Estandar",
+          "valor": "FHS 3.0 §3.5  /boot"
+        }
+      ],
+      "fuentes": [
+        {
+          "texto": "Arch boot process - nucleo e initramfs (Arch Wiki)",
+          "url": "https://wiki.archlinux.org/title/Arch_boot_process",
+          "tipo": "distro"
+        },
+        {
+          "texto": "Initial ramdisk / initramfs (Wikipedia, EN)",
+          "url": "https://en.wikipedia.org/wiki/Initial_ramdisk",
+          "tipo": "enciclopedia"
+        },
+        {
+          "texto": "modprobe(8) - modulos del nucleo (man7.org)",
+          "url": "https://man7.org/linux/man-pages/man8/modprobe.8.html",
+          "tipo": "man"
+        }
+      ],
+      "enlaces": [
+        {
+          "texto": "Arch boot process - nucleo e initramfs (Arch Wiki)",
+          "url": "https://wiki.archlinux.org/title/Arch_boot_process"
+        },
+        {
+          "texto": "Initial ramdisk / initramfs (Wikipedia, EN)",
+          "url": "https://en.wikipedia.org/wiki/Initial_ramdisk"
+        },
+        {
+          "texto": "modprobe(8) - modulos del nucleo (man7.org)",
+          "url": "https://man7.org/linux/man-pages/man8/modprobe.8.html"
+        }
+      ]
+    },
+    {
+      "name": "cdrom",
+      "hashtag": "#anomalia-top",
+      "categoria": "Anomalia: nivel raiz",
+      "rol": "Aviso",
+      "descripcion_corta_ES": "Punto de montaje de CD-ROM huerfano en la raiz (residuo).",
+      "detalle": "Entrada en / que no forma parte del conjunto canonico de directorios. Puede ser normal (swap.img en Ubuntu, lost+found de ext4) o un residuo que conviene revisar (cdrom huerfano).",
+      "formato": "",
+      "estandar": "Mountpoint huerfano (no FHS)",
+      "caracteristicas": [
+        {
+          "clave": "Naturaleza",
+          "valor": "Hallazgo de auditoria"
+        },
+        {
+          "clave": "Accion",
+          "valor": "Revision manual"
+        },
+        {
+          "clave": "Estandar",
+          "valor": "Mountpoint huerfano (no FHS)"
+        }
+      ],
+      "fuentes": [
+        {
+          "texto": "FHS 3.0 - Filesystem Hierarchy Standard (Wikipedia, EN)",
+          "url": "https://en.wikipedia.org/wiki/Filesystem_Hierarchy_Standard",
+          "tipo": "enciclopedia"
+        },
+        {
+          "texto": "hier(7) - arbol de directorios (man7.org)",
+          "url": "https://man7.org/linux/man-pages/man7/hier.7.html",
+          "tipo": "man"
+        },
+        {
+          "texto": "Jerarquia estandar de sistemas de archivos (Wikipedia, ES)",
+          "url": "https://es.wikipedia.org/wiki/Jerarqu%C3%ADa_est%C3%A1ndar_de_sistemas_de_archivos",
+          "tipo": "enciclopedia"
+        }
+      ],
+      "enlaces": [
+        {
+          "texto": "FHS 3.0 - Filesystem Hierarchy Standard (Wikipedia, EN)",
+          "url": "https://en.wikipedia.org/wiki/Filesystem_Hierarchy_Standard"
+        },
+        {
+          "texto": "hier(7) - arbol de directorios (man7.org)",
+          "url": "https://man7.org/linux/man-pages/man7/hier.7.html"
+        },
+        {
+          "texto": "Jerarquia estandar de sistemas de archivos (Wikipedia, ES)",
+          "url": "https://es.wikipedia.org/wiki/Jerarqu%C3%ADa_est%C3%A1ndar_de_sistemas_de_archivos"
+        }
+      ]
+    },
+    {
+      "name": "desplantar.md",
+      "hashtag": "#anomalia-contenido",
+      "categoria": "Anomalia: contenido",
+      "rol": "Aviso",
+      "descripcion_corta_ES": "El propio volcado tree(1) autocontenido en la raiz.",
+      "detalle": "Hay algo que no deberia estar ahi (el ejemplo tipico: el fichero de volcado dentro de la propia raiz).",
+      "formato": "Texto (Markdown)",
+      "estandar": "Extra-FHS (artefacto de auditoria)",
+      "caracteristicas": [
+        {
+          "clave": "Naturaleza",
+          "valor": "Hallazgo de auditoria"
+        },
+        {
+          "clave": "Accion",
+          "valor": "Retirar"
+        },
+        {
+          "clave": "Formato",
+          "valor": "Texto (Markdown)"
+        },
+        {
+          "clave": "Estandar",
+          "valor": "Extra-FHS (artefacto de auditoria)"
+        },
+        {
+          "clave": "Extension",
+          "valor": ".md"
+        }
+      ],
+      "fuentes": [
+        {
+          "texto": "FHS 3.0 - Filesystem Hierarchy Standard (Wikipedia, EN)",
+          "url": "https://en.wikipedia.org/wiki/Filesystem_Hierarchy_Standard",
+          "tipo": "enciclopedia"
+        },
+        {
+          "texto": "hier(7) - arbol de directorios (man7.org)",
+          "url": "https://man7.org/linux/man-pages/man7/hier.7.html",
+          "tipo": "man"
+        },
+        {
+          "texto": "Jerarquia estandar de sistemas de archivos (Wikipedia, ES)",
+          "url": "https://es.wikipedia.org/wiki/Jerarqu%C3%ADa_est%C3%A1ndar_de_sistemas_de_archivos",
+          "tipo": "enciclopedia"
+        }
+      ],
+      "enlaces": [
+        {
+          "texto": "FHS 3.0 - Filesystem Hierarchy Standard (Wikipedia, EN)",
+          "url": "https://en.wikipedia.org/wiki/Filesystem_Hierarchy_Standard"
+        },
+        {
+          "texto": "hier(7) - arbol de directorios (man7.org)",
+          "url": "https://man7.org/linux/man-pages/man7/hier.7.html"
+        },
+        {
+          "texto": "Jerarquia estandar de sistemas de archivos (Wikipedia, ES)",
+          "url": "https://es.wikipedia.org/wiki/Jerarqu%C3%ADa_est%C3%A1ndar_de_sistemas_de_archivos"
+        }
+      ]
+    },
+    {
+      "name": "dev",
+      "hashtag": "#dispositivo",
+      "categoria": "Dispositivos",
+      "rol": "Kernel (devtmpfs)",
+      "descripcion_corta_ES": "Nodos de dispositivo gestionados por udev (devtmpfs).",
+      "detalle": "En /dev el nucleo expone los dispositivos como ficheros (p. ej. /dev/sda, /dev/null). udev los crea y renombra dinamicamente segun sus reglas, y ofrece alias estables por ID.",
+      "formato": "",
+      "estandar": "FHS 3.0 §3.6  /dev",
+      "caracteristicas": [
+        {
+          "clave": "Naturaleza",
+          "valor": "Nodo de dispositivo"
+        },
+        {
+          "clave": "Filesystem",
+          "valor": "devtmpfs (memoria)"
+        },
+        {
+          "clave": "Gestion",
+          "valor": "udev"
+        },
+        {
+          "clave": "Estandar",
+          "valor": "FHS 3.0 §3.6  /dev"
+        }
+      ],
+      "fuentes": [
+        {
+          "texto": "udev(7) - gestion de /dev (man7.org)",
+          "url": "https://man7.org/linux/man-pages/man7/udev.7.html",
+          "tipo": "man"
+        },
+        {
+          "texto": "Device file (Wikipedia, EN)",
+          "url": "https://en.wikipedia.org/wiki/Device_file",
+          "tipo": "enciclopedia"
+        }
+      ],
+      "enlaces": [
+        {
+          "texto": "udev(7) - gestion de /dev (man7.org)",
+          "url": "https://man7.org/linux/man-pages/man7/udev.7.html"
+        },
+        {
+          "texto": "Device file (Wikipedia, EN)",
+          "url": "https://en.wikipedia.org/wiki/Device_file"
+        }
+      ]
+    },
+    {
+      "name": "etc",
+      "hashtag": "#config",
+      "categoria": "Configuracion",
+      "rol": "Sistema",
+      "descripcion_corta_ES": "Configuracion del sistema (host-specific).",
+      "detalle": "La configuracion del sistema vive casi toda en /etc y se lee al arrancar los servicios. Suele ser texto plano editable, especifica de la maquina, y se conserva al actualizar paquetes. El sufijo .d indica un directorio de fragmentos que se combinan.",
+      "formato": "",
+      "estandar": "FHS 3.0 §3.7  /etc",
+      "caracteristicas": [
+        {
+          "clave": "Naturaleza",
+          "valor": "Configuracion"
+        },
+        {
+          "clave": "Formato",
+          "valor": "Texto / INI / YAML segun extension"
+        },
+        {
+          "clave": "Ambito",
+          "valor": "Host-especifico"
+        },
+        {
+          "clave": "Al actualizar",
+          "valor": "Se conserva"
+        },
+        {
+          "clave": "Estandar",
+          "valor": "FHS 3.0 §3.7  /etc"
+        }
+      ],
+      "fuentes": [
+        {
+          "texto": "Ficheros de configuracion (Arch Wiki)",
+          "url": "https://wiki.archlinux.org/title/Configuration_file",
+          "tipo": "distro"
+        }
+      ],
+      "enlaces": [
+        {
+          "texto": "Ficheros de configuracion (Arch Wiki)",
+          "url": "https://wiki.archlinux.org/title/Configuration_file"
+        }
+      ]
+    },
+    {
+      "name": "home",
+      "hashtag": "#datos-usuario",
+      "categoria": "Datos de usuario",
+      "rol": "Usuario",
+      "descripcion_corta_ES": "Directorios personales de los usuarios.",
+      "detalle": "Ficheros propios de cada persona o del administrador (root). Incluye documentos, configuracion personal (.config), caches (.cache) y datos (.local), siguiendo el estandar XDG Base Directory.",
+      "formato": "",
+      "estandar": "FHS 3.0 §3.8  /home",
+      "caracteristicas": [
+        {
+          "clave": "Naturaleza",
+          "valor": "Datos personales"
+        },
+        {
+          "clave": "Propietario",
+          "valor": "Usuario / root"
+        },
+        {
+          "clave": "Estandar",
+          "valor": "XDG Base Directory"
+        },
+        {
+          "clave": "Estandar",
+          "valor": "FHS 3.0 §3.8  /home"
+        }
+      ],
+      "fuentes": [
+        {
+          "texto": "hier(7) - /home y /root (man7.org)",
+          "url": "https://man7.org/linux/man-pages/man7/hier.7.html",
+          "tipo": "man"
+        },
+        {
+          "texto": "XDG Base Directory (Arch Wiki)",
+          "url": "https://wiki.archlinux.org/title/XDG_Base_Directory",
+          "tipo": "distro"
+        }
+      ],
+      "enlaces": [
+        {
+          "texto": "hier(7) - /home y /root (man7.org)",
+          "url": "https://man7.org/linux/man-pages/man7/hier.7.html"
+        },
+        {
+          "texto": "XDG Base Directory (Arch Wiki)",
+          "url": "https://wiki.archlinux.org/title/XDG_Base_Directory"
+        }
+      ]
+    },
+    {
+      "name": "lib",
+      "hashtag": "#biblioteca",
+      "categoria": "Bibliotecas",
+      "rol": "Sistema",
+      "descripcion_corta_ES": "Enlace de la fusion /usr: /lib -> usr/lib (bibliotecas esenciales).",
+      "detalle": "Codigo reutilizable que otros programas cargan en ejecucion (bibliotecas compartidas .so) o enlazan al compilar (bibliotecas estaticas .a). Las versionadas suelen seguir el patron libX.so.MAYOR.MENOR.",
+      "formato": "",
+      "estandar": "FHS 3.0 §3.9  /lib (usr-merge)",
+      "caracteristicas": [
+        {
+          "clave": "Naturaleza",
+          "valor": "Biblioteca"
+        },
+        {
+          "clave": "Formato",
+          "valor": ".so (ELF) o .a (ar)"
+        },
+        {
+          "clave": "Enlace",
+          "valor": "Dinamico o estatico"
+        },
+        {
+          "clave": "Estandar",
+          "valor": "FHS 3.0 §3.9  /lib (usr-merge)"
+        }
+      ],
+      "fuentes": [
+        {
+          "texto": "The Case for the /usr Merge (freedesktop.org)",
+          "url": "https://www.freedesktop.org/wiki/Software/systemd/TheCaseForTheUsrMerge/",
+          "tipo": "oficial"
+        },
+        {
+          "texto": "File hierarchy (Arch Wiki)",
+          "url": "https://wiki.archlinux.org/title/File_hierarchy",
+          "tipo": "distro"
+        }
+      ],
+      "enlaces": [
+        {
+          "texto": "The Case for the /usr Merge (freedesktop.org)",
+          "url": "https://www.freedesktop.org/wiki/Software/systemd/TheCaseForTheUsrMerge/"
+        },
+        {
+          "texto": "File hierarchy (Arch Wiki)",
+          "url": "https://wiki.archlinux.org/title/File_hierarchy"
+        }
+      ]
+    },
+    {
+      "name": "lib32",
+      "hashtag": "#biblioteca",
+      "categoria": "Bibliotecas",
+      "rol": "Sistema",
+      "descripcion_corta_ES": "Enlace de la fusion /usr: /lib32 -> usr/lib32 (bibliotecas de 32 bits).",
+      "detalle": "Codigo reutilizable que otros programas cargan en ejecucion (bibliotecas compartidas .so) o enlazan al compilar (bibliotecas estaticas .a). Las versionadas suelen seguir el patron libX.so.MAYOR.MENOR.",
+      "formato": "",
+      "estandar": "Ext. multilib /lib32",
+      "caracteristicas": [
+        {
+          "clave": "Naturaleza",
+          "valor": "Biblioteca"
+        },
+        {
+          "clave": "Formato",
+          "valor": ".so (ELF) o .a (ar)"
+        },
+        {
+          "clave": "Enlace",
+          "valor": "Dinamico o estatico"
+        },
+        {
+          "clave": "Estandar",
+          "valor": "Ext. multilib /lib32"
+        }
+      ],
+      "fuentes": [
+        {
+          "texto": "The Case for the /usr Merge (freedesktop.org)",
+          "url": "https://www.freedesktop.org/wiki/Software/systemd/TheCaseForTheUsrMerge/",
+          "tipo": "oficial"
+        },
+        {
+          "texto": "File hierarchy (Arch Wiki)",
+          "url": "https://wiki.archlinux.org/title/File_hierarchy",
+          "tipo": "distro"
+        }
+      ],
+      "enlaces": [
+        {
+          "texto": "The Case for the /usr Merge (freedesktop.org)",
+          "url": "https://www.freedesktop.org/wiki/Software/systemd/TheCaseForTheUsrMerge/"
+        },
+        {
+          "texto": "File hierarchy (Arch Wiki)",
+          "url": "https://wiki.archlinux.org/title/File_hierarchy"
+        }
+      ]
+    },
+    {
+      "name": "lib64",
+      "hashtag": "#biblioteca",
+      "categoria": "Bibliotecas",
+      "rol": "Sistema",
+      "descripcion_corta_ES": "Enlace de la fusion /usr: /lib64 -> usr/lib64 (bibliotecas de 64 bits).",
+      "detalle": "Codigo reutilizable que otros programas cargan en ejecucion (bibliotecas compartidas .so) o enlazan al compilar (bibliotecas estaticas .a). Las versionadas suelen seguir el patron libX.so.MAYOR.MENOR.",
+      "formato": "",
+      "estandar": "Ext. multilib /lib64",
+      "caracteristicas": [
+        {
+          "clave": "Naturaleza",
+          "valor": "Biblioteca"
+        },
+        {
+          "clave": "Formato",
+          "valor": ".so (ELF) o .a (ar)"
+        },
+        {
+          "clave": "Enlace",
+          "valor": "Dinamico o estatico"
+        },
+        {
+          "clave": "Estandar",
+          "valor": "Ext. multilib /lib64"
+        }
+      ],
+      "fuentes": [
+        {
+          "texto": "The Case for the /usr Merge (freedesktop.org)",
+          "url": "https://www.freedesktop.org/wiki/Software/systemd/TheCaseForTheUsrMerge/",
+          "tipo": "oficial"
+        },
+        {
+          "texto": "File hierarchy (Arch Wiki)",
+          "url": "https://wiki.archlinux.org/title/File_hierarchy",
+          "tipo": "distro"
+        }
+      ],
+      "enlaces": [
+        {
+          "texto": "The Case for the /usr Merge (freedesktop.org)",
+          "url": "https://www.freedesktop.org/wiki/Software/systemd/TheCaseForTheUsrMerge/"
+        },
+        {
+          "texto": "File hierarchy (Arch Wiki)",
+          "url": "https://wiki.archlinux.org/title/File_hierarchy"
+        }
+      ]
+    },
+    {
+      "name": "libx32",
+      "hashtag": "#biblioteca",
+      "categoria": "Bibliotecas",
+      "rol": "Sistema",
+      "descripcion_corta_ES": "Enlace de la fusion /usr: /libx32 -> usr/libx32 (ABI x32).",
+      "detalle": "Codigo reutilizable que otros programas cargan en ejecucion (bibliotecas compartidas .so) o enlazan al compilar (bibliotecas estaticas .a). Las versionadas suelen seguir el patron libX.so.MAYOR.MENOR.",
+      "formato": "",
+      "estandar": "Ext. multilib /libx32",
+      "caracteristicas": [
+        {
+          "clave": "Naturaleza",
+          "valor": "Biblioteca"
+        },
+        {
+          "clave": "Formato",
+          "valor": ".so (ELF) o .a (ar)"
+        },
+        {
+          "clave": "Enlace",
+          "valor": "Dinamico o estatico"
+        },
+        {
+          "clave": "Estandar",
+          "valor": "Ext. multilib /libx32"
+        }
+      ],
+      "fuentes": [
+        {
+          "texto": "The Case for the /usr Merge (freedesktop.org)",
+          "url": "https://www.freedesktop.org/wiki/Software/systemd/TheCaseForTheUsrMerge/",
+          "tipo": "oficial"
+        },
+        {
+          "texto": "File hierarchy (Arch Wiki)",
+          "url": "https://wiki.archlinux.org/title/File_hierarchy",
+          "tipo": "distro"
+        }
+      ],
+      "enlaces": [
+        {
+          "texto": "The Case for the /usr Merge (freedesktop.org)",
+          "url": "https://www.freedesktop.org/wiki/Software/systemd/TheCaseForTheUsrMerge/"
+        },
+        {
+          "texto": "File hierarchy (Arch Wiki)",
+          "url": "https://wiki.archlinux.org/title/File_hierarchy"
+        }
+      ]
+    },
+    {
+      "name": "lost+found",
+      "hashtag": "#anomalia-top",
+      "categoria": "Anomalia: nivel raiz",
+      "rol": "Aviso",
+      "descripcion_corta_ES": "Directorio de recuperacion de fsck de ext4 (normal, extra-FHS en raiz).",
+      "detalle": "Entrada en / que no forma parte del conjunto canonico de directorios. Puede ser normal (swap.img en Ubuntu, lost+found de ext4) o un residuo que conviene revisar (cdrom huerfano).",
+      "formato": "",
+      "estandar": "Extra-FHS (ext4)",
+      "caracteristicas": [
+        {
+          "clave": "Naturaleza",
+          "valor": "Hallazgo de auditoria"
+        },
+        {
+          "clave": "Accion",
+          "valor": "Revision manual"
+        },
+        {
+          "clave": "Estandar",
+          "valor": "Extra-FHS (ext4)"
+        }
+      ],
+      "fuentes": [
+        {
+          "texto": "lost+found (Wikipedia, EN)",
+          "url": "https://en.wikipedia.org/wiki/Lost%2Bfound",
+          "tipo": "enciclopedia"
+        }
+      ],
+      "enlaces": [
+        {
+          "texto": "lost+found (Wikipedia, EN)",
+          "url": "https://en.wikipedia.org/wiki/Lost%2Bfound"
+        }
+      ]
+    },
+    {
+      "name": "media",
+      "hashtag": "#fhs",
+      "categoria": "Jerarquia FHS",
+      "rol": "Sistema",
+      "descripcion_corta_ES": "Puntos de montaje de medios extraibles.",
+      "detalle": "El FHS 3.0 estandariza donde vive cada cosa en un sistema Linux: binarios en /usr/bin, configuracion en /etc, datos variables en /var, etc. Que una ruta se ajuste a este estandar es lo que permite que las herramientas funcionen igual en cualquier distribucion.",
+      "formato": "",
+      "estandar": "FHS 3.0 §3.11 /media",
+      "caracteristicas": [
+        {
+          "clave": "Naturaleza",
+          "valor": "Directorio del sistema (FHS)"
+        },
+        {
+          "clave": "Origen",
+          "valor": "FHS 3.0 / usr-merge"
+        },
+        {
+          "clave": "Persistencia",
+          "valor": "Depende del subarbol"
+        },
+        {
+          "clave": "Estandar",
+          "valor": "FHS 3.0 §3.11 /media"
+        }
+      ],
+      "fuentes": [
+        {
+          "texto": "FHS 3.0 - Filesystem Hierarchy Standard (Wikipedia, EN)",
+          "url": "https://en.wikipedia.org/wiki/Filesystem_Hierarchy_Standard",
+          "tipo": "enciclopedia"
+        },
+        {
+          "texto": "hier(7) - arbol de directorios (man7.org)",
+          "url": "https://man7.org/linux/man-pages/man7/hier.7.html",
+          "tipo": "man"
+        },
+        {
+          "texto": "Jerarquia estandar de sistemas de archivos (Wikipedia, ES)",
+          "url": "https://es.wikipedia.org/wiki/Jerarqu%C3%ADa_est%C3%A1ndar_de_sistemas_de_archivos",
+          "tipo": "enciclopedia"
+        }
+      ],
+      "enlaces": [
+        {
+          "texto": "FHS 3.0 - Filesystem Hierarchy Standard (Wikipedia, EN)",
+          "url": "https://en.wikipedia.org/wiki/Filesystem_Hierarchy_Standard"
+        },
+        {
+          "texto": "hier(7) - arbol de directorios (man7.org)",
+          "url": "https://man7.org/linux/man-pages/man7/hier.7.html"
+        },
+        {
+          "texto": "Jerarquia estandar de sistemas de archivos (Wikipedia, ES)",
+          "url": "https://es.wikipedia.org/wiki/Jerarqu%C3%ADa_est%C3%A1ndar_de_sistemas_de_archivos"
+        }
+      ]
+    },
+    {
+      "name": "mnt",
+      "hashtag": "#fhs",
+      "categoria": "Jerarquia FHS",
+      "rol": "Sistema",
+      "descripcion_corta_ES": "Punto de montaje temporal para el administrador.",
+      "detalle": "El FHS 3.0 estandariza donde vive cada cosa en un sistema Linux: binarios en /usr/bin, configuracion en /etc, datos variables en /var, etc. Que una ruta se ajuste a este estandar es lo que permite que las herramientas funcionen igual en cualquier distribucion.",
+      "formato": "",
+      "estandar": "FHS 3.0 §3.12 /mnt",
+      "caracteristicas": [
+        {
+          "clave": "Naturaleza",
+          "valor": "Directorio del sistema (FHS)"
+        },
+        {
+          "clave": "Origen",
+          "valor": "FHS 3.0 / usr-merge"
+        },
+        {
+          "clave": "Persistencia",
+          "valor": "Depende del subarbol"
+        },
+        {
+          "clave": "Estandar",
+          "valor": "FHS 3.0 §3.12 /mnt"
+        }
+      ],
+      "fuentes": [
+        {
+          "texto": "FHS 3.0 - Filesystem Hierarchy Standard (Wikipedia, EN)",
+          "url": "https://en.wikipedia.org/wiki/Filesystem_Hierarchy_Standard",
+          "tipo": "enciclopedia"
+        },
+        {
+          "texto": "hier(7) - arbol de directorios (man7.org)",
+          "url": "https://man7.org/linux/man-pages/man7/hier.7.html",
+          "tipo": "man"
+        },
+        {
+          "texto": "Jerarquia estandar de sistemas de archivos (Wikipedia, ES)",
+          "url": "https://es.wikipedia.org/wiki/Jerarqu%C3%ADa_est%C3%A1ndar_de_sistemas_de_archivos",
+          "tipo": "enciclopedia"
+        }
+      ],
+      "enlaces": [
+        {
+          "texto": "FHS 3.0 - Filesystem Hierarchy Standard (Wikipedia, EN)",
+          "url": "https://en.wikipedia.org/wiki/Filesystem_Hierarchy_Standard"
+        },
+        {
+          "texto": "hier(7) - arbol de directorios (man7.org)",
+          "url": "https://man7.org/linux/man-pages/man7/hier.7.html"
+        },
+        {
+          "texto": "Jerarquia estandar de sistemas de archivos (Wikipedia, ES)",
+          "url": "https://es.wikipedia.org/wiki/Jerarqu%C3%ADa_est%C3%A1ndar_de_sistemas_de_archivos"
+        }
+      ]
+    },
+    {
+      "name": "opt",
+      "hashtag": "#fhs",
+      "categoria": "Jerarquia FHS",
+      "rol": "Sistema",
+      "descripcion_corta_ES": "Paquetes de software opcionales de terceros.",
+      "detalle": "El FHS 3.0 estandariza donde vive cada cosa en un sistema Linux: binarios en /usr/bin, configuracion en /etc, datos variables en /var, etc. Que una ruta se ajuste a este estandar es lo que permite que las herramientas funcionen igual en cualquier distribucion.",
+      "formato": "",
+      "estandar": "FHS 3.0 §3.13 /opt",
+      "caracteristicas": [
+        {
+          "clave": "Naturaleza",
+          "valor": "Directorio del sistema (FHS)"
+        },
+        {
+          "clave": "Origen",
+          "valor": "FHS 3.0 / usr-merge"
+        },
+        {
+          "clave": "Persistencia",
+          "valor": "Depende del subarbol"
+        },
+        {
+          "clave": "Estandar",
+          "valor": "FHS 3.0 §3.13 /opt"
+        }
+      ],
+      "fuentes": [
+        {
+          "texto": "FHS 3.0 - Filesystem Hierarchy Standard (Wikipedia, EN)",
+          "url": "https://en.wikipedia.org/wiki/Filesystem_Hierarchy_Standard",
+          "tipo": "enciclopedia"
+        },
+        {
+          "texto": "hier(7) - arbol de directorios (man7.org)",
+          "url": "https://man7.org/linux/man-pages/man7/hier.7.html",
+          "tipo": "man"
+        },
+        {
+          "texto": "Jerarquia estandar de sistemas de archivos (Wikipedia, ES)",
+          "url": "https://es.wikipedia.org/wiki/Jerarqu%C3%ADa_est%C3%A1ndar_de_sistemas_de_archivos",
+          "tipo": "enciclopedia"
+        }
+      ],
+      "enlaces": [
+        {
+          "texto": "FHS 3.0 - Filesystem Hierarchy Standard (Wikipedia, EN)",
+          "url": "https://en.wikipedia.org/wiki/Filesystem_Hierarchy_Standard"
+        },
+        {
+          "texto": "hier(7) - arbol de directorios (man7.org)",
+          "url": "https://man7.org/linux/man-pages/man7/hier.7.html"
+        },
+        {
+          "texto": "Jerarquia estandar de sistemas de archivos (Wikipedia, ES)",
+          "url": "https://es.wikipedia.org/wiki/Jerarqu%C3%ADa_est%C3%A1ndar_de_sistemas_de_archivos"
+        }
+      ]
+    },
+    {
+      "name": "proc",
+      "hashtag": "#datos-proceso",
+      "categoria": "Pseudo-FS del nucleo",
+      "rol": "Kernel (virtual)",
+      "descripcion_corta_ES": "Sistema de archivos virtual de procesos e informacion del nucleo.",
+      "detalle": "No son ficheros reales en disco: el nucleo los genera al vuelo para exponer procesos (/proc), dispositivos y parametros (/sys) y datos de ejecucion (/run). Su contenido cambia constantemente y no se respalda.",
+      "formato": "",
+      "estandar": "FHS 3.0 §3.14 /proc",
+      "caracteristicas": [
+        {
+          "clave": "Naturaleza",
+          "valor": "Pseudo-filesystem"
+        },
+        {
+          "clave": "Persistencia",
+          "valor": "Ninguna (memoria)"
+        },
+        {
+          "clave": "Generado por",
+          "valor": "El nucleo"
+        },
+        {
+          "clave": "Estandar",
+          "valor": "FHS 3.0 §3.14 /proc"
+        }
+      ],
+      "fuentes": [
+        {
+          "texto": "proc(5) - /proc (man7.org)",
+          "url": "https://man7.org/linux/man-pages/man5/proc.5.html",
+          "tipo": "man"
+        }
+      ],
+      "enlaces": [
+        {
+          "texto": "proc(5) - /proc (man7.org)",
+          "url": "https://man7.org/linux/man-pages/man5/proc.5.html"
+        }
+      ]
+    },
+    {
+      "name": "root",
+      "hashtag": "#datos-usuario",
+      "categoria": "Datos de usuario",
+      "rol": "Usuario",
+      "descripcion_corta_ES": "Directorio personal del superusuario root.",
+      "detalle": "Ficheros propios de cada persona o del administrador (root). Incluye documentos, configuracion personal (.config), caches (.cache) y datos (.local), siguiendo el estandar XDG Base Directory.",
+      "formato": "",
+      "estandar": "FHS 3.0 §3.15 /root",
+      "caracteristicas": [
+        {
+          "clave": "Naturaleza",
+          "valor": "Datos personales"
+        },
+        {
+          "clave": "Propietario",
+          "valor": "Usuario / root"
+        },
+        {
+          "clave": "Estandar",
+          "valor": "XDG Base Directory"
+        },
+        {
+          "clave": "Estandar",
+          "valor": "FHS 3.0 §3.15 /root"
+        }
+      ],
+      "fuentes": [
+        {
+          "texto": "hier(7) - /home y /root (man7.org)",
+          "url": "https://man7.org/linux/man-pages/man7/hier.7.html",
+          "tipo": "man"
+        },
+        {
+          "texto": "XDG Base Directory (Arch Wiki)",
+          "url": "https://wiki.archlinux.org/title/XDG_Base_Directory",
+          "tipo": "distro"
+        }
+      ],
+      "enlaces": [
+        {
+          "texto": "hier(7) - /home y /root (man7.org)",
+          "url": "https://man7.org/linux/man-pages/man7/hier.7.html"
+        },
+        {
+          "texto": "XDG Base Directory (Arch Wiki)",
+          "url": "https://wiki.archlinux.org/title/XDG_Base_Directory"
+        }
+      ]
+    },
+    {
+      "name": "run",
+      "hashtag": "#datos-proceso",
+      "categoria": "Pseudo-FS del nucleo",
+      "rol": "Kernel (virtual)",
+      "descripcion_corta_ES": "Datos de ejecucion en tmpfs desde el arranque.",
+      "detalle": "No son ficheros reales en disco: el nucleo los genera al vuelo para exponer procesos (/proc), dispositivos y parametros (/sys) y datos de ejecucion (/run). Su contenido cambia constantemente y no se respalda.",
+      "formato": "",
+      "estandar": "FHS 3.0 §3.16 /run",
+      "caracteristicas": [
+        {
+          "clave": "Naturaleza",
+          "valor": "Pseudo-filesystem"
+        },
+        {
+          "clave": "Persistencia",
+          "valor": "Ninguna (memoria)"
+        },
+        {
+          "clave": "Generado por",
+          "valor": "El nucleo"
+        },
+        {
+          "clave": "Estandar",
+          "valor": "FHS 3.0 §3.16 /run"
+        }
+      ],
+      "fuentes": [
+        {
+          "texto": "tmpfs (Wikipedia, EN)",
+          "url": "https://en.wikipedia.org/wiki/Tmpfs",
+          "tipo": "enciclopedia"
+        }
+      ],
+      "enlaces": [
+        {
+          "texto": "tmpfs (Wikipedia, EN)",
+          "url": "https://en.wikipedia.org/wiki/Tmpfs"
+        }
+      ]
+    },
+    {
+      "name": "sbin",
+      "hashtag": "#fhs",
+      "categoria": "Jerarquia FHS",
+      "rol": "Sistema",
+      "descripcion_corta_ES": "Enlace de la fusion /usr: /sbin -> usr/sbin (binarios de administracion).",
+      "detalle": "El FHS 3.0 estandariza donde vive cada cosa en un sistema Linux: binarios en /usr/bin, configuracion en /etc, datos variables en /var, etc. Que una ruta se ajuste a este estandar es lo que permite que las herramientas funcionen igual en cualquier distribucion.",
+      "formato": "",
+      "estandar": "FHS 3.0 §3.17 /sbin (usr-merge)",
+      "caracteristicas": [
+        {
+          "clave": "Naturaleza",
+          "valor": "Directorio del sistema (FHS)"
+        },
+        {
+          "clave": "Origen",
+          "valor": "FHS 3.0 / usr-merge"
+        },
+        {
+          "clave": "Persistencia",
+          "valor": "Depende del subarbol"
+        },
+        {
+          "clave": "Estandar",
+          "valor": "FHS 3.0 §3.17 /sbin (usr-merge)"
+        }
+      ],
+      "fuentes": [
+        {
+          "texto": "The Case for the /usr Merge (freedesktop.org)",
+          "url": "https://www.freedesktop.org/wiki/Software/systemd/TheCaseForTheUsrMerge/",
+          "tipo": "oficial"
+        },
+        {
+          "texto": "File hierarchy (Arch Wiki)",
+          "url": "https://wiki.archlinux.org/title/File_hierarchy",
+          "tipo": "distro"
+        }
+      ],
+      "enlaces": [
+        {
+          "texto": "The Case for the /usr Merge (freedesktop.org)",
+          "url": "https://www.freedesktop.org/wiki/Software/systemd/TheCaseForTheUsrMerge/"
+        },
+        {
+          "texto": "File hierarchy (Arch Wiki)",
+          "url": "https://wiki.archlinux.org/title/File_hierarchy"
+        }
+      ]
+    },
+    {
+      "name": "snap",
+      "hashtag": "#snap",
+      "categoria": "Paquetes snap",
+      "rol": "Aplicacion",
+      "descripcion_corta_ES": "Montajes de aplicaciones snap (imagenes squashfs).",
+      "detalle": "Ubuntu empaqueta parte del software como snaps: imagenes squashfs de solo lectura que se montan en /snap. Van confinados (aislados) y se actualizan de forma atomica e independiente.",
+      "formato": "",
+      "estandar": "Extra-FHS (Ubuntu)",
+      "caracteristicas": [
+        {
+          "clave": "Naturaleza",
+          "valor": "Empaquetado snap"
+        },
+        {
+          "clave": "Formato",
+          "valor": "squashfs (solo lectura)"
+        },
+        {
+          "clave": "Aislamiento",
+          "valor": "Confinado"
+        },
+        {
+          "clave": "Estandar",
+          "valor": "Extra-FHS (Ubuntu)"
+        }
+      ],
+      "fuentes": [
+        {
+          "texto": "Snapcraft - documentacion",
+          "url": "https://snapcraft.io/docs",
+          "tipo": "oficial"
+        },
+        {
+          "texto": "Snap (software) (Wikipedia, ES)",
+          "url": "https://es.wikipedia.org/wiki/Snap_(software)",
+          "tipo": "enciclopedia"
+        }
+      ],
+      "enlaces": [
+        {
+          "texto": "Snapcraft - documentacion",
+          "url": "https://snapcraft.io/docs"
+        },
+        {
+          "texto": "Snap (software) (Wikipedia, ES)",
+          "url": "https://es.wikipedia.org/wiki/Snap_(software)"
+        }
+      ]
+    },
+    {
+      "name": "srv",
+      "hashtag": "#fhs",
+      "categoria": "Jerarquia FHS",
+      "rol": "Sistema",
+      "descripcion_corta_ES": "Datos servidos por el sistema (web, ftp).",
+      "detalle": "El FHS 3.0 estandariza donde vive cada cosa en un sistema Linux: binarios en /usr/bin, configuracion en /etc, datos variables en /var, etc. Que una ruta se ajuste a este estandar es lo que permite que las herramientas funcionen igual en cualquier distribucion.",
+      "formato": "",
+      "estandar": "FHS 3.0 §3.18 /srv",
+      "caracteristicas": [
+        {
+          "clave": "Naturaleza",
+          "valor": "Directorio del sistema (FHS)"
+        },
+        {
+          "clave": "Origen",
+          "valor": "FHS 3.0 / usr-merge"
+        },
+        {
+          "clave": "Persistencia",
+          "valor": "Depende del subarbol"
+        },
+        {
+          "clave": "Estandar",
+          "valor": "FHS 3.0 §3.18 /srv"
+        }
+      ],
+      "fuentes": [
+        {
+          "texto": "FHS 3.0 - Filesystem Hierarchy Standard (Wikipedia, EN)",
+          "url": "https://en.wikipedia.org/wiki/Filesystem_Hierarchy_Standard",
+          "tipo": "enciclopedia"
+        },
+        {
+          "texto": "hier(7) - arbol de directorios (man7.org)",
+          "url": "https://man7.org/linux/man-pages/man7/hier.7.html",
+          "tipo": "man"
+        },
+        {
+          "texto": "Jerarquia estandar de sistemas de archivos (Wikipedia, ES)",
+          "url": "https://es.wikipedia.org/wiki/Jerarqu%C3%ADa_est%C3%A1ndar_de_sistemas_de_archivos",
+          "tipo": "enciclopedia"
+        }
+      ],
+      "enlaces": [
+        {
+          "texto": "FHS 3.0 - Filesystem Hierarchy Standard (Wikipedia, EN)",
+          "url": "https://en.wikipedia.org/wiki/Filesystem_Hierarchy_Standard"
+        },
+        {
+          "texto": "hier(7) - arbol de directorios (man7.org)",
+          "url": "https://man7.org/linux/man-pages/man7/hier.7.html"
+        },
+        {
+          "texto": "Jerarquia estandar de sistemas de archivos (Wikipedia, ES)",
+          "url": "https://es.wikipedia.org/wiki/Jerarqu%C3%ADa_est%C3%A1ndar_de_sistemas_de_archivos"
+        }
+      ]
+    },
+    {
+      "name": "swap.img",
+      "hashtag": "#anomalia-top",
+      "categoria": "Anomalia: nivel raiz",
+      "rol": "Aviso",
+      "descripcion_corta_ES": "Fichero de intercambio (swapfile) en la raiz; normal en Ubuntu.",
+      "detalle": "Entrada en / que no forma parte del conjunto canonico de directorios. Puede ser normal (swap.img en Ubuntu, lost+found de ext4) o un residuo que conviene revisar (cdrom huerfano).",
+      "formato": "",
+      "estandar": "Extra-FHS (Ubuntu)",
+      "caracteristicas": [
+        {
+          "clave": "Naturaleza",
+          "valor": "Hallazgo de auditoria"
+        },
+        {
+          "clave": "Accion",
+          "valor": "Revision manual"
+        },
+        {
+          "clave": "Estandar",
+          "valor": "Extra-FHS (Ubuntu)"
+        },
+        {
+          "clave": "Extension",
+          "valor": ".img"
+        }
+      ],
+      "fuentes": [
+        {
+          "texto": "Swap (Arch Wiki)",
+          "url": "https://wiki.archlinux.org/title/Swap",
+          "tipo": "distro"
+        }
+      ],
+      "enlaces": [
+        {
+          "texto": "Swap (Arch Wiki)",
+          "url": "https://wiki.archlinux.org/title/Swap"
+        }
+      ]
+    },
+    {
+      "name": "sys",
+      "hashtag": "#datos-proceso",
+      "categoria": "Pseudo-FS del nucleo",
+      "rol": "Kernel (virtual)",
+      "descripcion_corta_ES": "Sistema de archivos virtual que expone objetos del nucleo (sysfs).",
+      "detalle": "No son ficheros reales en disco: el nucleo los genera al vuelo para exponer procesos (/proc), dispositivos y parametros (/sys) y datos de ejecucion (/run). Su contenido cambia constantemente y no se respalda.",
+      "formato": "",
+      "estandar": "FHS 3.0 §3.19 /sys",
+      "caracteristicas": [
+        {
+          "clave": "Naturaleza",
+          "valor": "Pseudo-filesystem"
+        },
+        {
+          "clave": "Persistencia",
+          "valor": "Ninguna (memoria)"
+        },
+        {
+          "clave": "Generado por",
+          "valor": "El nucleo"
+        },
+        {
+          "clave": "Estandar",
+          "valor": "FHS 3.0 §3.19 /sys"
+        }
+      ],
+      "fuentes": [
+        {
+          "texto": "sysfs(5) - /sys (man7.org)",
+          "url": "https://man7.org/linux/man-pages/man5/sysfs.5.html",
+          "tipo": "man"
+        }
+      ],
+      "enlaces": [
+        {
+          "texto": "sysfs(5) - /sys (man7.org)",
+          "url": "https://man7.org/linux/man-pages/man5/sysfs.5.html"
+        }
+      ]
+    },
+    {
+      "name": "tmp",
+      "hashtag": "#cache",
+      "categoria": "Cache / temporales",
+      "rol": "Temporal",
+      "descripcion_corta_ES": "Ficheros temporales, a menudo en tmpfs y borrados al reiniciar.",
+      "detalle": "Datos que se pueden borrar sin perdida real: caches de aplicaciones, indices del gestor de paquetes y temporales. /tmp suele vaciarse al reiniciar (tmpfs); /var/tmp sobrevive mas tiempo.",
+      "formato": "",
+      "estandar": "FHS 3.0 §3.20 /tmp",
+      "caracteristicas": [
+        {
+          "clave": "Naturaleza",
+          "valor": "Datos regenerables"
+        },
+        {
+          "clave": "Persistencia",
+          "valor": "Prescindible"
+        },
+        {
+          "clave": "Ubicacion",
+          "valor": "/var/cache, /tmp, /var/tmp"
+        },
+        {
+          "clave": "Estandar",
+          "valor": "FHS 3.0 §3.20 /tmp"
+        }
+      ],
+      "fuentes": [
+        {
+          "texto": "tmpfs (Wikipedia, EN)",
+          "url": "https://en.wikipedia.org/wiki/Tmpfs",
+          "tipo": "enciclopedia"
+        }
+      ],
+      "enlaces": [
+        {
+          "texto": "tmpfs (Wikipedia, EN)",
+          "url": "https://en.wikipedia.org/wiki/Tmpfs"
+        }
+      ]
+    },
+    {
+      "name": "usr",
+      "hashtag": "#fhs",
+      "categoria": "Jerarquia FHS",
+      "rol": "Sistema",
+      "descripcion_corta_ES": "Jerarquia secundaria de solo lectura con la mayor parte del software.",
+      "detalle": "El FHS 3.0 estandariza donde vive cada cosa en un sistema Linux: binarios en /usr/bin, configuracion en /etc, datos variables en /var, etc. Que una ruta se ajuste a este estandar es lo que permite que las herramientas funcionen igual en cualquier distribucion.",
+      "formato": "",
+      "estandar": "FHS 3.0 §3.21 /usr",
+      "caracteristicas": [
+        {
+          "clave": "Naturaleza",
+          "valor": "Directorio del sistema (FHS)"
+        },
+        {
+          "clave": "Origen",
+          "valor": "FHS 3.0 / usr-merge"
+        },
+        {
+          "clave": "Persistencia",
+          "valor": "Depende del subarbol"
+        },
+        {
+          "clave": "Estandar",
+          "valor": "FHS 3.0 §3.21 /usr"
+        }
+      ],
+      "fuentes": [
+        {
+          "texto": "FHS 3.0 - Filesystem Hierarchy Standard (Wikipedia, EN)",
+          "url": "https://en.wikipedia.org/wiki/Filesystem_Hierarchy_Standard",
+          "tipo": "enciclopedia"
+        },
+        {
+          "texto": "hier(7) - arbol de directorios (man7.org)",
+          "url": "https://man7.org/linux/man-pages/man7/hier.7.html",
+          "tipo": "man"
+        },
+        {
+          "texto": "Jerarquia estandar de sistemas de archivos (Wikipedia, ES)",
+          "url": "https://es.wikipedia.org/wiki/Jerarqu%C3%ADa_est%C3%A1ndar_de_sistemas_de_archivos",
+          "tipo": "enciclopedia"
+        }
+      ],
+      "enlaces": [
+        {
+          "texto": "FHS 3.0 - Filesystem Hierarchy Standard (Wikipedia, EN)",
+          "url": "https://en.wikipedia.org/wiki/Filesystem_Hierarchy_Standard"
+        },
+        {
+          "texto": "hier(7) - arbol de directorios (man7.org)",
+          "url": "https://man7.org/linux/man-pages/man7/hier.7.html"
+        },
+        {
+          "texto": "Jerarquia estandar de sistemas de archivos (Wikipedia, ES)",
+          "url": "https://es.wikipedia.org/wiki/Jerarqu%C3%ADa_est%C3%A1ndar_de_sistemas_de_archivos"
+        }
+      ]
+    },
+    {
+      "name": "var",
+      "hashtag": "#fhs",
+      "categoria": "Jerarquia FHS",
+      "rol": "Sistema",
+      "descripcion_corta_ES": "Datos variables: registros, caches, spools y estado.",
+      "detalle": "El FHS 3.0 estandariza donde vive cada cosa en un sistema Linux: binarios en /usr/bin, configuracion en /etc, datos variables en /var, etc. Que una ruta se ajuste a este estandar es lo que permite que las herramientas funcionen igual en cualquier distribucion.",
+      "formato": "",
+      "estandar": "FHS 3.0 §3.22 /var",
+      "caracteristicas": [
+        {
+          "clave": "Naturaleza",
+          "valor": "Directorio del sistema (FHS)"
+        },
+        {
+          "clave": "Origen",
+          "valor": "FHS 3.0 / usr-merge"
+        },
+        {
+          "clave": "Persistencia",
+          "valor": "Depende del subarbol"
+        },
+        {
+          "clave": "Estandar",
+          "valor": "FHS 3.0 §3.22 /var"
+        }
+      ],
+      "fuentes": [
+        {
+          "texto": "FHS 3.0 - Filesystem Hierarchy Standard (Wikipedia, EN)",
+          "url": "https://en.wikipedia.org/wiki/Filesystem_Hierarchy_Standard",
+          "tipo": "enciclopedia"
+        },
+        {
+          "texto": "hier(7) - arbol de directorios (man7.org)",
+          "url": "https://man7.org/linux/man-pages/man7/hier.7.html",
+          "tipo": "man"
+        },
+        {
+          "texto": "Jerarquia estandar de sistemas de archivos (Wikipedia, ES)",
+          "url": "https://es.wikipedia.org/wiki/Jerarqu%C3%ADa_est%C3%A1ndar_de_sistemas_de_archivos",
+          "tipo": "enciclopedia"
+        }
+      ],
+      "enlaces": [
+        {
+          "texto": "FHS 3.0 - Filesystem Hierarchy Standard (Wikipedia, EN)",
+          "url": "https://en.wikipedia.org/wiki/Filesystem_Hierarchy_Standard"
+        },
+        {
+          "texto": "hier(7) - arbol de directorios (man7.org)",
+          "url": "https://man7.org/linux/man-pages/man7/hier.7.html"
+        },
+        {
+          "texto": "Jerarquia estandar de sistemas de archivos (Wikipedia, ES)",
+          "url": "https://es.wikipedia.org/wiki/Jerarqu%C3%ADa_est%C3%A1ndar_de_sistemas_de_archivos"
+        }
+      ]
+    }
+  ],
+  "ruleCountByCategory": {
+    "#fhs": 31,
+    "#biblioteca": 15,
+    "#config": 62,
+    "#anomalia-top": 6,
+    "#anomalia-contenido": 2,
+    "#daemon": 15,
+    "#kernel": 14,
+    "#binario": 8,
+    "#log": 2,
+    "#cache": 7,
+    "#snap": 4,
+    "#datos-proceso": 10,
+    "#datos-usuario": 5,
+    "#dispositivo": 3
+  },
+  "ruleTotals": {
+    "exact": 34,
+    "directoryPattern": 92,
+    "extension": 32,
+    "topLevel": 26
+  }
+}

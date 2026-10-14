@@ -1,0 +1,415 @@
+{
+    "$defs": {
+        "Authority": {
+            "additionalProperties": false,
+            "description": "External canon cited by URL. Text stays outside the schema.",
+            "properties": {
+                "id": {
+                    "type": "string"
+                },
+                "source_url": {
+                    "type": "string"
+                },
+                "title": {
+                    "type": "string"
+                },
+                "version_label": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "id",
+                "title",
+                "source_url",
+                "version_label"
+            ],
+            "title": "Authority",
+            "type": "object"
+        },
+        "CanonFicha": {
+            "additionalProperties": false,
+            "description": "JSON card under docs/*.json. Extends Authority with local observation, optional Secure Boot switch fields, and source-contrast provenance.",
+            "properties": {
+                "activates_when_on": {
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": [
+                        "array",
+                        "null"
+                    ]
+                },
+                "contrast_verdict": {
+                    "anyOf": [
+                        {
+                            "$ref": "#/$defs/ContrastVerdict"
+                        },
+                        {
+                            "type": "null"
+                        }
+                    ]
+                },
+                "deactivates_when_on": {
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": [
+                        "array",
+                        "null"
+                    ]
+                },
+                "explanation": {
+                    "type": "string"
+                },
+                "id": {
+                    "type": "string"
+                },
+                "judges_what": {
+                    "type": "string"
+                },
+                "local_witness": {
+                    "description": "Local man/info/NEWS path or measured command",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "observed_here": {
+                    "type": "string"
+                },
+                "secondary_urls": {
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": [
+                        "array",
+                        "null"
+                    ]
+                },
+                "source_checked_at": {
+                    "format": "date-time",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "source_http_status": {
+                    "description": "200, 404, 403_bot, local_only, or similar probe label",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "source_url": {
+                    "type": "string"
+                },
+                "switch_off": {
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "switch_on": {
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "title": {
+                    "type": "string"
+                },
+                "version_label": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "judges_what",
+                "observed_here",
+                "explanation",
+                "id",
+                "title",
+                "source_url",
+                "version_label"
+            ],
+            "title": "CanonFicha",
+            "type": "object"
+        },
+        "ContrastVerdict": {
+            "description": "",
+            "enum": [
+                "acuerdo",
+                "desacuerdo",
+                "url_rota",
+                "bloqueado_bot",
+                "parcial"
+            ],
+            "title": "ContrastVerdict",
+            "type": "string"
+        },
+        "Horizon": {
+            "additionalProperties": false,
+            "description": "What the instrument cannot see or must refuse.",
+            "properties": {
+                "id": {
+                    "type": "string"
+                },
+                "kind": {
+                    "$ref": "#/$defs/HorizonKind"
+                },
+                "note": {
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                }
+            },
+            "required": [
+                "id",
+                "kind"
+            ],
+            "title": "Horizon",
+            "type": "object"
+        },
+        "HorizonKind": {
+            "description": "",
+            "enum": [
+                "no_dotfiles",
+                "no_metadata",
+                "leaf_ambiguity",
+                "grub_lockdown",
+                "kernel_lockdown_integrity",
+                "unknown_filesystem",
+                "full_dentries"
+            ],
+            "title": "HorizonKind",
+            "type": "string"
+        },
+        "Instrument": {
+            "description": "",
+            "enum": [
+                "tree",
+                "grub_ls",
+                "grub_cat",
+                "grub_hexdump",
+                "sh_ls"
+            ],
+            "title": "Instrument",
+            "type": "string"
+        },
+        "Judgment": {
+            "additionalProperties": false,
+            "description": "Verdict against an external authority. No compliant slot on paths.",
+            "properties": {
+                "authority": {
+                    "type": "string"
+                },
+                "id": {
+                    "type": "string"
+                },
+                "statement": {
+                    "type": "string"
+                },
+                "verdict": {
+                    "$ref": "#/$defs/Verdict"
+                }
+            },
+            "required": [
+                "id",
+                "statement",
+                "authority",
+                "verdict"
+            ],
+            "title": "Judgment",
+            "type": "object"
+        },
+        "Plate": {
+            "additionalProperties": false,
+            "description": "Immutable capture with instrument and horizons.",
+            "properties": {
+                "body_uri": {
+                    "type": "string"
+                },
+                "captured_at": {
+                    "format": "date-time",
+                    "type": "string"
+                },
+                "horizons": {
+                    "items": {
+                        "$ref": "#/$defs/Horizon"
+                    },
+                    "type": "array"
+                },
+                "id": {
+                    "type": "string"
+                },
+                "instrument": {
+                    "$ref": "#/$defs/Instrument"
+                },
+                "regime": {
+                    "$ref": "#/$defs/Regime"
+                },
+                "role": {
+                    "$ref": "#/$defs/Role"
+                },
+                "statements": {
+                    "items": {
+                        "$ref": "#/$defs/Statement"
+                    },
+                    "type": [
+                        "array",
+                        "null"
+                    ]
+                }
+            },
+            "required": [
+                "id",
+                "role",
+                "instrument",
+                "regime",
+                "captured_at",
+                "horizons",
+                "body_uri"
+            ],
+            "title": "Plate",
+            "type": "object"
+        },
+        "Regime": {
+            "description": "",
+            "enum": [
+                "live",
+                "frozen"
+            ],
+            "title": "Regime",
+            "type": "string"
+        },
+        "Relation": {
+            "description": "",
+            "enum": [
+                "lists",
+                "contains",
+                "links_to",
+                "mounts",
+                "denies",
+                "reads"
+            ],
+            "title": "Relation",
+            "type": "string"
+        },
+        "Role": {
+            "description": "",
+            "enum": [
+                "capture",
+                "fixture"
+            ],
+            "title": "Role",
+            "type": "string"
+        },
+        "Statement": {
+            "additionalProperties": false,
+            "description": "One relation asserted, refused, or not in plate. No parent/children.",
+            "properties": {
+                "id": {
+                    "type": "string"
+                },
+                "object_text": {
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "relation": {
+                    "$ref": "#/$defs/Relation"
+                },
+                "subject": {
+                    "type": "string"
+                },
+                "support": {
+                    "$ref": "#/$defs/Support"
+                }
+            },
+            "required": [
+                "id",
+                "subject",
+                "relation",
+                "support"
+            ],
+            "title": "Statement",
+            "type": "object"
+        },
+        "Support": {
+            "description": "",
+            "enum": [
+                "asserted",
+                "refused",
+                "not_in_plate"
+            ],
+            "title": "Support",
+            "type": "string"
+        },
+        "Verdict": {
+            "description": "",
+            "enum": [
+                "acuerdo",
+                "desacuerdo",
+                "inobservable",
+                "extra_documentado"
+            ],
+            "title": "Verdict",
+            "type": "string"
+        }
+    },
+    "$id": "https://local.sysxray/sobre",
+    "$schema": "https://json-schema.org/draft/2019-09/schema",
+    "additionalProperties": false,
+    "description": "Immutable capture with instrument and horizons.",
+    "metamodel_version": "1.12.0",
+    "properties": {
+        "body_uri": {
+            "type": "string"
+        },
+        "captured_at": {
+            "format": "date-time",
+            "type": "string"
+        },
+        "horizons": {
+            "items": {
+                "$ref": "#/$defs/Horizon"
+            },
+            "type": "array"
+        },
+        "id": {
+            "type": "string"
+        },
+        "instrument": {
+            "$ref": "#/$defs/Instrument"
+        },
+        "regime": {
+            "$ref": "#/$defs/Regime"
+        },
+        "role": {
+            "$ref": "#/$defs/Role"
+        },
+        "statements": {
+            "items": {
+                "$ref": "#/$defs/Statement"
+            },
+            "type": [
+                "array",
+                "null"
+            ]
+        }
+    },
+    "required": [
+        "id",
+        "role",
+        "instrument",
+        "regime",
+        "captured_at",
+        "horizons",
+        "body_uri"
+    ],
+    "title": "sysxray_sobre",
+    "type": "object",
+    "version": null
+}
+

@@ -1,0 +1,10 @@
+{
+  "id": "invalid-no-horizons",
+  "role": "fixture",
+  "instrument": "tree",
+  "regime": "frozen",
+  "captured_at": "2026-10-12T18:25:38Z",
+  "horizons": [],
+  "body_uri": "file://data/tree/",
+  "statements": []
+}

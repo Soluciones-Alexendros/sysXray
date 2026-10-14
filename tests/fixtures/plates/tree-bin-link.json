@@ -1,0 +1,16 @@
+{
+  "id": "fixture-tree-bin",
+  "role": "fixture",
+  "instrument": "tree",
+  "regime": "frozen",
+  "captured_at": "2026-10-12T18:25:38Z",
+  "horizons": [{ "id": "h1", "kind": "no_dotfiles" }],
+  "body_uri": "file://data/tree/",
+  "statements": [{
+    "id": "s1",
+    "subject": "/bin",
+    "relation": "links_to",
+    "object_text": "usr/bin",
+    "support": "asserted"
+  }]
+}

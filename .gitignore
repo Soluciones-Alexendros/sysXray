@@ -1,0 +1,15 @@
+.venv/
+.pystow/
+schema/gen.err
+__pycache__/
+*.pyc
+.pytest_cache/
+data/tree/
+data/symlink-report.json
+data/audit-report.json
+data/plates/*
+!data/plates/.gitkeep
+.cursor/
+*.md.bak
+.DS_Store
+

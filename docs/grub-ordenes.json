@@ -1,0 +1,17 @@
+{
+  "@type": "CanonFicha",
+  "id": "authority-grub-ordenes",
+  "title": "Órdenes de GRUB en este equipo (no es bash)",
+  "source_url": "https://www.gnu.org/software/grub/manual/grub/html_node/Command_002dline-and-menu-entry-commands.html",
+  "version_label": "GRUB 2.14-2ubuntu2.1; UUID raíz 0ca5347e-1acd-44df-977a-bc57318fd969",
+  "judges_what": "Qué se puede pedir en la consola GRUB (tecla c, aviso grub>) para obtener una placa de lectura: listado, contenido y volcado crudo. No clasifica ni valida: eso lo hace el repo después.",
+  "observed_here": "grub.cfg en /boot/efi/EFI/ubuntu/ ya hace search.fs_uuid 0ca5347e-1acd-44df-977a-bc57318fd969 root y set prefix=($root)'/boot/grub'. (hd0,gpt1) es la EFI; el sistema está en (hd0,gpt2). La raíz no está cifrada. Secure Boot activo no impide ls/cat de esa ext4; sí puede rechazar órdenes de lockdown.",
+  "explanation": "GRUB no habla bash ni sh POSIX. No hay tuberías, find ni tree. Órdenes de placa para este disco: set pager=1; search --fs-uuid 0ca5347e-1acd-44df-977a-bc57318fd969 --set=root; ls -l ($root)/; ls -l ($root)/home/alexendros/; cat ($root)/etc/os-release; hexdump ($root)/etc/os-release. Fetch a gnu.org: 403_bot; nodos hexdump y lockdown confirmados en info local.",
+  "source_checked_at": "2026-10-14T13:45:00Z",
+  "source_http_status": "403_bot",
+  "contrast_verdict": "bloqueado_bot",
+  "secondary_urls": [
+    "https://www.gnu.org/software/grub/manual/grub/"
+  ],
+  "local_witness": "/usr/share/info/grub.info.gz (nodos hexdump, lockdown); /boot/efi/EFI/ubuntu/grub.cfg"
+}

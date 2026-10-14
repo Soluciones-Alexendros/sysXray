@@ -1,0 +1,2725 @@
+{
+  "source": "/home/alexendros/Documentos/desplantar.md",
+  "generated": "2026-10-12T18:25:38.009Z",
+  "counts": {
+    "entries": 3233219,
+    "symlinks": 114265,
+    "directories": 305975,
+    "files": 2812979,
+    "unmatched": 0,
+    "chunks": 306,
+    "lazyNodes": 103
+  },
+  "topLevel": [
+    {
+      "name": "bin",
+      "type": "s",
+      "target": "usr/bin",
+      "index": 1,
+      "lazy": false,
+      "childCount": 0,
+      "chunks": null,
+      "chunk": 0
+    },
+    {
+      "name": "boot",
+      "type": "d",
+      "target": null,
+      "index": 2,
+      "lazy": false,
+      "childCount": 16,
+      "chunks": null,
+      "chunk": 0
+    },
+    {
+      "name": "cdrom",
+      "type": "f",
+      "target": null,
+      "index": 343,
+      "lazy": false,
+      "childCount": 0,
+      "chunks": null,
+      "chunk": 0
+    },
+    {
+      "name": "desplantar.md",
+      "type": "f",
+      "target": null,
+      "index": 344,
+      "lazy": false,
+      "childCount": 0,
+      "chunks": null,
+      "chunk": 0
+    },
+    {
+      "name": "dev",
+      "type": "d",
+      "target": null,
+      "index": 345,
+      "lazy": false,
+      "childCount": 240,
+      "chunks": null,
+      "chunk": 0
+    },
+    {
+      "name": "etc",
+      "type": "d",
+      "target": null,
+      "index": 1154,
+      "lazy": false,
+      "childCount": 311,
+      "chunks": null,
+      "chunk": 0
+    },
+    {
+      "name": "home",
+      "type": "d",
+      "target": null,
+      "index": 5394,
+      "lazy": true,
+      "childCount": 3,
+      "chunks": null,
+      "chunk": 234
+    },
+    {
+      "name": "lib",
+      "type": "s",
+      "target": "usr/lib",
+      "index": 2353652,
+      "lazy": false,
+      "childCount": 0,
+      "chunks": null,
+      "chunk": 235
+    },
+    {
+      "name": "lib32",
+      "type": "s",
+      "target": "usr/lib32",
+      "index": 2353653,
+      "lazy": false,
+      "childCount": 0,
+      "chunks": null,
+      "chunk": 235
+    },
+    {
+      "name": "lib64",
+      "type": "s",
+      "target": "usr/lib64",
+      "index": 2353654,
+      "lazy": false,
+      "childCount": 0,
+      "chunks": null,
+      "chunk": 235
+    },
+    {
+      "name": "libx32",
+      "type": "s",
+      "target": "usr/libx32",
+      "index": 2353655,
+      "lazy": false,
+      "childCount": 0,
+      "chunks": null,
+      "chunk": 235
+    },
+    {
+      "name": "lost+found",
+      "type": "f",
+      "target": null,
+      "index": 2353656,
+      "lazy": false,
+      "childCount": 0,
+      "chunks": null,
+      "chunk": 235
+    },
+    {
+      "name": "media",
+      "type": "f",
+      "target": null,
+      "index": 2353657,
+      "lazy": false,
+      "childCount": 0,
+      "chunks": null,
+      "chunk": 235
+    },
+    {
+      "name": "mnt",
+      "type": "d",
+      "target": null,
+      "index": 2353658,
+      "lazy": false,
+      "childCount": 7,
+      "chunks": null,
+      "chunk": 235
+    },
+    {
+      "name": "opt",
+      "type": "d",
+      "target": null,
+      "index": 2353666,
+      "lazy": false,
+      "childCount": 7,
+      "chunks": null,
+      "chunk": 235
+    },
+    {
+      "name": "proc",
+      "type": "d",
+      "target": null,
+      "index": 2368175,
+      "lazy": true,
+      "childCount": 336,
+      "chunks": null,
+      "chunk": 239
+    },
+    {
+      "name": "root",
+      "type": "d",
+      "target": null,
+      "index": 2466703,
+      "lazy": false,
+      "childCount": 7,
+      "chunks": null,
+      "chunk": 240
+    },
+    {
+      "name": "run",
+      "type": "d",
+      "target": null,
+      "index": 2466739,
+      "lazy": false,
+      "childCount": 55,
+      "chunks": null,
+      "chunk": 240
+    },
+    {
+      "name": "sbin",
+      "type": "s",
+      "target": "usr/sbin",
+      "index": 2468504,
+      "lazy": false,
+      "childCount": 0,
+      "chunks": null,
+      "chunk": 240
+    },
+    {
+      "name": "snap",
+      "type": "d",
+      "target": null,
+      "index": 2468505,
+      "lazy": true,
+      "childCount": 13,
+      "chunks": null,
+      "chunk": 258
+    },
+    {
+      "name": "srv",
+      "type": "f",
+      "target": null,
+      "index": 2652817,
+      "lazy": false,
+      "childCount": 0,
+      "chunks": null,
+      "chunk": 259
+    },
+    {
+      "name": "swap.img",
+      "type": "f",
+      "target": null,
+      "index": 2652818,
+      "lazy": false,
+      "childCount": 0,
+      "chunks": null,
+      "chunk": 259
+    },
+    {
+      "name": "sys",
+      "type": "d",
+      "target": null,
+      "index": 2652819,
+      "lazy": true,
+      "childCount": 11,
+      "chunks": null,
+      "chunk": 266
+    },
+    {
+      "name": "tmp",
+      "type": "d",
+      "target": null,
+      "index": 2757085,
+      "lazy": false,
+      "childCount": 8,
+      "chunks": null,
+      "chunk": 267
+    },
+    {
+      "name": "usr",
+      "type": "d",
+      "target": null,
+      "index": 2757102,
+      "lazy": true,
+      "childCount": 12,
+      "chunks": null,
+      "chunk": 291
+    },
+    {
+      "name": "var",
+      "type": "d",
+      "target": null,
+      "index": 3161260,
+      "lazy": true,
+      "childCount": 14,
+      "chunks": null,
+      "chunk": 305
+    }
+  ],
+  "chunks": [
+    {
+      "id": 0,
+      "start": 1,
+      "end": 5393,
+      "baseDepth": 0,
+      "parentPath": "/",
+      "count": 5393
+    },
+    {
+      "id": 1,
+      "start": 5398,
+      "end": 5457,
+      "baseDepth": 4,
+      "parentPath": "/home/alexendros/Aplicaciones/datos",
+      "count": 60
+    },
+    {
+      "id": 2,
+      "start": 5459,
+      "end": 5671,
+      "baseDepth": 5,
+      "parentPath": "/home/alexendros/Aplicaciones/datos/cache",
+      "count": 213
+    },
+    {
+      "id": 3,
+      "start": 5675,
+      "end": 14856,
+      "baseDepth": 8,
+      "parentPath": "/home/alexendros/Aplicaciones/datos/cache/BraveSoftware/Brave-Browser/Default",
+      "count": 9182
+    },
+    {
+      "id": 4,
+      "start": 14859,
+      "end": 54858,
+      "baseDepth": 10,
+      "parentPath": "/home/alexendros/Aplicaciones/datos/cache/BraveSoftware/Brave-Browser/Default/Code Cache/js",
+      "count": 40000
+    },
+    {
+      "id": 5,
+      "start": 54859,
+      "end": 94858,
+      "baseDepth": 10,
+      "parentPath": "/home/alexendros/Aplicaciones/datos/cache/BraveSoftware/Brave-Browser/Default/Code Cache/js",
+      "count": 40000
+    },
+    {
+      "id": 6,
+      "start": 94859,
+      "end": 115613,
+      "baseDepth": 10,
+      "parentPath": "/home/alexendros/Aplicaciones/datos/cache/BraveSoftware/Brave-Browser/Default/Code Cache/js",
+      "count": 20755
+    },
+    {
+      "id": 7,
+      "start": 14858,
+      "end": 14858,
+      "baseDepth": 9,
+      "parentPath": "/home/alexendros/Aplicaciones/datos/cache/BraveSoftware/Brave-Browser/Default/Code Cache",
+      "count": 1
+    },
+    {
+      "id": 8,
+      "start": 115614,
+      "end": 115619,
+      "baseDepth": 9,
+      "parentPath": "/home/alexendros/Aplicaciones/datos/cache/BraveSoftware/Brave-Browser/Default/Code Cache",
+      "count": 6
+    },
+    {
+      "id": 9,
+      "start": 14857,
+      "end": 14857,
+      "baseDepth": 8,
+      "parentPath": "/home/alexendros/Aplicaciones/datos/cache/BraveSoftware/Brave-Browser/Default",
+      "count": 1
+    },
+    {
+      "id": 10,
+      "start": 5674,
+      "end": 5674,
+      "baseDepth": 7,
+      "parentPath": "/home/alexendros/Aplicaciones/datos/cache/BraveSoftware/Brave-Browser",
+      "count": 1
+    },
+    {
+      "id": 11,
+      "start": 5673,
+      "end": 5673,
+      "baseDepth": 6,
+      "parentPath": "/home/alexendros/Aplicaciones/datos/cache/BraveSoftware",
+      "count": 1
+    },
+    {
+      "id": 12,
+      "start": 5672,
+      "end": 5672,
+      "baseDepth": 5,
+      "parentPath": "/home/alexendros/Aplicaciones/datos/cache",
+      "count": 1
+    },
+    {
+      "id": 13,
+      "start": 115620,
+      "end": 131422,
+      "baseDepth": 5,
+      "parentPath": "/home/alexendros/Aplicaciones/datos/cache",
+      "count": 15803
+    },
+    {
+      "id": 14,
+      "start": 131424,
+      "end": 136414,
+      "baseDepth": 6,
+      "parentPath": "/home/alexendros/Aplicaciones/datos/cache/npm",
+      "count": 4991
+    },
+    {
+      "id": 15,
+      "start": 136416,
+      "end": 174610,
+      "baseDepth": 7,
+      "parentPath": "/home/alexendros/Aplicaciones/datos/cache/npm/_npx",
+      "count": 38195
+    },
+    {
+      "id": 16,
+      "start": 174611,
+      "end": 208481,
+      "baseDepth": 7,
+      "parentPath": "/home/alexendros/Aplicaciones/datos/cache/npm/_npx",
+      "count": 33871
+    },
+    {
+      "id": 17,
+      "start": 208482,
+      "end": 246041,
+      "baseDepth": 7,
+      "parentPath": "/home/alexendros/Aplicaciones/datos/cache/npm/_npx",
+      "count": 37560
+    },
+    {
+      "id": 18,
+      "start": 246042,
+      "end": 285007,
+      "baseDepth": 7,
+      "parentPath": "/home/alexendros/Aplicaciones/datos/cache/npm/_npx",
+      "count": 38966
+    },
+    {
+      "id": 19,
+      "start": 285008,
+      "end": 307617,
+      "baseDepth": 7,
+      "parentPath": "/home/alexendros/Aplicaciones/datos/cache/npm/_npx",
+      "count": 22610
+    },
+    {
+      "id": 20,
+      "start": 136415,
+      "end": 136415,
+      "baseDepth": 6,
+      "parentPath": "/home/alexendros/Aplicaciones/datos/cache/npm",
+      "count": 1
+    },
+    {
+      "id": 21,
+      "start": 307618,
+      "end": 307620,
+      "baseDepth": 6,
+      "parentPath": "/home/alexendros/Aplicaciones/datos/cache/npm",
+      "count": 3
+    },
+    {
+      "id": 22,
+      "start": 131423,
+      "end": 131423,
+      "baseDepth": 5,
+      "parentPath": "/home/alexendros/Aplicaciones/datos/cache",
+      "count": 1
+    },
+    {
+      "id": 23,
+      "start": 307621,
+      "end": 307983,
+      "baseDepth": 5,
+      "parentPath": "/home/alexendros/Aplicaciones/datos/cache",
+      "count": 363
+    },
+    {
+      "id": 24,
+      "start": 307985,
+      "end": 317297,
+      "baseDepth": 6,
+      "parentPath": "/home/alexendros/Aplicaciones/datos/cache/opencode",
+      "count": 9313
+    },
+    {
+      "id": 25,
+      "start": 317299,
+      "end": 350235,
+      "baseDepth": 7,
+      "parentPath": "/home/alexendros/Aplicaciones/datos/cache/opencode/packages",
+      "count": 32937
+    },
+    {
+      "id": 26,
+      "start": 350236,
+      "end": 385096,
+      "baseDepth": 7,
+      "parentPath": "/home/alexendros/Aplicaciones/datos/cache/opencode/packages",
+      "count": 34861
+    },
+    {
+      "id": 27,
+      "start": 317298,
+      "end": 317298,
+      "baseDepth": 6,
+      "parentPath": "/home/alexendros/Aplicaciones/datos/cache/opencode",
+      "count": 1
+    },
+    {
+      "id": 28,
+      "start": 307984,
+      "end": 307984,
+      "baseDepth": 5,
+      "parentPath": "/home/alexendros/Aplicaciones/datos/cache",
+      "count": 1
+    },
+    {
+      "id": 29,
+      "start": 385098,
+      "end": 425000,
+      "baseDepth": 6,
+      "parentPath": "/home/alexendros/Aplicaciones/datos/cache/opencode-tmp",
+      "count": 39903
+    },
+    {
+      "id": 30,
+      "start": 425001,
+      "end": 454637,
+      "baseDepth": 6,
+      "parentPath": "/home/alexendros/Aplicaciones/datos/cache/opencode-tmp",
+      "count": 29637
+    },
+    {
+      "id": 31,
+      "start": 454638,
+      "end": 478960,
+      "baseDepth": 6,
+      "parentPath": "/home/alexendros/Aplicaciones/datos/cache/opencode-tmp",
+      "count": 24323
+    },
+    {
+      "id": 32,
+      "start": 385097,
+      "end": 385097,
+      "baseDepth": 5,
+      "parentPath": "/home/alexendros/Aplicaciones/datos/cache",
+      "count": 1
+    },
+    {
+      "id": 33,
+      "start": 478961,
+      "end": 491945,
+      "baseDepth": 5,
+      "parentPath": "/home/alexendros/Aplicaciones/datos/cache",
+      "count": 12985
+    },
+    {
+      "id": 34,
+      "start": 491948,
+      "end": 523242,
+      "baseDepth": 7,
+      "parentPath": "/home/alexendros/Aplicaciones/datos/cache/uv/archive-v0",
+      "count": 31295
+    },
+    {
+      "id": 35,
+      "start": 523243,
+      "end": 562116,
+      "baseDepth": 7,
+      "parentPath": "/home/alexendros/Aplicaciones/datos/cache/uv/archive-v0",
+      "count": 38874
+    },
+    {
+      "id": 36,
+      "start": 562117,
+      "end": 593988,
+      "baseDepth": 7,
+      "parentPath": "/home/alexendros/Aplicaciones/datos/cache/uv/archive-v0",
+      "count": 31872
+    },
+    {
+      "id": 37,
+      "start": 593989,
+      "end": 627647,
+      "baseDepth": 7,
+      "parentPath": "/home/alexendros/Aplicaciones/datos/cache/uv/archive-v0",
+      "count": 33659
+    },
+    {
+      "id": 38,
+      "start": 627648,
+      "end": 653974,
+      "baseDepth": 7,
+      "parentPath": "/home/alexendros/Aplicaciones/datos/cache/uv/archive-v0",
+      "count": 26327
+    },
+    {
+      "id": 39,
+      "start": 491947,
+      "end": 491947,
+      "baseDepth": 6,
+      "parentPath": "/home/alexendros/Aplicaciones/datos/cache/uv",
+      "count": 1
+    },
+    {
+      "id": 40,
+      "start": 653975,
+      "end": 655400,
+      "baseDepth": 6,
+      "parentPath": "/home/alexendros/Aplicaciones/datos/cache/uv",
+      "count": 1426
+    },
+    {
+      "id": 41,
+      "start": 491946,
+      "end": 491946,
+      "baseDepth": 5,
+      "parentPath": "/home/alexendros/Aplicaciones/datos/cache",
+      "count": 1
+    },
+    {
+      "id": 42,
+      "start": 655401,
+      "end": 655973,
+      "baseDepth": 5,
+      "parentPath": "/home/alexendros/Aplicaciones/datos/cache",
+      "count": 573
+    },
+    {
+      "id": 43,
+      "start": 655978,
+      "end": 695977,
+      "baseDepth": 9,
+      "parentPath": "/home/alexendros/Aplicaciones/datos/cache/vivaldi/Default/Cache/Cache_Data",
+      "count": 40000
+    },
+    {
+      "id": 44,
+      "start": 695978,
+      "end": 735977,
+      "baseDepth": 9,
+      "parentPath": "/home/alexendros/Aplicaciones/datos/cache/vivaldi/Default/Cache/Cache_Data",
+      "count": 40000
+    },
+    {
+      "id": 45,
+      "start": 735978,
+      "end": 775977,
+      "baseDepth": 9,
+      "parentPath": "/home/alexendros/Aplicaciones/datos/cache/vivaldi/Default/Cache/Cache_Data",
+      "count": 40000
+    },
+    {
+      "id": 46,
+      "start": 775978,
+      "end": 812659,
+      "baseDepth": 9,
+      "parentPath": "/home/alexendros/Aplicaciones/datos/cache/vivaldi/Default/Cache/Cache_Data",
+      "count": 36682
+    },
+    {
+      "id": 47,
+      "start": 655977,
+      "end": 655977,
+      "baseDepth": 8,
+      "parentPath": "/home/alexendros/Aplicaciones/datos/cache/vivaldi/Default/Cache",
+      "count": 1
+    },
+    {
+      "id": 48,
+      "start": 812660,
+      "end": 812662,
+      "baseDepth": 8,
+      "parentPath": "/home/alexendros/Aplicaciones/datos/cache/vivaldi/Default/Cache",
+      "count": 3
+    },
+    {
+      "id": 49,
+      "start": 655976,
+      "end": 655976,
+      "baseDepth": 7,
+      "parentPath": "/home/alexendros/Aplicaciones/datos/cache/vivaldi/Default",
+      "count": 1
+    },
+    {
+      "id": 50,
+      "start": 812663,
+      "end": 818942,
+      "baseDepth": 7,
+      "parentPath": "/home/alexendros/Aplicaciones/datos/cache/vivaldi/Default",
+      "count": 6280
+    },
+    {
+      "id": 51,
+      "start": 655975,
+      "end": 655975,
+      "baseDepth": 6,
+      "parentPath": "/home/alexendros/Aplicaciones/datos/cache/vivaldi",
+      "count": 1
+    },
+    {
+      "id": 52,
+      "start": 818943,
+      "end": 818952,
+      "baseDepth": 6,
+      "parentPath": "/home/alexendros/Aplicaciones/datos/cache/vivaldi",
+      "count": 10
+    },
+    {
+      "id": 53,
+      "start": 655974,
+      "end": 655974,
+      "baseDepth": 5,
+      "parentPath": "/home/alexendros/Aplicaciones/datos/cache",
+      "count": 1
+    },
+    {
+      "id": 54,
+      "start": 818953,
+      "end": 819356,
+      "baseDepth": 5,
+      "parentPath": "/home/alexendros/Aplicaciones/datos/cache",
+      "count": 404
+    },
+    {
+      "id": 55,
+      "start": 5458,
+      "end": 5458,
+      "baseDepth": 4,
+      "parentPath": "/home/alexendros/Aplicaciones/datos",
+      "count": 1
+    },
+    {
+      "id": 56,
+      "start": 819358,
+      "end": 840512,
+      "baseDepth": 5,
+      "parentPath": "/home/alexendros/Aplicaciones/datos/config",
+      "count": 21155
+    },
+    {
+      "id": 57,
+      "start": 840513,
+      "end": 864890,
+      "baseDepth": 5,
+      "parentPath": "/home/alexendros/Aplicaciones/datos/config",
+      "count": 24378
+    },
+    {
+      "id": 58,
+      "start": 864891,
+      "end": 886360,
+      "baseDepth": 5,
+      "parentPath": "/home/alexendros/Aplicaciones/datos/config",
+      "count": 21470
+    },
+    {
+      "id": 59,
+      "start": 819357,
+      "end": 819357,
+      "baseDepth": 4,
+      "parentPath": "/home/alexendros/Aplicaciones/datos",
+      "count": 1
+    },
+    {
+      "id": 60,
+      "start": 886361,
+      "end": 907946,
+      "baseDepth": 4,
+      "parentPath": "/home/alexendros/Aplicaciones/datos",
+      "count": 21586
+    },
+    {
+      "id": 61,
+      "start": 907948,
+      "end": 908442,
+      "baseDepth": 5,
+      "parentPath": "/home/alexendros/Aplicaciones/datos/share",
+      "count": 495
+    },
+    {
+      "id": 62,
+      "start": 908444,
+      "end": 908446,
+      "baseDepth": 6,
+      "parentPath": "/home/alexendros/Aplicaciones/datos/share/bun",
+      "count": 3
+    },
+    {
+      "id": 63,
+      "start": 908449,
+      "end": 946144,
+      "baseDepth": 8,
+      "parentPath": "/home/alexendros/Aplicaciones/datos/share/bun/install/cache",
+      "count": 37696
+    },
+    {
+      "id": 64,
+      "start": 946145,
+      "end": 982712,
+      "baseDepth": 8,
+      "parentPath": "/home/alexendros/Aplicaciones/datos/share/bun/install/cache",
+      "count": 36568
+    },
+    {
+      "id": 65,
+      "start": 982713,
+      "end": 1018318,
+      "baseDepth": 8,
+      "parentPath": "/home/alexendros/Aplicaciones/datos/share/bun/install/cache",
+      "count": 35606
+    },
+    {
+      "id": 66,
+      "start": 1018319,
+      "end": 1052667,
+      "baseDepth": 8,
+      "parentPath": "/home/alexendros/Aplicaciones/datos/share/bun/install/cache",
+      "count": 34349
+    },
+    {
+      "id": 67,
+      "start": 908448,
+      "end": 908448,
+      "baseDepth": 7,
+      "parentPath": "/home/alexendros/Aplicaciones/datos/share/bun/install",
+      "count": 1
+    },
+    {
+      "id": 68,
+      "start": 1052668,
+      "end": 1052668,
+      "baseDepth": 7,
+      "parentPath": "/home/alexendros/Aplicaciones/datos/share/bun/install",
+      "count": 1
+    },
+    {
+      "id": 69,
+      "start": 908447,
+      "end": 908447,
+      "baseDepth": 6,
+      "parentPath": "/home/alexendros/Aplicaciones/datos/share/bun",
+      "count": 1
+    },
+    {
+      "id": 70,
+      "start": 908443,
+      "end": 908443,
+      "baseDepth": 5,
+      "parentPath": "/home/alexendros/Aplicaciones/datos/share",
+      "count": 1
+    },
+    {
+      "id": 71,
+      "start": 1052669,
+      "end": 1078083,
+      "baseDepth": 5,
+      "parentPath": "/home/alexendros/Aplicaciones/datos/share",
+      "count": 25415
+    },
+    {
+      "id": 72,
+      "start": 1078085,
+      "end": 1078086,
+      "baseDepth": 6,
+      "parentPath": "/home/alexendros/Aplicaciones/datos/share/containers",
+      "count": 2
+    },
+    {
+      "id": 73,
+      "start": 1078088,
+      "end": 1078092,
+      "baseDepth": 7,
+      "parentPath": "/home/alexendros/Aplicaciones/datos/share/containers/storage",
+      "count": 5
+    },
+    {
+      "id": 74,
+      "start": 1078094,
+      "end": 1093464,
+      "baseDepth": 8,
+      "parentPath": "/home/alexendros/Aplicaciones/datos/share/containers/storage/overlay",
+      "count": 15371
+    },
+    {
+      "id": 75,
+      "start": 1093467,
+      "end": 1093474,
+      "baseDepth": 10,
+      "parentPath": "/home/alexendros/Aplicaciones/datos/share/containers/storage/overlay/6ebdd2cc3d6f1c173904436f92eb8d0d4f58fe166ba16036648bc5d2d77ceb58/diff",
+      "count": 8
+    },
+    {
+      "id": 76,
+      "start": 1093476,
+      "end": 1093482,
+      "baseDepth": 11,
+      "parentPath": "/home/alexendros/Aplicaciones/datos/share/containers/storage/overlay/6ebdd2cc3d6f1c173904436f92eb8d0d4f58fe166ba16036648bc5d2d77ceb58/diff/usr",
+      "count": 7
+    },
+    {
+      "id": 77,
+      "start": 1093485,
+      "end": 1093517,
+      "baseDepth": 13,
+      "parentPath": "/home/alexendros/Aplicaciones/datos/share/containers/storage/overlay/6ebdd2cc3d6f1c173904436f92eb8d0d4f58fe166ba16036648bc5d2d77ceb58/diff/usr/lib/google-cloud-sdk",
+      "count": 33
+    },
+    {
+      "id": 78,
+      "start": 1093519,
+      "end": 1110017,
+      "baseDepth": 14,
+      "parentPath": "/home/alexendros/Aplicaciones/datos/share/containers/storage/overlay/6ebdd2cc3d6f1c173904436f92eb8d0d4f58fe166ba16036648bc5d2d77ceb58/diff/usr/lib/google-cloud-sdk/lib",
+      "count": 16499
+    },
+    {
+      "id": 79,
+      "start": 1110018,
+      "end": 1141404,
+      "baseDepth": 14,
+      "parentPath": "/home/alexendros/Aplicaciones/datos/share/containers/storage/overlay/6ebdd2cc3d6f1c173904436f92eb8d0d4f58fe166ba16036648bc5d2d77ceb58/diff/usr/lib/google-cloud-sdk/lib",
+      "count": 31387
+    },
+    {
+      "id": 80,
+      "start": 1093518,
+      "end": 1093518,
+      "baseDepth": 13,
+      "parentPath": "/home/alexendros/Aplicaciones/datos/share/containers/storage/overlay/6ebdd2cc3d6f1c173904436f92eb8d0d4f58fe166ba16036648bc5d2d77ceb58/diff/usr/lib/google-cloud-sdk",
+      "count": 1
+    },
+    {
+      "id": 81,
+      "start": 1141405,
+      "end": 1154383,
+      "baseDepth": 13,
+      "parentPath": "/home/alexendros/Aplicaciones/datos/share/containers/storage/overlay/6ebdd2cc3d6f1c173904436f92eb8d0d4f58fe166ba16036648bc5d2d77ceb58/diff/usr/lib/google-cloud-sdk",
+      "count": 12979
+    },
+    {
+      "id": 82,
+      "start": 1093484,
+      "end": 1093484,
+      "baseDepth": 12,
+      "parentPath": "/home/alexendros/Aplicaciones/datos/share/containers/storage/overlay/6ebdd2cc3d6f1c173904436f92eb8d0d4f58fe166ba16036648bc5d2d77ceb58/diff/usr/lib",
+      "count": 1
+    },
+    {
+      "id": 83,
+      "start": 1093483,
+      "end": 1093483,
+      "baseDepth": 11,
+      "parentPath": "/home/alexendros/Aplicaciones/datos/share/containers/storage/overlay/6ebdd2cc3d6f1c173904436f92eb8d0d4f58fe166ba16036648bc5d2d77ceb58/diff/usr",
+      "count": 1
+    },
+    {
+      "id": 84,
+      "start": 1154384,
+      "end": 1154397,
+      "baseDepth": 11,
+      "parentPath": "/home/alexendros/Aplicaciones/datos/share/containers/storage/overlay/6ebdd2cc3d6f1c173904436f92eb8d0d4f58fe166ba16036648bc5d2d77ceb58/diff/usr",
+      "count": 14
+    },
+    {
+      "id": 85,
+      "start": 1093475,
+      "end": 1093475,
+      "baseDepth": 10,
+      "parentPath": "/home/alexendros/Aplicaciones/datos/share/containers/storage/overlay/6ebdd2cc3d6f1c173904436f92eb8d0d4f58fe166ba16036648bc5d2d77ceb58/diff",
+      "count": 1
+    },
+    {
+      "id": 86,
+      "start": 1154398,
+      "end": 1154467,
+      "baseDepth": 10,
+      "parentPath": "/home/alexendros/Aplicaciones/datos/share/containers/storage/overlay/6ebdd2cc3d6f1c173904436f92eb8d0d4f58fe166ba16036648bc5d2d77ceb58/diff",
+      "count": 70
+    },
+    {
+      "id": 87,
+      "start": 1093466,
+      "end": 1093466,
+      "baseDepth": 9,
+      "parentPath": "/home/alexendros/Aplicaciones/datos/share/containers/storage/overlay/6ebdd2cc3d6f1c173904436f92eb8d0d4f58fe166ba16036648bc5d2d77ceb58",
+      "count": 1
+    },
+    {
+      "id": 88,
+      "start": 1154468,
+      "end": 1154471,
+      "baseDepth": 9,
+      "parentPath": "/home/alexendros/Aplicaciones/datos/share/containers/storage/overlay/6ebdd2cc3d6f1c173904436f92eb8d0d4f58fe166ba16036648bc5d2d77ceb58",
+      "count": 4
+    },
+    {
+      "id": 89,
+      "start": 1093465,
+      "end": 1093465,
+      "baseDepth": 8,
+      "parentPath": "/home/alexendros/Aplicaciones/datos/share/containers/storage/overlay",
+      "count": 1
+    },
+    {
+      "id": 90,
+      "start": 1154472,
+      "end": 1186769,
+      "baseDepth": 8,
+      "parentPath": "/home/alexendros/Aplicaciones/datos/share/containers/storage/overlay",
+      "count": 32298
+    },
+    {
+      "id": 91,
+      "start": 1186770,
+      "end": 1198607,
+      "baseDepth": 8,
+      "parentPath": "/home/alexendros/Aplicaciones/datos/share/containers/storage/overlay",
+      "count": 11838
+    },
+    {
+      "id": 92,
+      "start": 1198610,
+      "end": 1198611,
+      "baseDepth": 10,
+      "parentPath": "/home/alexendros/Aplicaciones/datos/share/containers/storage/overlay/b377e95fa56da811b2a1b9c2b378b147002703f77c6f47de277a7a26abbe752d/diff",
+      "count": 2
+    },
+    {
+      "id": 93,
+      "start": 1198614,
+      "end": 1198634,
+      "baseDepth": 12,
+      "parentPath": "/home/alexendros/Aplicaciones/datos/share/containers/storage/overlay/b377e95fa56da811b2a1b9c2b378b147002703f77c6f47de277a7a26abbe752d/diff/usr/local",
+      "count": 21
+    },
+    {
+      "id": 94,
+      "start": 1198636,
+      "end": 1198638,
+      "baseDepth": 13,
+      "parentPath": "/home/alexendros/Aplicaciones/datos/share/containers/storage/overlay/b377e95fa56da811b2a1b9c2b378b147002703f77c6f47de277a7a26abbe752d/diff/usr/local/rustup",
+      "count": 3
+    },
+    {
+      "id": 95,
+      "start": 1198641,
+      "end": 1198752,
+      "baseDepth": 15,
+      "parentPath": "/home/alexendros/Aplicaciones/datos/share/containers/storage/overlay/b377e95fa56da811b2a1b9c2b378b147002703f77c6f47de277a7a26abbe752d/diff/usr/local/rustup/toolchains/stable-x86_64-unknown-linux-gnu",
+      "count": 112
+    },
+    {
+      "id": 96,
+      "start": 1198755,
+      "end": 1198763,
+      "baseDepth": 17,
+      "parentPath": "/home/alexendros/Aplicaciones/datos/share/containers/storage/overlay/b377e95fa56da811b2a1b9c2b378b147002703f77c6f47de277a7a26abbe752d/diff/usr/local/rustup/toolchains/stable-x86_64-unknown-linux-gnu/share/doc",
+      "count": 9
+    },
+    {
+      "id": 97,
+      "start": 1198765,
+      "end": 1198766,
+      "baseDepth": 18,
+      "parentPath": "/home/alexendros/Aplicaciones/datos/share/containers/storage/overlay/b377e95fa56da811b2a1b9c2b378b147002703f77c6f47de277a7a26abbe752d/diff/usr/local/rustup/toolchains/stable-x86_64-unknown-linux-gnu/share/doc/rust",
+      "count": 2
+    },
+    {
+      "id": 98,
+      "start": 1198768,
+      "end": 1200056,
+      "baseDepth": 19,
+      "parentPath": "/home/alexendros/Aplicaciones/datos/share/containers/storage/overlay/b377e95fa56da811b2a1b9c2b378b147002703f77c6f47de277a7a26abbe752d/diff/usr/local/rustup/toolchains/stable-x86_64-unknown-linux-gnu/share/doc/rust/html",
+      "count": 1289
+    },
+    {
+      "id": 99,
+      "start": 1200058,
+      "end": 1231534,
+      "baseDepth": 20,
+      "parentPath": "/home/alexendros/Aplicaciones/datos/share/containers/storage/overlay/b377e95fa56da811b2a1b9c2b378b147002703f77c6f47de277a7a26abbe752d/diff/usr/local/rustup/toolchains/stable-x86_64-unknown-linux-gnu/share/doc/rust/html/core",
+      "count": 31477
+    },
+    {
+      "id": 100,
+      "start": 1231535,
+      "end": 1255159,
+      "baseDepth": 20,
+      "parentPath": "/home/alexendros/Aplicaciones/datos/share/containers/storage/overlay/b377e95fa56da811b2a1b9c2b378b147002703f77c6f47de277a7a26abbe752d/diff/usr/local/rustup/toolchains/stable-x86_64-unknown-linux-gnu/share/doc/rust/html/core",
+      "count": 23625
+    },
+    {
+      "id": 101,
+      "start": 1200057,
+      "end": 1200057,
+      "baseDepth": 19,
+      "parentPath": "/home/alexendros/Aplicaciones/datos/share/containers/storage/overlay/b377e95fa56da811b2a1b9c2b378b147002703f77c6f47de277a7a26abbe752d/diff/usr/local/rustup/toolchains/stable-x86_64-unknown-linux-gnu/share/doc/rust/html",
+      "count": 1
+    },
+    {
+      "id": 102,
+      "start": 1255160,
+      "end": 1265978,
+      "baseDepth": 19,
+      "parentPath": "/home/alexendros/Aplicaciones/datos/share/containers/storage/overlay/b377e95fa56da811b2a1b9c2b378b147002703f77c6f47de277a7a26abbe752d/diff/usr/local/rustup/toolchains/stable-x86_64-unknown-linux-gnu/share/doc/rust/html",
+      "count": 10819
+    },
+    {
+      "id": 103,
+      "start": 1198767,
+      "end": 1198767,
+      "baseDepth": 18,
+      "parentPath": "/home/alexendros/Aplicaciones/datos/share/containers/storage/overlay/b377e95fa56da811b2a1b9c2b378b147002703f77c6f47de277a7a26abbe752d/diff/usr/local/rustup/toolchains/stable-x86_64-unknown-linux-gnu/share/doc/rust",
+      "count": 1
+    },
+    {
+      "id": 104,
+      "start": 1265979,
+      "end": 1265992,
+      "baseDepth": 18,
+      "parentPath": "/home/alexendros/Aplicaciones/datos/share/containers/storage/overlay/b377e95fa56da811b2a1b9c2b378b147002703f77c6f47de277a7a26abbe752d/diff/usr/local/rustup/toolchains/stable-x86_64-unknown-linux-gnu/share/doc/rust",
+      "count": 14
+    },
+    {
+      "id": 105,
+      "start": 1198764,
+      "end": 1198764,
+      "baseDepth": 17,
+      "parentPath": "/home/alexendros/Aplicaciones/datos/share/containers/storage/overlay/b377e95fa56da811b2a1b9c2b378b147002703f77c6f47de277a7a26abbe752d/diff/usr/local/rustup/toolchains/stable-x86_64-unknown-linux-gnu/share/doc",
+      "count": 1
+    },
+    {
+      "id": 106,
+      "start": 1265993,
+      "end": 1265996,
+      "baseDepth": 17,
+      "parentPath": "/home/alexendros/Aplicaciones/datos/share/containers/storage/overlay/b377e95fa56da811b2a1b9c2b378b147002703f77c6f47de277a7a26abbe752d/diff/usr/local/rustup/toolchains/stable-x86_64-unknown-linux-gnu/share/doc",
+      "count": 4
+    },
+    {
+      "id": 107,
+      "start": 1198754,
+      "end": 1198754,
+      "baseDepth": 16,
+      "parentPath": "/home/alexendros/Aplicaciones/datos/share/containers/storage/overlay/b377e95fa56da811b2a1b9c2b378b147002703f77c6f47de277a7a26abbe752d/diff/usr/local/rustup/toolchains/stable-x86_64-unknown-linux-gnu/share",
+      "count": 1
+    },
+    {
+      "id": 108,
+      "start": 1265997,
+      "end": 1266040,
+      "baseDepth": 16,
+      "parentPath": "/home/alexendros/Aplicaciones/datos/share/containers/storage/overlay/b377e95fa56da811b2a1b9c2b378b147002703f77c6f47de277a7a26abbe752d/diff/usr/local/rustup/toolchains/stable-x86_64-unknown-linux-gnu/share",
+      "count": 44
+    },
+    {
+      "id": 109,
+      "start": 1198753,
+      "end": 1198753,
+      "baseDepth": 15,
+      "parentPath": "/home/alexendros/Aplicaciones/datos/share/containers/storage/overlay/b377e95fa56da811b2a1b9c2b378b147002703f77c6f47de277a7a26abbe752d/diff/usr/local/rustup/toolchains/stable-x86_64-unknown-linux-gnu",
+      "count": 1
+    },
+    {
+      "id": 110,
+      "start": 1198640,
+      "end": 1198640,
+      "baseDepth": 14,
+      "parentPath": "/home/alexendros/Aplicaciones/datos/share/containers/storage/overlay/b377e95fa56da811b2a1b9c2b378b147002703f77c6f47de277a7a26abbe752d/diff/usr/local/rustup/toolchains",
+      "count": 1
+    },
+    {
+      "id": 111,
+      "start": 1198639,
+      "end": 1198639,
+      "baseDepth": 13,
+      "parentPath": "/home/alexendros/Aplicaciones/datos/share/containers/storage/overlay/b377e95fa56da811b2a1b9c2b378b147002703f77c6f47de277a7a26abbe752d/diff/usr/local/rustup",
+      "count": 1
+    },
+    {
+      "id": 112,
+      "start": 1266041,
+      "end": 1266042,
+      "baseDepth": 13,
+      "parentPath": "/home/alexendros/Aplicaciones/datos/share/containers/storage/overlay/b377e95fa56da811b2a1b9c2b378b147002703f77c6f47de277a7a26abbe752d/diff/usr/local/rustup",
+      "count": 2
+    },
+    {
+      "id": 113,
+      "start": 1198635,
+      "end": 1198635,
+      "baseDepth": 12,
+      "parentPath": "/home/alexendros/Aplicaciones/datos/share/containers/storage/overlay/b377e95fa56da811b2a1b9c2b378b147002703f77c6f47de277a7a26abbe752d/diff/usr/local",
+      "count": 1
+    },
+    {
+      "id": 114,
+      "start": 1198613,
+      "end": 1198613,
+      "baseDepth": 11,
+      "parentPath": "/home/alexendros/Aplicaciones/datos/share/containers/storage/overlay/b377e95fa56da811b2a1b9c2b378b147002703f77c6f47de277a7a26abbe752d/diff/usr",
+      "count": 1
+    },
+    {
+      "id": 115,
+      "start": 1198612,
+      "end": 1198612,
+      "baseDepth": 10,
+      "parentPath": "/home/alexendros/Aplicaciones/datos/share/containers/storage/overlay/b377e95fa56da811b2a1b9c2b378b147002703f77c6f47de277a7a26abbe752d/diff",
+      "count": 1
+    },
+    {
+      "id": 116,
+      "start": 1198609,
+      "end": 1198609,
+      "baseDepth": 9,
+      "parentPath": "/home/alexendros/Aplicaciones/datos/share/containers/storage/overlay/b377e95fa56da811b2a1b9c2b378b147002703f77c6f47de277a7a26abbe752d",
+      "count": 1
+    },
+    {
+      "id": 117,
+      "start": 1266043,
+      "end": 1266046,
+      "baseDepth": 9,
+      "parentPath": "/home/alexendros/Aplicaciones/datos/share/containers/storage/overlay/b377e95fa56da811b2a1b9c2b378b147002703f77c6f47de277a7a26abbe752d",
+      "count": 4
+    },
+    {
+      "id": 118,
+      "start": 1198608,
+      "end": 1198608,
+      "baseDepth": 8,
+      "parentPath": "/home/alexendros/Aplicaciones/datos/share/containers/storage/overlay",
+      "count": 1
+    },
+    {
+      "id": 119,
+      "start": 1266047,
+      "end": 1302607,
+      "baseDepth": 8,
+      "parentPath": "/home/alexendros/Aplicaciones/datos/share/containers/storage/overlay",
+      "count": 36561
+    },
+    {
+      "id": 120,
+      "start": 1302608,
+      "end": 1341497,
+      "baseDepth": 8,
+      "parentPath": "/home/alexendros/Aplicaciones/datos/share/containers/storage/overlay",
+      "count": 38890
+    },
+    {
+      "id": 121,
+      "start": 1341498,
+      "end": 1352985,
+      "baseDepth": 8,
+      "parentPath": "/home/alexendros/Aplicaciones/datos/share/containers/storage/overlay",
+      "count": 11488
+    },
+    {
+      "id": 122,
+      "start": 1078093,
+      "end": 1078093,
+      "baseDepth": 7,
+      "parentPath": "/home/alexendros/Aplicaciones/datos/share/containers/storage",
+      "count": 1
+    },
+    {
+      "id": 123,
+      "start": 1352986,
+      "end": 1353193,
+      "baseDepth": 7,
+      "parentPath": "/home/alexendros/Aplicaciones/datos/share/containers/storage",
+      "count": 208
+    },
+    {
+      "id": 124,
+      "start": 1078087,
+      "end": 1078087,
+      "baseDepth": 6,
+      "parentPath": "/home/alexendros/Aplicaciones/datos/share/containers",
+      "count": 1
+    },
+    {
+      "id": 125,
+      "start": 1078084,
+      "end": 1078084,
+      "baseDepth": 5,
+      "parentPath": "/home/alexendros/Aplicaciones/datos/share",
+      "count": 1
+    },
+    {
+      "id": 126,
+      "start": 1353194,
+      "end": 1372744,
+      "baseDepth": 5,
+      "parentPath": "/home/alexendros/Aplicaciones/datos/share",
+      "count": 19551
+    },
+    {
+      "id": 127,
+      "start": 1372745,
+      "end": 1410353,
+      "baseDepth": 5,
+      "parentPath": "/home/alexendros/Aplicaciones/datos/share",
+      "count": 37609
+    },
+    {
+      "id": 128,
+      "start": 1410355,
+      "end": 1410526,
+      "baseDepth": 6,
+      "parentPath": "/home/alexendros/Aplicaciones/datos/share/pnpm",
+      "count": 172
+    },
+    {
+      "id": 129,
+      "start": 1410528,
+      "end": 1447984,
+      "baseDepth": 7,
+      "parentPath": "/home/alexendros/Aplicaciones/datos/share/pnpm/store",
+      "count": 37457
+    },
+    {
+      "id": 130,
+      "start": 1447987,
+      "end": 1487685,
+      "baseDepth": 9,
+      "parentPath": "/home/alexendros/Aplicaciones/datos/share/pnpm/store/v11/files",
+      "count": 39699
+    },
+    {
+      "id": 131,
+      "start": 1487686,
+      "end": 1527425,
+      "baseDepth": 9,
+      "parentPath": "/home/alexendros/Aplicaciones/datos/share/pnpm/store/v11/files",
+      "count": 39740
+    },
+    {
+      "id": 132,
+      "start": 1527426,
+      "end": 1567283,
+      "baseDepth": 9,
+      "parentPath": "/home/alexendros/Aplicaciones/datos/share/pnpm/store/v11/files",
+      "count": 39858
+    },
+    {
+      "id": 133,
+      "start": 1567284,
+      "end": 1576048,
+      "baseDepth": 9,
+      "parentPath": "/home/alexendros/Aplicaciones/datos/share/pnpm/store/v11/files",
+      "count": 8765
+    },
+    {
+      "id": 134,
+      "start": 1447986,
+      "end": 1447986,
+      "baseDepth": 8,
+      "parentPath": "/home/alexendros/Aplicaciones/datos/share/pnpm/store/v11",
+      "count": 1
+    },
+    {
+      "id": 135,
+      "start": 1576049,
+      "end": 1576049,
+      "baseDepth": 8,
+      "parentPath": "/home/alexendros/Aplicaciones/datos/share/pnpm/store/v11",
+      "count": 1
+    },
+    {
+      "id": 136,
+      "start": 1576052,
+      "end": 1615156,
+      "baseDepth": 10,
+      "parentPath": "/home/alexendros/Aplicaciones/datos/share/pnpm/store/v11/links/@",
+      "count": 39105
+    },
+    {
+      "id": 137,
+      "start": 1615157,
+      "end": 1617287,
+      "baseDepth": 10,
+      "parentPath": "/home/alexendros/Aplicaciones/datos/share/pnpm/store/v11/links/@",
+      "count": 2131
+    },
+    {
+      "id": 138,
+      "start": 1576051,
+      "end": 1576051,
+      "baseDepth": 9,
+      "parentPath": "/home/alexendros/Aplicaciones/datos/share/pnpm/store/v11/links",
+      "count": 1
+    },
+    {
+      "id": 139,
+      "start": 1617288,
+      "end": 1632425,
+      "baseDepth": 9,
+      "parentPath": "/home/alexendros/Aplicaciones/datos/share/pnpm/store/v11/links",
+      "count": 15138
+    },
+    {
+      "id": 140,
+      "start": 1576050,
+      "end": 1576050,
+      "baseDepth": 8,
+      "parentPath": "/home/alexendros/Aplicaciones/datos/share/pnpm/store/v11",
+      "count": 1
+    },
+    {
+      "id": 141,
+      "start": 1632426,
+      "end": 1632464,
+      "baseDepth": 8,
+      "parentPath": "/home/alexendros/Aplicaciones/datos/share/pnpm/store/v11",
+      "count": 39
+    },
+    {
+      "id": 142,
+      "start": 1447985,
+      "end": 1447985,
+      "baseDepth": 7,
+      "parentPath": "/home/alexendros/Aplicaciones/datos/share/pnpm/store",
+      "count": 1
+    },
+    {
+      "id": 143,
+      "start": 1632467,
+      "end": 1672437,
+      "baseDepth": 9,
+      "parentPath": "/home/alexendros/Aplicaciones/datos/share/pnpm/store/v3/files",
+      "count": 39971
+    },
+    {
+      "id": 144,
+      "start": 1672438,
+      "end": 1688735,
+      "baseDepth": 9,
+      "parentPath": "/home/alexendros/Aplicaciones/datos/share/pnpm/store/v3/files",
+      "count": 16298
+    },
+    {
+      "id": 145,
+      "start": 1632466,
+      "end": 1632466,
+      "baseDepth": 8,
+      "parentPath": "/home/alexendros/Aplicaciones/datos/share/pnpm/store/v3",
+      "count": 1
+    },
+    {
+      "id": 146,
+      "start": 1632465,
+      "end": 1632465,
+      "baseDepth": 7,
+      "parentPath": "/home/alexendros/Aplicaciones/datos/share/pnpm/store",
+      "count": 1
+    },
+    {
+      "id": 147,
+      "start": 1410527,
+      "end": 1410527,
+      "baseDepth": 6,
+      "parentPath": "/home/alexendros/Aplicaciones/datos/share/pnpm",
+      "count": 1
+    },
+    {
+      "id": 148,
+      "start": 1410354,
+      "end": 1410354,
+      "baseDepth": 5,
+      "parentPath": "/home/alexendros/Aplicaciones/datos/share",
+      "count": 1
+    },
+    {
+      "id": 149,
+      "start": 1688736,
+      "end": 1703138,
+      "baseDepth": 5,
+      "parentPath": "/home/alexendros/Aplicaciones/datos/share",
+      "count": 14403
+    },
+    {
+      "id": 150,
+      "start": 1703140,
+      "end": 1703142,
+      "baseDepth": 6,
+      "parentPath": "/home/alexendros/Aplicaciones/datos/share/rustup",
+      "count": 3
+    },
+    {
+      "id": 151,
+      "start": 1703144,
+      "end": 1710576,
+      "baseDepth": 7,
+      "parentPath": "/home/alexendros/Aplicaciones/datos/share/rustup/toolchains",
+      "count": 7433
+    },
+    {
+      "id": 152,
+      "start": 1710578,
+      "end": 1718796,
+      "baseDepth": 8,
+      "parentPath": "/home/alexendros/Aplicaciones/datos/share/rustup/toolchains/nightly-x86_64-unknown-linux-gnu",
+      "count": 8219
+    },
+    {
+      "id": 153,
+      "start": 1718799,
+      "end": 1718811,
+      "baseDepth": 10,
+      "parentPath": "/home/alexendros/Aplicaciones/datos/share/rustup/toolchains/nightly-x86_64-unknown-linux-gnu/share/doc",
+      "count": 13
+    },
+    {
+      "id": 154,
+      "start": 1718813,
+      "end": 1718814,
+      "baseDepth": 11,
+      "parentPath": "/home/alexendros/Aplicaciones/datos/share/rustup/toolchains/nightly-x86_64-unknown-linux-gnu/share/doc/rust",
+      "count": 2
+    },
+    {
+      "id": 155,
+      "start": 1718816,
+      "end": 1720150,
+      "baseDepth": 12,
+      "parentPath": "/home/alexendros/Aplicaciones/datos/share/rustup/toolchains/nightly-x86_64-unknown-linux-gnu/share/doc/rust/html",
+      "count": 1335
+    },
+    {
+      "id": 156,
+      "start": 1720152,
+      "end": 1751642,
+      "baseDepth": 13,
+      "parentPath": "/home/alexendros/Aplicaciones/datos/share/rustup/toolchains/nightly-x86_64-unknown-linux-gnu/share/doc/rust/html/core",
+      "count": 31491
+    },
+    {
+      "id": 157,
+      "start": 1751643,
+      "end": 1775307,
+      "baseDepth": 13,
+      "parentPath": "/home/alexendros/Aplicaciones/datos/share/rustup/toolchains/nightly-x86_64-unknown-linux-gnu/share/doc/rust/html/core",
+      "count": 23665
+    },
+    {
+      "id": 158,
+      "start": 1720151,
+      "end": 1720151,
+      "baseDepth": 12,
+      "parentPath": "/home/alexendros/Aplicaciones/datos/share/rustup/toolchains/nightly-x86_64-unknown-linux-gnu/share/doc/rust/html",
+      "count": 1
+    },
+    {
+      "id": 159,
+      "start": 1775308,
+      "end": 1786219,
+      "baseDepth": 12,
+      "parentPath": "/home/alexendros/Aplicaciones/datos/share/rustup/toolchains/nightly-x86_64-unknown-linux-gnu/share/doc/rust/html",
+      "count": 10912
+    },
+    {
+      "id": 160,
+      "start": 1718815,
+      "end": 1718815,
+      "baseDepth": 11,
+      "parentPath": "/home/alexendros/Aplicaciones/datos/share/rustup/toolchains/nightly-x86_64-unknown-linux-gnu/share/doc/rust",
+      "count": 1
+    },
+    {
+      "id": 161,
+      "start": 1786220,
+      "end": 1786233,
+      "baseDepth": 11,
+      "parentPath": "/home/alexendros/Aplicaciones/datos/share/rustup/toolchains/nightly-x86_64-unknown-linux-gnu/share/doc/rust",
+      "count": 14
+    },
+    {
+      "id": 162,
+      "start": 1718812,
+      "end": 1718812,
+      "baseDepth": 10,
+      "parentPath": "/home/alexendros/Aplicaciones/datos/share/rustup/toolchains/nightly-x86_64-unknown-linux-gnu/share/doc",
+      "count": 1
+    },
+    {
+      "id": 163,
+      "start": 1786234,
+      "end": 1786245,
+      "baseDepth": 10,
+      "parentPath": "/home/alexendros/Aplicaciones/datos/share/rustup/toolchains/nightly-x86_64-unknown-linux-gnu/share/doc",
+      "count": 12
+    },
+    {
+      "id": 164,
+      "start": 1718798,
+      "end": 1718798,
+      "baseDepth": 9,
+      "parentPath": "/home/alexendros/Aplicaciones/datos/share/rustup/toolchains/nightly-x86_64-unknown-linux-gnu/share",
+      "count": 1
+    },
+    {
+      "id": 165,
+      "start": 1786246,
+      "end": 1786289,
+      "baseDepth": 9,
+      "parentPath": "/home/alexendros/Aplicaciones/datos/share/rustup/toolchains/nightly-x86_64-unknown-linux-gnu/share",
+      "count": 44
+    },
+    {
+      "id": 166,
+      "start": 1718797,
+      "end": 1718797,
+      "baseDepth": 8,
+      "parentPath": "/home/alexendros/Aplicaciones/datos/share/rustup/toolchains/nightly-x86_64-unknown-linux-gnu",
+      "count": 1
+    },
+    {
+      "id": 167,
+      "start": 1710577,
+      "end": 1710577,
+      "baseDepth": 7,
+      "parentPath": "/home/alexendros/Aplicaciones/datos/share/rustup/toolchains",
+      "count": 1
+    },
+    {
+      "id": 168,
+      "start": 1786291,
+      "end": 1791295,
+      "baseDepth": 8,
+      "parentPath": "/home/alexendros/Aplicaciones/datos/share/rustup/toolchains/stable-x86_64-unknown-linux-gnu",
+      "count": 5005
+    },
+    {
+      "id": 169,
+      "start": 1791298,
+      "end": 1791306,
+      "baseDepth": 10,
+      "parentPath": "/home/alexendros/Aplicaciones/datos/share/rustup/toolchains/stable-x86_64-unknown-linux-gnu/share/doc",
+      "count": 9
+    },
+    {
+      "id": 170,
+      "start": 1791308,
+      "end": 1791309,
+      "baseDepth": 11,
+      "parentPath": "/home/alexendros/Aplicaciones/datos/share/rustup/toolchains/stable-x86_64-unknown-linux-gnu/share/doc/rust",
+      "count": 2
+    },
+    {
+      "id": 171,
+      "start": 1791311,
+      "end": 1792577,
+      "baseDepth": 12,
+      "parentPath": "/home/alexendros/Aplicaciones/datos/share/rustup/toolchains/stable-x86_64-unknown-linux-gnu/share/doc/rust/html",
+      "count": 1267
+    },
+    {
+      "id": 172,
+      "start": 1792579,
+      "end": 1824020,
+      "baseDepth": 13,
+      "parentPath": "/home/alexendros/Aplicaciones/datos/share/rustup/toolchains/stable-x86_64-unknown-linux-gnu/share/doc/rust/html/core",
+      "count": 31442
+    },
+    {
+      "id": 173,
+      "start": 1824021,
+      "end": 1847552,
+      "baseDepth": 13,
+      "parentPath": "/home/alexendros/Aplicaciones/datos/share/rustup/toolchains/stable-x86_64-unknown-linux-gnu/share/doc/rust/html/core",
+      "count": 23532
+    },
+    {
+      "id": 174,
+      "start": 1792578,
+      "end": 1792578,
+      "baseDepth": 12,
+      "parentPath": "/home/alexendros/Aplicaciones/datos/share/rustup/toolchains/stable-x86_64-unknown-linux-gnu/share/doc/rust/html",
+      "count": 1
+    },
+    {
+      "id": 175,
+      "start": 1847553,
+      "end": 1858283,
+      "baseDepth": 12,
+      "parentPath": "/home/alexendros/Aplicaciones/datos/share/rustup/toolchains/stable-x86_64-unknown-linux-gnu/share/doc/rust/html",
+      "count": 10731
+    },
+    {
+      "id": 176,
+      "start": 1791310,
+      "end": 1791310,
+      "baseDepth": 11,
+      "parentPath": "/home/alexendros/Aplicaciones/datos/share/rustup/toolchains/stable-x86_64-unknown-linux-gnu/share/doc/rust",
+      "count": 1
+    },
+    {
+      "id": 177,
+      "start": 1858284,
+      "end": 1858297,
+      "baseDepth": 11,
+      "parentPath": "/home/alexendros/Aplicaciones/datos/share/rustup/toolchains/stable-x86_64-unknown-linux-gnu/share/doc/rust",
+      "count": 14
+    },
+    {
+      "id": 178,
+      "start": 1791307,
+      "end": 1791307,
+      "baseDepth": 10,
+      "parentPath": "/home/alexendros/Aplicaciones/datos/share/rustup/toolchains/stable-x86_64-unknown-linux-gnu/share/doc",
+      "count": 1
+    },
+    {
+      "id": 179,
+      "start": 1858298,
+      "end": 1858305,
+      "baseDepth": 10,
+      "parentPath": "/home/alexendros/Aplicaciones/datos/share/rustup/toolchains/stable-x86_64-unknown-linux-gnu/share/doc",
+      "count": 8
+    },
+    {
+      "id": 180,
+      "start": 1791297,
+      "end": 1791297,
+      "baseDepth": 9,
+      "parentPath": "/home/alexendros/Aplicaciones/datos/share/rustup/toolchains/stable-x86_64-unknown-linux-gnu/share",
+      "count": 1
+    },
+    {
+      "id": 181,
+      "start": 1858306,
+      "end": 1858349,
+      "baseDepth": 9,
+      "parentPath": "/home/alexendros/Aplicaciones/datos/share/rustup/toolchains/stable-x86_64-unknown-linux-gnu/share",
+      "count": 44
+    },
+    {
+      "id": 182,
+      "start": 1791296,
+      "end": 1791296,
+      "baseDepth": 8,
+      "parentPath": "/home/alexendros/Aplicaciones/datos/share/rustup/toolchains/stable-x86_64-unknown-linux-gnu",
+      "count": 1
+    },
+    {
+      "id": 183,
+      "start": 1786290,
+      "end": 1786290,
+      "baseDepth": 7,
+      "parentPath": "/home/alexendros/Aplicaciones/datos/share/rustup/toolchains",
+      "count": 1
+    },
+    {
+      "id": 184,
+      "start": 1703143,
+      "end": 1703143,
+      "baseDepth": 6,
+      "parentPath": "/home/alexendros/Aplicaciones/datos/share/rustup",
+      "count": 1
+    },
+    {
+      "id": 185,
+      "start": 1858350,
+      "end": 1858354,
+      "baseDepth": 6,
+      "parentPath": "/home/alexendros/Aplicaciones/datos/share/rustup",
+      "count": 5
+    },
+    {
+      "id": 186,
+      "start": 1703139,
+      "end": 1703139,
+      "baseDepth": 5,
+      "parentPath": "/home/alexendros/Aplicaciones/datos/share",
+      "count": 1
+    },
+    {
+      "id": 187,
+      "start": 1858355,
+      "end": 1869298,
+      "baseDepth": 5,
+      "parentPath": "/home/alexendros/Aplicaciones/datos/share",
+      "count": 10944
+    },
+    {
+      "id": 188,
+      "start": 1869299,
+      "end": 1902273,
+      "baseDepth": 5,
+      "parentPath": "/home/alexendros/Aplicaciones/datos/share",
+      "count": 32975
+    },
+    {
+      "id": 189,
+      "start": 1902275,
+      "end": 1913142,
+      "baseDepth": 6,
+      "parentPath": "/home/alexendros/Aplicaciones/datos/share/voicebox",
+      "count": 10868
+    },
+    {
+      "id": 190,
+      "start": 1913144,
+      "end": 1913253,
+      "baseDepth": 7,
+      "parentPath": "/home/alexendros/Aplicaciones/datos/share/voicebox/backend-venv-cu128",
+      "count": 110
+    },
+    {
+      "id": 191,
+      "start": 1913257,
+      "end": 1952133,
+      "baseDepth": 10,
+      "parentPath": "/home/alexendros/Aplicaciones/datos/share/voicebox/backend-venv-cu128/lib/python3.12/site-packages",
+      "count": 38877
+    },
+    {
+      "id": 192,
+      "start": 1952134,
+      "end": 1991333,
+      "baseDepth": 10,
+      "parentPath": "/home/alexendros/Aplicaciones/datos/share/voicebox/backend-venv-cu128/lib/python3.12/site-packages",
+      "count": 39200
+    },
+    {
+      "id": 193,
+      "start": 1991334,
+      "end": 1999528,
+      "baseDepth": 10,
+      "parentPath": "/home/alexendros/Aplicaciones/datos/share/voicebox/backend-venv-cu128/lib/python3.12/site-packages",
+      "count": 8195
+    },
+    {
+      "id": 194,
+      "start": 1913256,
+      "end": 1913256,
+      "baseDepth": 9,
+      "parentPath": "/home/alexendros/Aplicaciones/datos/share/voicebox/backend-venv-cu128/lib/python3.12",
+      "count": 1
+    },
+    {
+      "id": 195,
+      "start": 1913255,
+      "end": 1913255,
+      "baseDepth": 8,
+      "parentPath": "/home/alexendros/Aplicaciones/datos/share/voicebox/backend-venv-cu128/lib",
+      "count": 1
+    },
+    {
+      "id": 196,
+      "start": 1913254,
+      "end": 1913254,
+      "baseDepth": 7,
+      "parentPath": "/home/alexendros/Aplicaciones/datos/share/voicebox/backend-venv-cu128",
+      "count": 1
+    },
+    {
+      "id": 197,
+      "start": 1999529,
+      "end": 1999534,
+      "baseDepth": 7,
+      "parentPath": "/home/alexendros/Aplicaciones/datos/share/voicebox/backend-venv-cu128",
+      "count": 6
+    },
+    {
+      "id": 198,
+      "start": 1913143,
+      "end": 1913143,
+      "baseDepth": 6,
+      "parentPath": "/home/alexendros/Aplicaciones/datos/share/voicebox",
+      "count": 1
+    },
+    {
+      "id": 199,
+      "start": 1999535,
+      "end": 1999632,
+      "baseDepth": 6,
+      "parentPath": "/home/alexendros/Aplicaciones/datos/share/voicebox",
+      "count": 98
+    },
+    {
+      "id": 200,
+      "start": 1902274,
+      "end": 1902274,
+      "baseDepth": 5,
+      "parentPath": "/home/alexendros/Aplicaciones/datos/share",
+      "count": 1
+    },
+    {
+      "id": 201,
+      "start": 1999633,
+      "end": 1999642,
+      "baseDepth": 5,
+      "parentPath": "/home/alexendros/Aplicaciones/datos/share",
+      "count": 10
+    },
+    {
+      "id": 202,
+      "start": 1999644,
+      "end": 2033744,
+      "baseDepth": 6,
+      "parentPath": "/home/alexendros/Aplicaciones/datos/share/zed",
+      "count": 34101
+    },
+    {
+      "id": 203,
+      "start": 2033745,
+      "end": 2067214,
+      "baseDepth": 6,
+      "parentPath": "/home/alexendros/Aplicaciones/datos/share/zed",
+      "count": 33470
+    },
+    {
+      "id": 204,
+      "start": 1999643,
+      "end": 1999643,
+      "baseDepth": 5,
+      "parentPath": "/home/alexendros/Aplicaciones/datos/share",
+      "count": 1
+    },
+    {
+      "id": 205,
+      "start": 907947,
+      "end": 907947,
+      "baseDepth": 4,
+      "parentPath": "/home/alexendros/Aplicaciones/datos",
+      "count": 1
+    },
+    {
+      "id": 206,
+      "start": 2067215,
+      "end": 2067322,
+      "baseDepth": 4,
+      "parentPath": "/home/alexendros/Aplicaciones/datos",
+      "count": 108
+    },
+    {
+      "id": 207,
+      "start": 5397,
+      "end": 5397,
+      "baseDepth": 3,
+      "parentPath": "/home/alexendros/Aplicaciones",
+      "count": 1
+    },
+    {
+      "id": 208,
+      "start": 2067323,
+      "end": 2103934,
+      "baseDepth": 3,
+      "parentPath": "/home/alexendros/Aplicaciones",
+      "count": 36612
+    },
+    {
+      "id": 209,
+      "start": 2103936,
+      "end": 2141968,
+      "baseDepth": 4,
+      "parentPath": "/home/alexendros/Aplicaciones/Repertorio",
+      "count": 38033
+    },
+    {
+      "id": 210,
+      "start": 2141969,
+      "end": 2179954,
+      "baseDepth": 4,
+      "parentPath": "/home/alexendros/Aplicaciones/Repertorio",
+      "count": 37986
+    },
+    {
+      "id": 211,
+      "start": 2179956,
+      "end": 2180262,
+      "baseDepth": 5,
+      "parentPath": "/home/alexendros/Aplicaciones/Repertorio/voicebox-aportacionesfoss",
+      "count": 307
+    },
+    {
+      "id": 212,
+      "start": 2180264,
+      "end": 2180489,
+      "baseDepth": 6,
+      "parentPath": "/home/alexendros/Aplicaciones/Repertorio/voicebox-aportacionesfoss/backend",
+      "count": 226
+    },
+    {
+      "id": 213,
+      "start": 2180491,
+      "end": 2180599,
+      "baseDepth": 7,
+      "parentPath": "/home/alexendros/Aplicaciones/Repertorio/voicebox-aportacionesfoss/backend/venv",
+      "count": 109
+    },
+    {
+      "id": 214,
+      "start": 2180603,
+      "end": 2218614,
+      "baseDepth": 10,
+      "parentPath": "/home/alexendros/Aplicaciones/Repertorio/voicebox-aportacionesfoss/backend/venv/lib/python3.12/site-packages",
+      "count": 38012
+    },
+    {
+      "id": 215,
+      "start": 2218615,
+      "end": 2258402,
+      "baseDepth": 10,
+      "parentPath": "/home/alexendros/Aplicaciones/Repertorio/voicebox-aportacionesfoss/backend/venv/lib/python3.12/site-packages",
+      "count": 39788
+    },
+    {
+      "id": 216,
+      "start": 2258403,
+      "end": 2266375,
+      "baseDepth": 10,
+      "parentPath": "/home/alexendros/Aplicaciones/Repertorio/voicebox-aportacionesfoss/backend/venv/lib/python3.12/site-packages",
+      "count": 7973
+    },
+    {
+      "id": 217,
+      "start": 2180602,
+      "end": 2180602,
+      "baseDepth": 9,
+      "parentPath": "/home/alexendros/Aplicaciones/Repertorio/voicebox-aportacionesfoss/backend/venv/lib/python3.12",
+      "count": 1
+    },
+    {
+      "id": 218,
+      "start": 2180601,
+      "end": 2180601,
+      "baseDepth": 8,
+      "parentPath": "/home/alexendros/Aplicaciones/Repertorio/voicebox-aportacionesfoss/backend/venv/lib",
+      "count": 1
+    },
+    {
+      "id": 219,
+      "start": 2180600,
+      "end": 2180600,
+      "baseDepth": 7,
+      "parentPath": "/home/alexendros/Aplicaciones/Repertorio/voicebox-aportacionesfoss/backend/venv",
+      "count": 1
+    },
+    {
+      "id": 220,
+      "start": 2266376,
+      "end": 2266381,
+      "baseDepth": 7,
+      "parentPath": "/home/alexendros/Aplicaciones/Repertorio/voicebox-aportacionesfoss/backend/venv",
+      "count": 6
+    },
+    {
+      "id": 221,
+      "start": 2180490,
+      "end": 2180490,
+      "baseDepth": 6,
+      "parentPath": "/home/alexendros/Aplicaciones/Repertorio/voicebox-aportacionesfoss/backend",
+      "count": 1
+    },
+    {
+      "id": 222,
+      "start": 2266382,
+      "end": 2266383,
+      "baseDepth": 6,
+      "parentPath": "/home/alexendros/Aplicaciones/Repertorio/voicebox-aportacionesfoss/backend",
+      "count": 2
+    },
+    {
+      "id": 223,
+      "start": 2180263,
+      "end": 2180263,
+      "baseDepth": 5,
+      "parentPath": "/home/alexendros/Aplicaciones/Repertorio/voicebox-aportacionesfoss",
+      "count": 1
+    },
+    {
+      "id": 224,
+      "start": 2266384,
+      "end": 2266913,
+      "baseDepth": 5,
+      "parentPath": "/home/alexendros/Aplicaciones/Repertorio/voicebox-aportacionesfoss",
+      "count": 530
+    },
+    {
+      "id": 225,
+      "start": 2179955,
+      "end": 2179955,
+      "baseDepth": 4,
+      "parentPath": "/home/alexendros/Aplicaciones/Repertorio",
+      "count": 1
+    },
+    {
+      "id": 226,
+      "start": 2266914,
+      "end": 2286947,
+      "baseDepth": 4,
+      "parentPath": "/home/alexendros/Aplicaciones/Repertorio",
+      "count": 20034
+    },
+    {
+      "id": 227,
+      "start": 2103935,
+      "end": 2103935,
+      "baseDepth": 3,
+      "parentPath": "/home/alexendros/Aplicaciones",
+      "count": 1
+    },
+    {
+      "id": 228,
+      "start": 2286948,
+      "end": 2310755,
+      "baseDepth": 3,
+      "parentPath": "/home/alexendros/Aplicaciones",
+      "count": 23808
+    },
+    {
+      "id": 229,
+      "start": 5396,
+      "end": 5396,
+      "baseDepth": 2,
+      "parentPath": "/home/alexendros",
+      "count": 1
+    },
+    {
+      "id": 230,
+      "start": 2310756,
+      "end": 2350250,
+      "baseDepth": 2,
+      "parentPath": "/home/alexendros",
+      "count": 39495
+    },
+    {
+      "id": 231,
+      "start": 2350251,
+      "end": 2353613,
+      "baseDepth": 2,
+      "parentPath": "/home/alexendros",
+      "count": 3363
+    },
+    {
+      "id": 232,
+      "start": 5395,
+      "end": 5395,
+      "baseDepth": 1,
+      "parentPath": "/home",
+      "count": 1
+    },
+    {
+      "id": 233,
+      "start": 2353614,
+      "end": 2353651,
+      "baseDepth": 1,
+      "parentPath": "/home",
+      "count": 38
+    },
+    {
+      "id": 234,
+      "start": 5394,
+      "end": 5394,
+      "baseDepth": 0,
+      "parentPath": "/",
+      "count": 1
+    },
+    {
+      "id": 235,
+      "start": 2353652,
+      "end": 2368174,
+      "baseDepth": 0,
+      "parentPath": "/",
+      "count": 14523
+    },
+    {
+      "id": 236,
+      "start": 2368176,
+      "end": 2408169,
+      "baseDepth": 1,
+      "parentPath": "/proc",
+      "count": 39994
+    },
+    {
+      "id": 237,
+      "start": 2408170,
+      "end": 2447641,
+      "baseDepth": 1,
+      "parentPath": "/proc",
+      "count": 39472
+    },
+    {
+      "id": 238,
+      "start": 2447642,
+      "end": 2466702,
+      "baseDepth": 1,
+      "parentPath": "/proc",
+      "count": 19061
+    },
+    {
+      "id": 239,
+      "start": 2368175,
+      "end": 2368175,
+      "baseDepth": 0,
+      "parentPath": "/",
+      "count": 1
+    },
+    {
+      "id": 240,
+      "start": 2466703,
+      "end": 2468504,
+      "baseDepth": 0,
+      "parentPath": "/",
+      "count": 1802
+    },
+    {
+      "id": 241,
+      "start": 2468506,
+      "end": 2505936,
+      "baseDepth": 1,
+      "parentPath": "/snap",
+      "count": 37431
+    },
+    {
+      "id": 242,
+      "start": 2505937,
+      "end": 2527217,
+      "baseDepth": 1,
+      "parentPath": "/snap",
+      "count": 21281
+    },
+    {
+      "id": 243,
+      "start": 2527219,
+      "end": 2550861,
+      "baseDepth": 2,
+      "parentPath": "/snap/gnome-46-2404",
+      "count": 23643
+    },
+    {
+      "id": 244,
+      "start": 2550862,
+      "end": 2574497,
+      "baseDepth": 2,
+      "parentPath": "/snap/gnome-46-2404",
+      "count": 23636
+    },
+    {
+      "id": 245,
+      "start": 2527218,
+      "end": 2527218,
+      "baseDepth": 1,
+      "parentPath": "/snap",
+      "count": 1
+    },
+    {
+      "id": 246,
+      "start": 2574500,
+      "end": 2574501,
+      "baseDepth": 3,
+      "parentPath": "/snap/gtk-common-themes/1535",
+      "count": 2
+    },
+    {
+      "id": 247,
+      "start": 2574503,
+      "end": 2580824,
+      "baseDepth": 4,
+      "parentPath": "/snap/gtk-common-themes/1535/share",
+      "count": 6322
+    },
+    {
+      "id": 248,
+      "start": 2580826,
+      "end": 2614620,
+      "baseDepth": 5,
+      "parentPath": "/snap/gtk-common-themes/1535/share/icons",
+      "count": 33795
+    },
+    {
+      "id": 249,
+      "start": 2614621,
+      "end": 2646196,
+      "baseDepth": 5,
+      "parentPath": "/snap/gtk-common-themes/1535/share/icons",
+      "count": 31576
+    },
+    {
+      "id": 250,
+      "start": 2580825,
+      "end": 2580825,
+      "baseDepth": 4,
+      "parentPath": "/snap/gtk-common-themes/1535/share",
+      "count": 1
+    },
+    {
+      "id": 251,
+      "start": 2646197,
+      "end": 2650703,
+      "baseDepth": 4,
+      "parentPath": "/snap/gtk-common-themes/1535/share",
+      "count": 4507
+    },
+    {
+      "id": 252,
+      "start": 2574502,
+      "end": 2574502,
+      "baseDepth": 3,
+      "parentPath": "/snap/gtk-common-themes/1535",
+      "count": 1
+    },
+    {
+      "id": 253,
+      "start": 2650704,
+      "end": 2650706,
+      "baseDepth": 3,
+      "parentPath": "/snap/gtk-common-themes/1535",
+      "count": 3
+    },
+    {
+      "id": 254,
+      "start": 2574499,
+      "end": 2574499,
+      "baseDepth": 2,
+      "parentPath": "/snap/gtk-common-themes",
+      "count": 1
+    },
+    {
+      "id": 255,
+      "start": 2650707,
+      "end": 2650707,
+      "baseDepth": 2,
+      "parentPath": "/snap/gtk-common-themes",
+      "count": 1
+    },
+    {
+      "id": 256,
+      "start": 2574498,
+      "end": 2574498,
+      "baseDepth": 1,
+      "parentPath": "/snap",
+      "count": 1
+    },
+    {
+      "id": 257,
+      "start": 2650708,
+      "end": 2652816,
+      "baseDepth": 1,
+      "parentPath": "/snap",
+      "count": 2109
+    },
+    {
+      "id": 258,
+      "start": 2468505,
+      "end": 2468505,
+      "baseDepth": 0,
+      "parentPath": "/",
+      "count": 1
+    },
+    {
+      "id": 259,
+      "start": 2652817,
+      "end": 2652818,
+      "baseDepth": 0,
+      "parentPath": "/",
+      "count": 2
+    },
+    {
+      "id": 260,
+      "start": 2652820,
+      "end": 2689549,
+      "baseDepth": 1,
+      "parentPath": "/sys",
+      "count": 36730
+    },
+    {
+      "id": 261,
+      "start": 2689550,
+      "end": 2694673,
+      "baseDepth": 1,
+      "parentPath": "/sys",
+      "count": 5124
+    },
+    {
+      "id": 262,
+      "start": 2694675,
+      "end": 2732733,
+      "baseDepth": 2,
+      "parentPath": "/sys/kernel",
+      "count": 38059
+    },
+    {
+      "id": 263,
+      "start": 2732734,
+      "end": 2752418,
+      "baseDepth": 2,
+      "parentPath": "/sys/kernel",
+      "count": 19685
+    },
+    {
+      "id": 264,
+      "start": 2694674,
+      "end": 2694674,
+      "baseDepth": 1,
+      "parentPath": "/sys",
+      "count": 1
+    },
+    {
+      "id": 265,
+      "start": 2752419,
+      "end": 2757084,
+      "baseDepth": 1,
+      "parentPath": "/sys",
+      "count": 4666
+    },
+    {
+      "id": 266,
+      "start": 2652819,
+      "end": 2652819,
+      "baseDepth": 0,
+      "parentPath": "/",
+      "count": 1
+    },
+    {
+      "id": 267,
+      "start": 2757085,
+      "end": 2757101,
+      "baseDepth": 0,
+      "parentPath": "/",
+      "count": 17
+    },
+    {
+      "id": 268,
+      "start": 2757103,
+      "end": 2772918,
+      "baseDepth": 1,
+      "parentPath": "/usr",
+      "count": 15816
+    },
+    {
+      "id": 269,
+      "start": 2772920,
+      "end": 2803676,
+      "baseDepth": 2,
+      "parentPath": "/usr/lib",
+      "count": 30757
+    },
+    {
+      "id": 270,
+      "start": 2803679,
+      "end": 2805627,
+      "baseDepth": 4,
+      "parentPath": "/usr/lib/python3/dist-packages",
+      "count": 1949
+    },
+    {
+      "id": 271,
+      "start": 2805629,
+      "end": 2845137,
+      "baseDepth": 5,
+      "parentPath": "/usr/lib/python3/dist-packages/ansible_collections",
+      "count": 39509
+    },
+    {
+      "id": 272,
+      "start": 2845138,
+      "end": 2846562,
+      "baseDepth": 5,
+      "parentPath": "/usr/lib/python3/dist-packages/ansible_collections",
+      "count": 1425
+    },
+    {
+      "id": 273,
+      "start": 2805628,
+      "end": 2805628,
+      "baseDepth": 4,
+      "parentPath": "/usr/lib/python3/dist-packages",
+      "count": 1
+    },
+    {
+      "id": 274,
+      "start": 2846563,
+      "end": 2862626,
+      "baseDepth": 4,
+      "parentPath": "/usr/lib/python3/dist-packages",
+      "count": 16064
+    },
+    {
+      "id": 275,
+      "start": 2803678,
+      "end": 2803678,
+      "baseDepth": 3,
+      "parentPath": "/usr/lib/python3",
+      "count": 1
+    },
+    {
+      "id": 276,
+      "start": 2803677,
+      "end": 2803677,
+      "baseDepth": 2,
+      "parentPath": "/usr/lib",
+      "count": 1
+    },
+    {
+      "id": 277,
+      "start": 2862627,
+      "end": 2882254,
+      "baseDepth": 2,
+      "parentPath": "/usr/lib",
+      "count": 19628
+    },
+    {
+      "id": 278,
+      "start": 2772919,
+      "end": 2772919,
+      "baseDepth": 1,
+      "parentPath": "/usr",
+      "count": 1
+    },
+    {
+      "id": 279,
+      "start": 2882255,
+      "end": 2887509,
+      "baseDepth": 1,
+      "parentPath": "/usr",
+      "count": 5255
+    },
+    {
+      "id": 280,
+      "start": 2887511,
+      "end": 2919220,
+      "baseDepth": 2,
+      "parentPath": "/usr/share",
+      "count": 31710
+    },
+    {
+      "id": 281,
+      "start": 2919221,
+      "end": 2954123,
+      "baseDepth": 2,
+      "parentPath": "/usr/share",
+      "count": 34903
+    },
+    {
+      "id": 282,
+      "start": 2954124,
+      "end": 2993579,
+      "baseDepth": 2,
+      "parentPath": "/usr/share",
+      "count": 39456
+    },
+    {
+      "id": 283,
+      "start": 2993580,
+      "end": 3010925,
+      "baseDepth": 2,
+      "parentPath": "/usr/share",
+      "count": 17346
+    },
+    {
+      "id": 284,
+      "start": 3010926,
+      "end": 3047841,
+      "baseDepth": 2,
+      "parentPath": "/usr/share",
+      "count": 36916
+    },
+    {
+      "id": 285,
+      "start": 3047842,
+      "end": 3062951,
+      "baseDepth": 2,
+      "parentPath": "/usr/share",
+      "count": 15110
+    },
+    {
+      "id": 286,
+      "start": 2887510,
+      "end": 2887510,
+      "baseDepth": 1,
+      "parentPath": "/usr",
+      "count": 1
+    },
+    {
+      "id": 287,
+      "start": 3062953,
+      "end": 3095562,
+      "baseDepth": 2,
+      "parentPath": "/usr/src",
+      "count": 32610
+    },
+    {
+      "id": 288,
+      "start": 3095563,
+      "end": 3128171,
+      "baseDepth": 2,
+      "parentPath": "/usr/src",
+      "count": 32609
+    },
+    {
+      "id": 289,
+      "start": 3128172,
+      "end": 3161259,
+      "baseDepth": 2,
+      "parentPath": "/usr/src",
+      "count": 33088
+    },
+    {
+      "id": 290,
+      "start": 3062952,
+      "end": 3062952,
+      "baseDepth": 1,
+      "parentPath": "/usr",
+      "count": 1
+    },
+    {
+      "id": 291,
+      "start": 2757102,
+      "end": 2757102,
+      "baseDepth": 0,
+      "parentPath": "/",
+      "count": 1
+    },
+    {
+      "id": 292,
+      "start": 3161261,
+      "end": 3162642,
+      "baseDepth": 1,
+      "parentPath": "/var",
+      "count": 1382
+    },
+    {
+      "id": 293,
+      "start": 3162644,
+      "end": 3162980,
+      "baseDepth": 2,
+      "parentPath": "/var/lib",
+      "count": 337
+    },
+    {
+      "id": 294,
+      "start": 3162982,
+      "end": 3163110,
+      "baseDepth": 3,
+      "parentPath": "/var/lib/containerd",
+      "count": 129
+    },
+    {
+      "id": 295,
+      "start": 3163112,
+      "end": 3163112,
+      "baseDepth": 4,
+      "parentPath": "/var/lib/containerd/io.containerd.snapshotter.v1.overlayfs",
+      "count": 1
+    },
+    {
+      "id": 296,
+      "start": 3163114,
+      "end": 3203110,
+      "baseDepth": 5,
+      "parentPath": "/var/lib/containerd/io.containerd.snapshotter.v1.overlayfs/snapshots",
+      "count": 39997
+    },
+    {
+      "id": 297,
+      "start": 3203111,
+      "end": 3214476,
+      "baseDepth": 5,
+      "parentPath": "/var/lib/containerd/io.containerd.snapshotter.v1.overlayfs/snapshots",
+      "count": 11366
+    },
+    {
+      "id": 298,
+      "start": 3163113,
+      "end": 3163113,
+      "baseDepth": 4,
+      "parentPath": "/var/lib/containerd/io.containerd.snapshotter.v1.overlayfs",
+      "count": 1
+    },
+    {
+      "id": 299,
+      "start": 3163111,
+      "end": 3163111,
+      "baseDepth": 3,
+      "parentPath": "/var/lib/containerd",
+      "count": 1
+    },
+    {
+      "id": 300,
+      "start": 3214477,
+      "end": 3214477,
+      "baseDepth": 3,
+      "parentPath": "/var/lib/containerd",
+      "count": 1
+    },
+    {
+      "id": 301,
+      "start": 3162981,
+      "end": 3162981,
+      "baseDepth": 2,
+      "parentPath": "/var/lib",
+      "count": 1
+    },
+    {
+      "id": 302,
+      "start": 3214478,
+      "end": 3232679,
+      "baseDepth": 2,
+      "parentPath": "/var/lib",
+      "count": 18202
+    },
+    {
+      "id": 303,
+      "start": 3162643,
+      "end": 3162643,
+      "baseDepth": 1,
+      "parentPath": "/var",
+      "count": 1
+    },
+    {
+      "id": 304,
+      "start": 3232680,
+      "end": 3233218,
+      "baseDepth": 1,
+      "parentPath": "/var",
+      "count": 539
+    },
+    {
+      "id": 305,
+      "start": 3161260,
+      "end": 3161260,
+      "baseDepth": 0,
+      "parentPath": "/",
+      "count": 1
+    }
+  ]
+}
