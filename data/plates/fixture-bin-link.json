@@ -1,0 +1,17 @@
+{
+  "id": "fixture-bin-link",
+  "role": "fixture",
+  "instrument": "tree",
+  "regime": "frozen",
+  "captured_at": "2026-10-12T18:25:38Z",
+  "horizons": [{ "id": "h-no_dotfiles", "kind": "no_dotfiles" }],
+  "body_uri": "file://data/plates/fixture-bin-link.json",
+  "body": "bin ⇒ usr/bin\n",
+  "statements": [{
+    "id": "s-bin",
+    "subject": "/bin",
+    "relation": "links_to",
+    "object_text": "usr/bin",
+    "support": "asserted"
+  }]
+}

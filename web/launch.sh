@@ -5,9 +5,11 @@ HERE="$(cd "$(dirname "$0")" && pwd)"
 ROOT="$(dirname "$HERE")"
 PORT="${1:-8000}"
 
-echo "desplantar-auditoria — visor"
+echo "sysXray — mesa"
 echo "Raíz servida: $ROOT"
 echo "Abre:         http://localhost:$PORT/web/"
+echo "Árbol:        http://localhost:$PORT/web/tree.html"
+echo "Placas:       http://localhost:$PORT/web/plates.html"
 echo "Detén con:    Ctrl+C"
 echo
 

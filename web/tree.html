@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>sysXray — radiografía (árbol)</title>
+<link rel="stylesheet" href="app.css">
+</head>
+<body>
+
+<header class="topbar">
+  <h1><a href="index.html" style="color:inherit;text-decoration:none">sysXray</a></h1>
+  <span class="sub">Radiografía · volcado <code>tree</code> de <code>/</code></span>
+  <span class="spacer"></span>
+  <ul class="chips" id="counters" aria-label="Contadores globales"></ul>
+</header>
+
+<div class="caveat" role="note">
+  <div>
+    <strong>Aviso (caveat mayor):</strong> el volcado se generó <em>sin</em> <code>tree -a</code>, por lo que
+    <strong>NO contiene ninguna entrada oculta</strong> — 0 de 3.233.218 registros empiezan por <code>.</code>.
+    Faltan, entre otros:
+    <ul>
+      <li><code>.config</code>, <code>.cache</code>, <code>.local</code>, <code>.ssh</code>, <code>.bashrc</code>, <code>/etc/skel/.*</code></li>
+      <li><code>node_modules/.pnpm</code>, <code>.bun</code> y cualquier fichero o directorio oculto.</li>
+    </ul>
+    Los recuentos y la auditoría deben leerse con esta limitación.
+  </div>
+</div>
+
+<section class="block" aria-labelledby="dash-h">
+  <h2 id="dash-h">Panel de raíces (26 entradas de nivel superior)</h2>
+  <div class="cards" id="dashboard"></div>
+</section>
+
+<section class="block" aria-labelledby="search-h">
+  <h2 id="search-h">Buscar y filtrar</h2>
+  <search class="toolbar">
+    <label>Nombre <input id="f-name" type="search" placeholder="subcadena, p. ej. systemd" autocomplete="off" spellcheck="false"></label>
+    <label>Tipo
+      <select id="f-type">
+        <option value="">cualquiera</option>
+        <option value="d">d · directorio</option>
+        <option value="f">f · fichero</option>
+        <option value="s">s · symlink</option>
+      </select>
+    </label>
+    <label>Hashtag
+      <select id="f-tag"><option value="">cualquiera</option></select>
+    </label>
+    <label class="checkbox"><input id="f-anom" type="checkbox"> solo anomalías</label>
+    <button class="btn primary" id="btn-search" type="button">Buscar</button>
+    <button class="btn" id="btn-clear" type="button">Limpiar</button>
+    <span class="spacer" style="flex:1"></span>
+    <span id="search-hint" class="muted" style="font-size:12px"></span>
+  </search>
+  <div class="progress" id="progress" role="status" aria-live="polite">
+    <span id="progress-label">Indexando…</span>
+    <span class="bar"><span class="fill" id="progress-fill"></span></span>
+  </div>
+  <div class="results" id="results" hidden>
+    <div class="results-head" id="results-head"></div>
+    <div class="results-list" id="results-list" role="listbox" aria-label="Resultados de búsqueda"></div>
+  </div>
+</section>
+
+<section class="split">
+  <div class="panel">
+    <header>
+      <span>Árbol virtualizado</span>
+      <span class="legend">d dir · f fichero · s symlink · <span class="lazytag">lazy</span> subárbol en chunks</span>
+    </header>
+    <div id="tree-viewport" tabindex="0" role="tree" aria-label="Árbol de ficheros (use flechas del teclado)">
+      <div id="tree-spacer" aria-hidden="true"></div>
+      <div id="tree-rows"></div>
+    </div>
+  </div>
+  <aside class="panel" aria-labelledby="detail-h">
+    <header><span id="detail-h">Detalle del nodo</span></header>
+    <div class="detail-body" id="detail">
+      <p class="detail-empty">Selecciona un nodo en el árbol o un resultado de búsqueda.</p>
+    </div>
+  </aside>
+</section>
+
+<script src="kb-rules.js" onerror="window.__kbRulesMissing=true"></script>
+<script src="app.js"></script>
+</body>
+</html>

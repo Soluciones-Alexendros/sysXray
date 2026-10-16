@@ -1,0 +1,17 @@
+{
+  "@type": "CanonFicha",
+  "id": "authority-gnu",
+  "title": "GNU — coreutils y GRUB",
+  "source_url": "https://www.gnu.org/software/grub/manual/grub/",
+  "version_label": "GRUB 2.14-2ubuntu2.1; coreutils (ls); NEWS lockdown desde 2.06",
+  "judges_what": "Comportamiento de las herramientas de listado (ls) y del cargador (órdenes propias de GRUB, lockdown desde 2.06 documentado en /usr/share/doc/grub-common/NEWS.gz).",
+  "observed_here": "GRUB 2.14 en este equipo. tree no es una herramienta GNU: es el instrumento de la placa cero. GRUB no ejecuta bash ni sh POSIX; tiene lista cerrada de órdenes (ls, cat, hexdump, search).",
+  "explanation": "Confirma práctica y sintaxis de instrumentos. No redefine FHS ni XDG. Las órdenes de la consola GRUB de este proyecto salen del manual de GRUB y del grub.cfg EFI medido aquí. Fetch automatizado a gnu.org devolvió 403 (bot); el contenido se sostiene con el testigo local.",
+  "source_checked_at": "2026-10-14T13:45:00Z",
+  "source_http_status": "403_bot",
+  "contrast_verdict": "bloqueado_bot",
+  "secondary_urls": [
+    "https://www.gnu.org/software/grub/manual/grub/html_node/Command_002dline-and-menu-entry-commands.html"
+  ],
+  "local_witness": "/usr/share/info/grub.info.gz; /usr/share/doc/grub-common/NEWS.gz (lockdown 2.06)"
+}

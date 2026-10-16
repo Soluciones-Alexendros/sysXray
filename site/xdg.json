@@ -1,0 +1,14 @@
+{
+  "@type": "CanonFicha",
+  "id": "authority-xdg",
+  "title": "XDG Base Directory Specification",
+  "source_url": "https://specifications.freedesktop.org/basedir-spec/latest/",
+  "version_label": "basedir-spec 0.8 (2021-05-08) + xdg-user-dirs",
+  "judges_what": "Espacio mutable del usuario: configuración (~/.config), datos (~/.local/share), caché (~/.cache), estado (~/.local/state). No juzga la raíz del sistema.",
+  "observed_here": "En /home/alexendros/ existen .config, .local, .cache, .ssh, .bashrc y otros. La placa tree sin -a no los volcó (horizonte no_dotfiles). Juzgar esos nombres contra el FHS es un error de categoría: FHS 3.0 §3.8 deja la estructura de /home a decisión local.",
+  "explanation": "Único canon del home para la fase Antigua. Lo que una aplicación deja suelto en ~/ es deriva respecto de XDG, no una falta del FHS.",
+  "source_checked_at": "2026-10-14T13:44:00Z",
+  "source_http_status": "200",
+  "contrast_verdict": "acuerdo",
+  "local_witness": "ls -la /home/alexendros/ (dotdirs presentes)"
+}

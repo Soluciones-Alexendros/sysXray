@@ -1,0 +1,11 @@
+{
+  "updated": "2026-10-16T12:32:55.475Z",
+  "plates": [
+    {
+      "id": "fixture-bin-link",
+      "file": "fixture-bin-link.json",
+      "instrument": "tree",
+      "role": "fixture"
+    }
+  ]
+}

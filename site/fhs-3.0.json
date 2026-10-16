@@ -1,0 +1,14 @@
+{
+  "@type": "CanonFicha",
+  "id": "authority-fhs-3.0",
+  "title": "Filesystem Hierarchy Standard 3.0",
+  "source_url": "https://refspecs.linuxfoundation.org/FHS_3.0/fhs-3.0.html",
+  "version_label": "FHS 3.0 (2015)",
+  "judges_what": "Nombres y propósito de los directorios de la raíz (/bin, /boot, /dev, /etc, /home, /lib, /media, /mnt, /opt, /proc, /root, /run, /sbin, /srv, /sys, /tmp, /usr, /var).",
+  "observed_here": "En este equipo (Ubuntu 26.04.1, placa tree 2026-10-12) los 17 nombres canónicos están presentes. /bin, /sbin, /lib, /lib32, /lib64 y /libx32 son enlaces a usr/*, no directorios. El texto FHS 3.0 de 2015 describe /bin y /lib como directorios: la forma no se cumple; los nombres sí. Extras: snap, swap.img, lost+found, cdrom, desplantar.md.",
+  "explanation": "El FHS 3.0 es el texto de referencia de la Linux Foundation sobre dónde debe vivir cada clase de fichero. No define el home del usuario con detalle (deja /home a decisión local). No es el canon vivo del usr-merge: ese papel lo ocupa UAPI.9 / file-hierarchy(7).",
+  "source_checked_at": "2026-10-14T13:44:00Z",
+  "source_http_status": "200",
+  "contrast_verdict": "acuerdo",
+  "local_witness": "data/audit-report.json fhs.present; /bin → usr/bin en placa"
+}

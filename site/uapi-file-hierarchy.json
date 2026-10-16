@@ -1,0 +1,17 @@
+{
+  "@type": "CanonFicha",
+  "id": "authority-uapi-file-hierarchy",
+  "title": "UAPI.9 / file-hierarchy(7) — jerarquía systemd",
+  "source_url": "https://uapi-group.org/specifications/specs/linux_file_system_hierarchy/",
+  "version_label": "systemd 259.5 (file-hierarchy(7) en este equipo)",
+  "judges_what": "Requisitos de jerarquía para sistemas con systemd: disponibilidad de rutas durante el arranque, usr-merge, y la imagen viva del árbol de sistema.",
+  "observed_here": "file-hierarchy(7) en este equipo remite a UAPI.9 y a The Case for the /usr Merge (freedesktop). Los enlaces /bin→usr/bin, /sbin→usr/sbin, /lib→usr/lib (y variantes) son la forma esperada bajo este canon, no una anomalía.",
+  "explanation": "Canon vivo frente al FHS 3.0 de 2015. Un juicio acuerdo bajo UAPI.9 y desacuerdo bajo hier(7)/FHS 3.0 sobre el mismo /bin son ambos válidos: cambian la Authority, no la Statement.",
+  "source_checked_at": "2026-10-14T13:44:00Z",
+  "source_http_status": "200",
+  "contrast_verdict": "acuerdo",
+  "secondary_urls": [
+    "https://www.freedesktop.org/wiki/Software/systemd/TheCaseForTheUsrMerge/"
+  ],
+  "local_witness": "man file-hierarchy(7); /bin → usr/bin"
+}

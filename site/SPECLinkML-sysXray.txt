@@ -1,0 +1,116 @@
+SPEC LinkML — sysXray
+Sobre del acto de observar
+Estado: vigente. Manda sobre HTML, YAML y fichas si discrepan.
+
+DEDICATORIA
+Este trabajo es para Daniel Domingo Benito, que pedía callar porque no
+quería saber nada de ordenadores. La explicación queda escrita y se puede
+comprobar.
+
+
+ASSUMPTIONS
+1. El esquema tipa el acto de observar (placa, horizonte, afirmación, juicio,
+   canon citado). Las 3.233.219 rutas siguen en los TSV.
+2. schema/sysxray.yaml es la fuente. Node consume schema/sysxray.schema.json.
+   El visor y "node tests/run.js" no piden Python.
+3. Python y linkml generan el JSON Schema. El pin se anota en schema/README.txt.
+4. id del esquema: https://local.sysxray/sobre
+5. web/kb-rules.js clasifica rutas. LinkML tipa el juicio.
+6. Capturas reales: role=capture. Pruebas: role=fixture.
+7. Prosa en español. Identificadores del esquema en inglés ASCII.
+8. Las fichas de canon son JSON (docs/*.json), instancias de CanonFicha
+   (is_a Authority). Se integran en LinkML como Authority.source_url y
+   como cuerpo de la ficha, no como texto suelto.
+
+
+REALIDAD MEDIDA (este equipo)
+Ubuntu 26.04.1 LTS. Núcleo 7.0.0-38-generic. GRUB 2.14-2ubuntu2.1.
+Secure Boot enabled. Lockdown del núcleo: integrity
+(none [integrity] confidentiality).
+NVMe Kingston 1 TB, GPT, dos particiones. Raíz ext4 sin cifrar.
+  (hd0,gpt1) nvme0n1p1 EFI 1G vfat /boot/efi UUID DB1C-E88E
+  (hd0,gpt2) nvme0n1p2 Ubuntu26 ext4 / UUID 0ca5347e-1acd-44df-977a-bc57318fd969
+grub.cfg EFI: search.fs_uuid 0ca5347e-1acd-44df-977a-bc57318fd969 root
+Swap: /swap.img cifrado al arrancar (swapcrypt, /dev/urandom). No es el sistema.
+Ocultos: ninguno en /. Home /home/alexendros/ tiene .config .local .cache .ssh …
+Órdenes GRUB (tecla c, aviso grub>):
+  set pager=1
+  search --fs-uuid 0ca5347e-1acd-44df-977a-bc57318fd969 --set=root
+  ls -l ($root)/
+  ls -l ($root)/home/alexendros/
+  cat ($root)/etc/os-release
+  hexdump ($root)/etc/os-release
+
+
+SEIS PROHIBICIONES
+1. Observación parcial. Plate exige instrument, regime, captured_at, horizons,
+   body_uri. Statement exige relation y support (asserted|refused|not_in_plate).
+   Slots exists y target_exists prohibidos.
+2. tree_root es Plate. Statement sin parent ni children.
+3. Authority.source_url obligatorio. Judgment exige authority.
+   Slot compliant prohibido.
+4. regime y captured_at obligatorios. Dos placas contradictorias validan.
+5. body_uri apunta al cuerpo. LinkML no recorre los TSV.
+6. linkml solo genera. node tests/run.js sin Python.
+
+
+CLASES
+Plate (tree_root): id role instrument regime captured_at horizons body_uri statements
+Horizon: id kind note
+Statement: id subject relation object_text support
+Judgment: id statement authority verdict
+Authority: id title source_url version_label
+CanonFicha (is_a Authority): judges_what observed_here explanation
+  switch_on switch_off activates_when_on deactivates_when_on
+  source_checked_at source_http_status contrast_verdict
+  secondary_urls local_witness
+  (switch_* y activates/deactivates son opcionales; obligatorios en
+   secure-boot-lockdown.json)
+  (contrast_* opcionales en el esquema; rellenados en docs/*.json)
+
+Enums
+  Role: capture fixture
+  Instrument: tree grub_ls grub_cat grub_hexdump sh_ls
+  Regime: live frozen
+  HorizonKind: no_dotfiles no_metadata leaf_ambiguity grub_lockdown
+    kernel_lockdown_integrity unknown_filesystem full_dentries
+  Relation: lists contains links_to mounts denies reads
+  Support: asserted refused not_in_plate
+  Verdict: acuerdo desacuerdo inobservable extra_documentado
+  ContrastVerdict: acuerdo desacuerdo url_rota bloqueado_bot parcial
+
+
+FICHAS (docs/*.json — instancias CanonFicha)
+  docs/fhs-3.0.json
+  docs/hier-7.json
+  docs/uapi-file-hierarchy.json
+  docs/xdg.json
+  docs/gnu.json
+  docs/redhat.json
+  docs/secure-boot-lockdown.json
+  docs/grub-ordenes.json
+
+CONTRASTE
+  docs/contraste-fuentes.json — informe de la pasada de validación de source_url
+  (http_status, contrast_verdict, notes). El dossier HTML enlaza este fichero.
+
+
+BOUNDARIES
+Always: node tests/run.js antes de cerrar; role=fixture en pruebas;
+  citar canon por URL; fichas en JSON CanonFicha.
+Ask first: instalar paquetes; cambiar contrato TSV; poner captura en data/plates/.
+Never: runtime LinkML sobre data/tree/; slot compliant; apagar Secure Boot
+  para "ver mejor"; inventar transcripción GRUB; borrar TSV; vendorizar
+  manuales enteros.
+
+
+SUCCESS
+  SPECLinkML-sysXray.txt vigente.
+  Ocho docs/*.json con id title source_url judges_what observed_here explanation.
+  secure-boot-lockdown.json explica el switch (on/off, activa/desactiva).
+  docs/contraste-fuentes.json con ocho entradas.
+  redhat.json no apunta al assembly 404.
+  LinkML/LinkML.html abre y enlaza.
+  schema/sysxray.yaml + schema/sysxray.schema.json.
+  node tests/run.js exit 0.
+  data/tree/ no se publica en GitHub.

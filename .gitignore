@@ -9,7 +9,9 @@ data/symlink-report.json
 data/audit-report.json
 data/plates/*
 !data/plates/.gitkeep
+!data/plates/README.txt
+!data/plates/index.json
+!data/plates/fixture-*.json
 .cursor/
 *.md.bak
 .DS_Store
-

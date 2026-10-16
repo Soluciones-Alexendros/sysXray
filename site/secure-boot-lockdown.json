@@ -1,0 +1,35 @@
+{
+  "@type": "CanonFicha",
+  "id": "authority-secure-boot-lockdown",
+  "title": "UEFI Secure Boot y lockdown (GRUB + núcleo)",
+  "source_url": "https://man7.org/linux/man-pages/man7/kernel_lockdown.7.html",
+  "version_label": "UEFI Secure Boot; GRUB 2.14 lockdown desde 2.06; kernel_lockdown(7); este equipo: SecureBoot enabled, lockdown integrity",
+  "judges_what": "Qué lecturas y órdenes quedan permitidas o rechazadas según el estado del interruptor Secure Boot y los lockdowns que arrastra (GRUB y núcleo). No juzga nombres ocultos del disco.",
+  "observed_here": "mokutil --sb-state: SecureBoot enabled. /sys/kernel/security/lockdown: none [integrity] confidentiality (activo: integrity). Variables EFI presentes: SecureBoot, SetupMode, PK, KEK, db. Cadena de arranque en /boot/efi/EFI/ubuntu/: shimx64.efi → grubx64.efi → núcleo firmado 7.0.0-38-generic. Raíz ext4 sin cifrar (UUID 0ca5347e-1acd-44df-977a-bc57318fd969).",
+  "explanation": "Secure Boot es una función del firmware UEFI, no del núcleo Linux ni de GRUB. Antes de entregar el control a cualquier binario EFI, el firmware comprueba que ese binario esté firmado con una clave que conste en las bases de datos de la máquina: PK (Platform Key), KEK (Key Exchange Keys), db (lista blanca de firmas) y dbx (lista negra de firmas revocadas). En Ubuntu la cadena típica es: el firmware carga shim (firmado, suele estar en la db vía Microsoft), shim carga grubx64.efi (firmado por Canonical/shim), GRUB carga el núcleo firmado. Si Secure Boot está activo, esa cadena se exige. Si alguien altera grubx64.efi o el núcleo sin una firma válida, el arranque se detiene. Secure Boot no cifra el disco, no oculta ficheros que empiecen por punto y no impide ls/cat de una partición ext4 que el GRUB firmado ya sabe montar. Lo que sí arrastra en Linux moderno es el lockdown: GRUB entra en modo lockdown (desde 2.06) y el núcleo suele quedar en integrity, que niega el acceso directo a la imagen del núcleo en marcha (/dev/mem, /dev/kmem, /dev/kcore, debugfs, módulos o kexec sin firma). El mensaje del núcleo es: Lockdown: X: Y is restricted. El interruptor Secure Boot vive en el firmware (Setup / BIOS UEFI); mokutil y las variables EFI solo informan del estado. Apagarlo no es un paso de este proyecto: aquí se documenta qué cambia, no se recomienda desactivarlo para 'ver mejor'.",
+  "switch_on": "Firmware solo carga binarios EFI cuya firma esté en db (y no en dbx). En este Ubuntu: shim → GRUB firmado → núcleo firmado. GRUB activa su lockdown. El núcleo suele arrancar con lockdown en integrity (medido aquí). Las órdenes que reescriben la cadena o leen memoria/hardware en crudo quedan prohibidas. ls, cat y hexdump de ficheros en la ext4 del sistema siguen siendo lectura de ficheros, no bypass de la firma.",
+  "switch_off": "El firmware deja de exigir firma en la cadena EFI. Se pueden cargar binarios EFI sin firmar (otro GRUB, otro cargador, un núcleo no firmado). El lockdown de GRUB y el del núcleo dejan de activarse por la vía Secure Boot (pueden forzarlos otros mecanismos, pero no el interruptor). /dev/mem, debugfs y módulos sin firma dejan de estar bloqueados por ese motivo. El disco y los nombres ocultos no cambian: siguen siendo el mismo filesystem; solo cambia qué el firmware y el lockdown permiten hacer con la máquina en marcha.",
+  "activates_when_on": [
+    "Comprobación de firma de cada binario EFI de la cadena de arranque (shim, GRUB, núcleo)",
+    "Uso de las bases PK, KEK, db y dbx del firmware",
+    "Lockdown de GRUB (órdenes peligrosas para la cadena: memrw, E/S, ACPI, módulo no firmado, chainload EFI sin firma)",
+    "Lockdown del núcleo en modo integrity (en este equipo: medido)",
+    "Rechazo de módulos del núcleo y de kexec sin firma válida",
+    "Negación de acceso a /dev/mem, /dev/kmem, /dev/kcore, /dev/ioports y debugfs vía kernel_lockdown"
+  ],
+  "deactivates_when_on": [
+    "Arranque de un EFI o núcleo sin firma válida (el firmware o shim lo detienen)",
+    "Órdenes de GRUB que reescriben o inspeccionan la máquina por debajo de la firma (memrw, E/S cruda, ACPI custom, cargar módulo GRUB no firmado)",
+    "Lectura directa de la imagen del núcleo en marcha desde el sistema operativo",
+    "Carga de módulos del núcleo sin firma (salvo excepciones IMA documentadas en kernel_lockdown(7))",
+    "Hibernación a swap sin cifrar cuando el lockdown lo exige"
+  ],
+  "source_checked_at": "2026-10-14T13:44:00Z",
+  "source_http_status": "200",
+  "contrast_verdict": "parcial",
+  "secondary_urls": [
+    "https://wiki.ubuntu.com/UEFI/SecureBoot",
+    "https://wiki.debian.org/SecureBoot"
+  ],
+  "local_witness": "mokutil --sb-state; cat /sys/kernel/security/lockdown; ls /boot/efi/EFI/ubuntu/; kernel_lockdown(7)"
+}

@@ -1,0 +1,7 @@
+{
+  "updated": "2026-10-16T12:00:00Z",
+  "judgments": [
+    { "id": "judgment-bin-hier", "file": "judgment-bin-hier.json" },
+    { "id": "judgment-bin-uapi", "file": "judgment-bin-uapi.json" }
+  ]
+}

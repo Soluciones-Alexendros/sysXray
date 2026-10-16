@@ -215,6 +215,26 @@ function runSobreTests(helpers) {
     };
     truthy(validateCanonFicha(bad).indexOf('missing source_url') !== -1, 'must require source_url');
   });
+
+  test('sobre: judgments seed /bin present', () => {
+    const idx = readJSON(path.join(ROOT, 'data', 'judgments', 'index.json'));
+    truthy(idx.judgments && idx.judgments.length >= 2, 'need bin judgments');
+    const hier = readJSON(path.join(ROOT, 'data', 'judgments', 'judgment-bin-hier.json'));
+    const uapi = readJSON(path.join(ROOT, 'data', 'judgments', 'judgment-bin-uapi.json'));
+    eq(hier.statement, '/bin', 'hier statement');
+    eq(hier.verdict, 'desacuerdo', 'hier verdict');
+    eq(uapi.verdict, 'acuerdo', 'uapi verdict');
+  });
+
+  test('sobre: plate-ingest detects dots and validates fixture plate', () => {
+    const ingest = require(path.join(ROOT, 'build', 'plate-ingest.js'));
+    const sample = fs.readFileSync(path.join(FIX, 'ingest-sample.txt'), 'utf8');
+    truthy(ingest.hasDotNames(sample) === true, 'sample should have dots');
+    truthy(ingest.hasDotNames('bin ⇒ usr/bin\n') === false, 'bin-only should not force dots');
+    const plate = readJSON(path.join(ROOT, 'data', 'plates', 'fixture-bin-link.json'));
+    const errs = validatePlate(plate);
+    truthy(errs.length === 0, 'fixture plate: ' + errs.join('; '));
+  });
 }
 
 module.exports = { runSobreTests, validatePlate, validateCanonFicha, FORBIDDEN_SLOTS };

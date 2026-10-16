@@ -1,0 +1,129 @@
+:root {
+  --ink: #1a1a1a;
+  --muted: #4a4a4a;
+  --line: #c8c8c8;
+  --bg: #f6f4ef;
+  --accent: #0b3d2e;
+  --warn: #6b2e0a;
+  --panel: #efece4;
+  --mono: "IBM Plex Mono", Consolas, monospace;
+  --serif: "Iowan Old Style", "Palatino Linotype", Palatino, Georgia, serif;
+}
+
+* { box-sizing: border-box; }
+
+body.mesa {
+  margin: 0;
+  font-family: var(--serif);
+  color: var(--ink);
+  background:
+    radial-gradient(ellipse at 10% 0%, #e8e2d4 0%, transparent 50%),
+    radial-gradient(ellipse at 90% 100%, #d9e2dc 0%, transparent 45%),
+    var(--bg);
+  line-height: 1.45;
+  min-height: 100vh;
+}
+
+.mesa-head, .how, .mesa-foot, .plates-wrap {
+  max-width: 42rem;
+  margin: 0 auto;
+  padding: 2rem 1.25rem 0;
+}
+
+.brand {
+  margin: 0;
+  font-size: 0.95rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--accent);
+  font-weight: 650;
+}
+
+.mesa-head h1 {
+  margin: 0.2rem 0 0.5rem;
+  font-size: 2rem;
+  font-weight: 600;
+  color: var(--accent);
+  letter-spacing: -0.02em;
+}
+
+.lead { color: var(--muted); margin: 0 0 0.75rem; }
+.ded { font-style: italic; color: var(--muted); margin: 0 0 1.5rem; }
+
+.doors {
+  max-width: 42rem;
+  margin: 0 auto;
+  padding: 0 1.25rem;
+  display: grid;
+  gap: 0.85rem;
+}
+
+.door {
+  display: block;
+  text-decoration: none;
+  color: inherit;
+  background: var(--panel);
+  border: 1px solid var(--line);
+  border-left: 4px solid var(--accent);
+  padding: 1rem 1.1rem;
+  transition: background 0.15s ease;
+}
+.door:hover { background: #e7e2d6; }
+.door strong { display: block; font-size: 1.15rem; margin-bottom: 0.25rem; color: var(--accent); }
+.door span { color: var(--muted); font-size: 0.98rem; }
+.door-muted { opacity: 0.72; border-left-color: var(--warn); }
+
+.how h2 {
+  font-size: 1.1rem;
+  border-top: 1px solid var(--line);
+  padding-top: 1.1rem;
+  margin: 1.75rem 0 0.6rem;
+}
+.how ol { padding-left: 1.25rem; color: var(--ink); }
+.how code, .plates-wrap code {
+  font-family: var(--mono);
+  font-size: 0.86rem;
+  background: var(--panel);
+  padding: 0.1rem 0.3rem;
+}
+
+.mesa-foot {
+  padding-bottom: 2.5rem;
+  color: var(--muted);
+  font-size: 0.95rem;
+}
+.mesa-foot a { color: var(--accent); }
+
+/* plates page */
+.plates-wrap h1 { font-size: 1.7rem; color: var(--accent); margin: 0 0 0.4rem; }
+.back { display: inline-block; margin-bottom: 1rem; color: var(--accent); }
+.card-list { display: grid; gap: 0.75rem; margin: 1rem 0 2rem; }
+.card {
+  background: var(--panel);
+  border: 1px solid var(--line);
+  border-left: 3px solid var(--accent);
+  padding: 0.75rem 1rem;
+}
+.card h3 { margin: 0 0 0.35rem; font-size: 1.05rem; }
+.card p { margin: 0.25rem 0; color: var(--muted); font-size: 0.95rem; }
+.card .verdict { color: var(--ink); font-weight: 600; }
+.pair {
+  display: grid;
+  gap: 0.75rem;
+}
+@media (min-width: 720px) {
+  .pair { grid-template-columns: 1fr 1fr; }
+}
+.pair .card.desacuerdo { border-left-color: var(--warn); }
+.pair .card.acuerdo { border-left-color: var(--accent); }
+pre.body {
+  background: #e8e4da;
+  border: 1px solid var(--line);
+  padding: 0.75rem;
+  overflow: auto;
+  max-height: 16rem;
+  white-space: pre-wrap;
+  font-family: var(--mono);
+  font-size: 0.8rem;
+}
+.empty { color: var(--muted); font-style: italic; }
